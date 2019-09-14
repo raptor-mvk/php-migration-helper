@@ -1,0 +1,31 @@
+{
+  "name": "raptor/php-migration-helper",
+  "description": "Helps migrate your projects from PHP 7.1 to 7.3",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.1",
+    "symfony/console": "^4.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "7.*",
+    "mockery/mockery": "1.2.*",
+    "raptor/test-utils": "@stable",
+    "phpmd/phpmd": "@stable",
+    "squizlabs/php_codesniffer": "3.4.*",
+    "roave/security-advisories": "dev-master",
+    "escapestudios/symfony2-coding-standard": "3.9.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Raptor\\PHPMigrationHelper\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Raptor\\PHPMigrationHelper\\UnitTests\\": "tests/unit"
+    }
+  },
+  "scripts": {
+    "test-all": "phpunit"
+  }
+}
