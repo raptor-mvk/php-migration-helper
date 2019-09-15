@@ -10,8 +10,8 @@
 
 ## Overview
 
-Helper contains command `migration-helper` that checks your project for changes in PHP 7.2 and 7.3
-that break backward compatibility. The report is provided as result of command execution.
+Helper contains command `php-migration-helper` that checks your project for changes in PHP 7.2 and
+7.3 that break backward compatibility. The report is provided as result of command execution.
 
 ## Installation
 

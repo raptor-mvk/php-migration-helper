@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+declare(strict_types=1);
+
+require dirname(__DIR__, 3). '/vendor/autoload.php';
+
+use Raptor\PHPMigrationHelper\Command\PHPMigrationHelperCommand;
+use Symfony\Component\Console\Application;
+
+$application = new Application();
+$filePath = dirname(__DIR__, 3);
+$command = new PHPMigrationHelperCommand($filePath);
+$application->add($command);
+$application->setDefaultCommand($command->getName(), true);
+
+/** @noinspection PhpUnhandledExceptionInspection __approved__ no need to handle errors */
+$application->run();

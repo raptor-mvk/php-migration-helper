@@ -1,0 +1,116 @@
+[
+  {
+    "filename": "file.php",
+    "_children": [
+      {
+        "_name": "single rule, single line",
+        "rules": [
+          {
+            "regexp": "/regexp3/",
+            "recommendation": "Fix this!"
+          }
+        ],
+        "expected_result": [
+          "vfs://root/file.php",
+          "================================================================================",
+          "Fix this!",
+          "\t3\tregexp3"
+        ]
+      },
+      {
+        "_name": "single rule, lines before and after",
+        "rules": [
+          {
+            "regexp": "/regexp5/",
+            "recommendation": "Do not fix this!",
+            "lines_before": 2,
+            "lines_after": 3
+          }
+        ],
+        "expected_result": [
+          "vfs://root/file.php",
+          "================================================================================",
+          "Do not fix this!",
+          "\t3\tregexp3",
+          "\t4\tregexp4",
+          "\t5\tregexp5",
+          "\t6\tregexp6",
+          "\t7\tregexp7",
+          "\t8\tregexp8"
+        ]
+      },
+      {
+        "_name": "single rule, lines before first",
+        "filename": "other.php",
+        "rules": [
+          {
+            "regexp": "/regexp2/",
+            "recommendation": "Some error!",
+            "lines_before": 10
+          }
+        ],
+        "expected_result": [
+          "vfs://root/other.php",
+          "================================================================================",
+          "Some error!",
+          "\t0\tregexp0",
+          "\t1\tregexp1",
+          "\t2\tregexp2"
+        ]
+      },
+      {
+        "_name": "single rule, lines after last",
+        "rules": [
+          {
+            "regexp": "/regexp8/",
+            "recommendation": "Another error!",
+            "lines_after": 4
+          }
+        ],
+        "expected_result": [
+          "vfs://root/file.php",
+          "================================================================================",
+          "Another error!",
+          "\t8\tregexp8",
+          "\t9\tregexp9"
+        ]
+      },
+      {
+        "_name": "multiple rule",
+        "rules": [
+          {
+            "regexp": "/regexp3/",
+            "recommendation": "This is incorrect!"
+          },
+          {
+            "regexp": "/regexp6/",
+            "recommendation": "See here!"
+          }
+        ],
+        "expected_result": [
+          "vfs://root/file.php",
+          "================================================================================",
+          "This is incorrect!",
+          "\t3\tregexp3",
+          "--------------------------------------------------------------------------------",
+          "See here!",
+          "\t6\tregexp6"
+        ]
+      },
+      {
+        "_name": "multiple rule, no coincidence",
+        "rules": [
+          {
+            "regexp": "/regexp32/",
+            "recommendation": "Wrong rule!"
+          },
+          {
+            "regexp": "/regexp66/",
+            "recommendation": "Wrong too!"
+          }
+        ],
+        "expected_result": null
+      }
+    ]
+  }
+]

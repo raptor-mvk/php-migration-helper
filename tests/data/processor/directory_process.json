@@ -1,0 +1,91 @@
+[
+  {
+    "_name": "single file",
+    "directory": "one",
+    "rules": [
+      {
+        "regexp": "/regexp3/",
+        "recommendation": "Fix this!"
+      }
+    ],
+    "expected_result": [
+      "Processed 1 file, found 1 file with potential problems",
+      "vfs://root/one/file.php",
+      "================================================================================",
+      "Fix this!",
+      "\t3\tregexp3"
+    ]
+  },
+  {
+    "_name": "no files",
+    "directory": "folder",
+    "rules": [
+      {
+        "regexp": "/regexp5/",
+        "recommendation": "No"
+      }
+    ],
+    "expected_result": [
+      "Processed 0 files, found 0 files with potential problems"
+    ]
+  },
+  {
+    "_name": "not all files with problems",
+    "directory": "directory",
+    "rules": [
+      {
+        "regexp": "/regexp4/",
+        "recommendation": "Yes"
+      },
+      {
+        "regexp": "/regexp6/",
+        "recommendation": "Found"
+      }
+    ],
+    "expected_result": [
+      "Processed 3 files, found 2 files with potential problems",
+      "vfs://root/directory/other.php",
+      "================================================================================",
+      "Yes",
+      "\t4\tregexp4",
+      "--------------------------------------------------------------------------------",
+      "Found",
+      "\t6\tregexp6",
+      "\n",
+      "vfs://root/directory/bad.php",
+      "================================================================================",
+      "Yes",
+      "\t4\tregexp4",
+      "--------------------------------------------------------------------------------",
+      "Found",
+      "\t6\tregexp6"
+    ]
+  },
+  {
+    "_name": "all files",
+    "directory": "",
+    "rules": [
+      {
+        "regexp": "/regexp1/",
+        "recommendation": "Awesome!"
+      }
+    ],
+    "expected_result": [
+      "Processed 4 files, found 3 files with potential problems",
+      "vfs://root/one/file.php",
+      "================================================================================",
+      "Awesome!",
+      "\t1\tregexp1",
+      "\n",
+      "vfs://root/directory/other.php",
+      "================================================================================",
+      "Awesome!",
+      "\t1\tregexp1",
+      "\n",
+      "vfs://root/directory/bad.php",
+      "================================================================================",
+      "Awesome!",
+      "\t1\tregexp1"
+    ]
+  }
+]
