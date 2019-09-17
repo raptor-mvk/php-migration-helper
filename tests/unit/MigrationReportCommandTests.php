@@ -25,7 +25,7 @@ final class MigrationReportCommandTests extends TestCase
     use WithVFSTrait, WithDataLoaderTrait;
 
     /** @noinspection PhpMissingParentCallCommonInspection __approved__ method is overridden */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->setupVFS();
         $testFileContent = file_get_contents(__DIR__.'/../data/command/php.tst');

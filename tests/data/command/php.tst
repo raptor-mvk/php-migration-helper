@@ -71,3 +71,5 @@ MYSTR;
     json_last_error_msg();
     echo INTL_IDNA_VARIANT_2003;
     read_exif_data();
+    define('GREET', 'Hello you.', false);
+    define('GREETS', 'Hello you.');

@@ -26,7 +26,7 @@ final class ConfigLoaderTests extends TestCase
     use WithVFSTrait, WithDataLoaderTrait, ExtraAssertionsTrait;
 
     /** @noinspection PhpMissingParentCallCommonInspection __approved__ method is overridden */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->setupVFS();
         $rulesDir = [
