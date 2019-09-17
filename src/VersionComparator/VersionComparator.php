@@ -59,6 +59,7 @@ class VersionComparator implements VersionComparatorInterface
         if (0 === strncmp($version, 'v', 1)) {
             $version = substr($version, 1);
         }
+
         return $version;
     }
 }
