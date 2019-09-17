@@ -34,8 +34,7 @@ class VersionComparator implements VersionComparatorInterface
             if (isset($installedVersion['name'], $installedVersion['version'])) {
                 $package = $installedVersion['name'];
                 $requiredPackageVersion = $requiredVersions[$package] ?? '0.0';
-                $installedPackageVersion = ('v' === $installedVersion['version'][0]) ?
-                    substr($installedVersion['version'], 1) : $installedVersion['version'];
+                $installedPackageVersion = $this->normalizeVersion($installedVersion['version']);
                 if (Comparator::greaterThan($requiredPackageVersion, $installedPackageVersion)) {
                     $result[] = "Update $package at least to {$requiredVersions[$package]}";
                 }
@@ -43,5 +42,23 @@ class VersionComparator implements VersionComparatorInterface
         }
 
         return (1 === count($result)) ? [] : $result;
+    }
+
+    /**
+     * Returns normalized version of package.
+     *
+     * @param string $version
+     *
+     * @return string
+     */
+    private function normalizeVersion(string $version): string
+    {
+        if (0 === strncmp($version, 'v.', 2)) {
+            $version = substr($version, 2);
+        }
+        if (0 === strncmp($version, 'v', 1)) {
+            $version = substr($version, 1);
+        }
+        return $version;
     }
 }

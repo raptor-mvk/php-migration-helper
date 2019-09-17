@@ -74,7 +74,7 @@
     ]
   },
   {
-    "_name": "v in version, have required",
+    "_name": "v in version",
     "installed_versions": [
       {
         "name": "my/package",
@@ -83,6 +83,23 @@
       {
         "name": "other/package",
         "version": "v1.2.0"
+      }
+    ],
+    "required_versions": {
+      "my/package": "1.4.0"
+    },
+    "expected_result": []
+  },
+  {
+    "_name": "v. in version",
+    "installed_versions": [
+      {
+        "name": "my/package",
+        "version": "v.1.5.0"
+      },
+      {
+        "name": "other/package",
+        "version": "v.1.2.0"
       }
     ],
     "required_versions": {
