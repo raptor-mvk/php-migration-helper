@@ -27,7 +27,7 @@ php composer.phar require --dev raptor/php-migration-helper:^1.0
 2. Run command (`VERSION_FROM` is current PHP version, `VERSION_TO` is desired PHP version and `REPORT_FILE` is path to
 the file with compatibility record):
 
-        php vendor/raptor/php-migration-helper/migration-report --from=VERSION_FROM --to=VERSION_TO --report=REPORT_FILE
+        php vendor/raptor/php-migration-helper/migration-report VERSION_FROM VERSION_TO REPORT_FILE
 
 3. View compatibility record. If it contains records from vendor path that need correction, please, make PR into
 this repository (fix `src/Resources/configs/configXX.yml` with appropriate version) with correct minimal version of
