@@ -1,8 +1,0 @@
-version: 7.2
-
-rules:
-  number_format:
-    regexp: '/(^|[^\w])number_format[\s\(]/'
-    recommendation: 'Check that result of number_format is not compared with "-0"'
-    lines_before: 0
-    lines_after: 4

@@ -1,0 +1,92 @@
+version: '7.2'
+
+excluded:
+  - vendor/raptor/php-migration-helper
+  - var
+
+packages:
+  phpunit/phpunit: '8.0'
+
+rules:
+  get_class:
+    regexp: '/(^|[^\w])get_class[\s\(]/'
+    recommendation: 'Check that parameter of get_class() cannot be null'
+    lines_before: 4
+  count:
+    regexp: '/(^|[^\w])count[\s\(]/'
+    recommendation: 'Check that parameter of count() is always countable'
+    lines_before: 4
+  array_unique:
+    regexp: '/(^|[^\w])array_unique[\s\(]/'
+    recommendation: 'Check that result of array_unique with sort_flags = SORT_STRING does not use keys for non-associative arrays (it may be reindexed)'
+    lines_after: 4
+  is_object:
+    regexp: '/(^|[^\w])is_object[\s\(]/'
+    recommendation: 'Check that parameter of is_object() cannot be __PHP_Incomplete_Class (now it returns TRUE instead of FALSE)'
+    lines_before: 4
+  number_format:
+    regexp: '/(^|[^\w])number_format[\s\(]/'
+    recommendation: 'Check that result of number_format is not compared with "-0"'
+    lines_after: 2
+  gettype:
+    regexp: '/(^|[^\w])gettype[\s\(]/'
+    recommendation: 'Check that result of gettype is not compared with "unknown type" (for closed resources now it returns "resource (closed)")'
+    lines_after: 2
+  bcmod:
+    regexp: '/(^|[^\w])bcmod[\s\(]/'
+    recommendation: 'Check that bcmod result is not compared to int (now result is not rounded)'
+    lines_after: 2
+  hash_functions:
+    regexp: '/(^|[^\w])hash_/'
+    recommendation: 'Check that hash_-prefixed functions called with option HASH_HMAC does not use one of the following algorithms adler32, crc32, crc32b, fnv132, fnv1a32, fnv164, fnv1a64, joaat'
+    lines_before: 2
+  rand:
+    regexp: '/(^|[^\w])(mt_)?rand[\s\(]/'
+    recommendation: 'If rand or mt_rand is called with fixed seed, resulting sequence after migration may differ from current'
+    lines_before: 2
+    lines_after: 2
+  date_parse_from_format:
+    regexp: '/(^|[^\w])date_parse_from_format[\s\(]/'
+    recommendation: 'Check, that value for key "zone" in the result of date_parse_from_format is not used (now it contains seconds with inverted sign instead of minutes)'
+    lines_after: 4
+  autoload:
+    regexp: '/(^|[^\w])__autoload[\s\(]/'
+    recommendation: 'Replace __autoload() with spl_autoload_register()'
+  png2wbmp:
+    regexp: '/(^|[^\w])png2wbmp[\s\(]/'
+    recommendation: 'Replace png2wbmp() with imagecreatefrompng() and imagewbmp()'
+  jpeg2wbmp:
+    regexp: '/(^|[^\w])jpeg2wbmp[\s\(]/'
+    recommendation: 'Replace jpeg2wbmp() with imagecreatefromjpeg() and imagewbmp()'
+  unset:
+    regexp: '/\(unset\)/'
+    recommendation: 'Replace (unset) cast with call of unset or just NULL'
+  parse_str:
+    regexp: '/(^|[^\w])parse_str[\s\(]/'
+    recommendation: 'Check whether parse_str is called with second parameter, now it is necessary'
+  gmp_random:
+    regexp: '/(^|[^\w])gmp_random[\s\(]/'
+    recommendation: 'Replace gmp_random() with gmp_random_bits() or gmp_random_range()'
+  each:
+    regexp: '/(^|[^\w])each[\s\(]/'
+    recommendation: 'Replace each() with foreach()'
+  assert:
+    regexp: '/(^|[^\w])assert[\s\(]/'
+    recommendation: 'Check whether assert() is called with string argument. If so, replace with direct call and fix zend.assertions in ini-file'
+    lines_before: 3
+  php_errormsg:
+    regexp: '/\$php_errormsg[^\w]/'
+    recommendation: 'Replace $php_errormsg with error_get_last()'
+  create_function:
+    regexp: '/(^|[^\w])create_function[\s\(]/'
+    recommendation: 'Replace create_function with anonymous function declaration'
+  errcontext:
+    regexp: '/\$errcontext[^\w]/'
+    recommendation: 'Remove usage of $errcontext, use debugger instead'
+  read_exif_data:
+    regexp: '/(^|[^\w])read_exif_data[\s\(]/'
+    recommendation: 'Replace read_exif_data with exif_read_data'
+  intl_idna_variant_2003:
+    regexp: '/(^|[^\w])INTL_IDNA_VARIANT_2003($|[^\w])/'
+    recommendation: 'Replace INTL_IDNA_VARIANT_2003 with INTL_IDNA_VARIANT_UTS46'
+

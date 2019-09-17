@@ -17,24 +17,25 @@ use Raptor\PHPMigrationHelper\Rule\RuleInterface;
  *
  * @copyright 2019, raptor_MVK
  */
-class FileProcessor implements FileProcessorInterface
+final class FileProcessor implements FileProcessorInterface
 {
     /**
      * Processes the given file with the given rules and returns compatibility report or null if everything is fine.
      *
      * @param string          $fileName
-     * @param RuleInterface[] $rules    array of rules applied to file
+     * @param RuleInterface[] $rules             array of rules applied to file
+     * @param string|null     $fileNameForReport filename that should be used in report
      *
      * @return string[]|null strings for compatibility report if needed, or null otherwise
      */
-    public function process(string $fileName, array $rules): ?array
+    public function process(string $fileName, array $rules, ?string $fileNameForReport = null): ?array
     {
-        $result = [[$fileName, '================================================================================']];
+        $result = [];
         $divider = '--------------------------------------------------------------------------------';
         $content = explode("\n", file_get_contents($fileName));
-        foreach ($content as $lineNumber => $line) {
+        foreach ($rules as $rule) {
             /** @var RuleInterface[] $rules */
-            foreach ($rules as $rule) {
+            foreach ($content as $lineNumber => $line) {
                 if (preg_match($rule->getRegExp(), $line) > 0) {
                     $result[] = $this->prepareResult($content, $lineNumber, $rule);
                     $result[] = [$divider];
@@ -62,7 +63,8 @@ class FileProcessor implements FileProcessorInterface
         $recommendation = $rule->getRecommendation();
         $result = [$recommendation];
         for ($i = $startLine; $i <= $finishLine; $i++) {
-            $result[] = "\t$i\t{$content[$i]}";
+            $lineNumber = $i + 1;
+            $result[] = "\t$lineNumber\t{$content[$i]}";
         }
 
         return $result;

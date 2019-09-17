@@ -2,14 +2,15 @@
 <?php
 declare(strict_types=1);
 
+/** @noinspection PhpIncludeInspection __approved__ command can be used only outside of project */
 require dirname(__DIR__, 3). '/vendor/autoload.php';
 
-use Raptor\PHPMigrationHelper\Command\PHPMigrationHelperCommand;
+use Raptor\PHPMigrationHelper\Command\MigrationReportCommand;
 use Symfony\Component\Console\Application;
 
 $application = new Application();
 $filePath = dirname(__DIR__, 3);
-$command = new PHPMigrationHelperCommand($filePath);
+$command = new MigrationReportCommand($filePath);
 $application->add($command);
 $application->setDefaultCommand($command->getName(), true);
 

@@ -20,7 +20,7 @@ use Raptor\TestUtils\WithVFSTrait;
  *
  * @copyright 2019, raptor_MVK
  */
-class FileProcessorTests extends TestCase
+final class FileProcessorTests extends TestCase
 {
     use WithVFSTrait, WithDataLoaderTrait;
 
@@ -50,7 +50,7 @@ class FileProcessorTests extends TestCase
         $rules = array_map($ruleMapper, $dataContainer->getRules());
         $fileName = $this->getFullPath($dataContainer->getFilename());
 
-        $actual = $fileProcessor->process($fileName, $rules);
+        $actual = $fileProcessor->process($fileName, $rules, $dataContainer->getReportFilename());
 
         static::assertSame($dataContainer->getExpectedResult(), $actual);
     }

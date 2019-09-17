@@ -8,7 +8,9 @@ declare(strict_types=1);
 
 namespace Raptor\PHPMigrationHelper\ConfigLoader;
 
+use Composer\Semver\Comparator;
 use Raptor\PHPMigrationHelper\Rule\Rule;
+use Raptor\PHPMigrationHelper\Rule\RuleInterface;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use RegexIterator;
@@ -22,32 +24,47 @@ use Symfony\Component\Yaml\Yaml;
  *
  * @copyright 2019, raptor_MVK
  */
-class ConfigLoader
+final class ConfigLoader
 {
+    /** @var array $currentPackages array of currently loaded required versions of packages */
+    private $currentPackages;
+
+    /** @var RuleConfigInterface[] $currentRuleConfigs array of currently loaded rule configs */
+    private $currentRuleConfigs;
+
     /**
-     * Loads rules config using given current and desired PHP versions
+     * Loads config using given current and desired PHP versions
      *
      * @param string $directory   directory with rules
      * @param string $versionFrom current PHP version
      * @param string $versionTo   desired PHP version
      *
-     * @return array loaded rules
+     * @return ConfigInterface loaded config
      */
-    public function load(string $directory, string $versionFrom, string $versionTo): array
+    public function load(string $directory, string $versionFrom, string $versionTo): ConfigInterface
     {
-        $result = [];
+        $this->init();
         $rulesData = $this->loadRuleFiles($directory);
         foreach ($rulesData as $rulesDatum) {
-            if (($rulesDatum['version'] > $versionFrom) && ($rulesDatum['version'] <= $versionTo)) {
-                /** @var array $rules */
-                $rules = $rulesDatum['rules'];
-                foreach ($rules as $ruleName => $ruleParams) {
-                    $result[] = Rule::fromArray($ruleName, $ruleParams);
-                }
+            if (Comparator::greaterThan($rulesDatum['version'], $versionFrom) &&
+                Comparator::lessThanOrEqualTo($rulesDatum['version'], $versionTo)) {
+                $rules = $this->parseRules($rulesDatum['rules'] ?? []);
+                $ruleConfig = new RuleConfig($rules, $rulesDatum['excluded'] ?? []);
+                $this->currentRuleConfigs[] = $ruleConfig;
+                $this->updatePackages($rulesDatum['packages'] ?? []);
             }
         }
 
-        return $result;
+        return new Config($this->currentPackages, $this->currentRuleConfigs);
+    }
+
+    /**
+     * Initializes empty loaded arrays.
+     */
+    private function init(): void
+    {
+        $this->currentPackages = [];
+        $this->currentRuleConfigs = [];
     }
 
     /**
@@ -74,5 +91,36 @@ class ConfigLoader
         }
 
         return $result;
+    }
+
+    /**
+     * Parses array of rule parameters and return array of RuleInterface instances.
+     *
+     * @param array $rulesData array of rule parameters in format [ rule => rule_params ]
+     *
+     * @return RuleInterface[]
+     */
+    private function parseRules(array $rulesData): array
+    {
+        $rules = [];
+        foreach ($rulesData as $ruleName => $ruleParams) {
+            $rules[] = Rule::fromArray($ruleName, $ruleParams);
+        }
+
+        return $rules;
+    }
+
+    /**
+     * Updates current array of required versions of packages.
+     *
+     * @param array $packages array of required versions of packages in format [ package => required_version ]
+     */
+    private function updatePackages(array $packages): void
+    {
+        foreach ($packages as $package => $version) {
+            if (Comparator::greaterThan($version, $this->currentPackages[$package] ?? '0.0')) {
+                $this->currentPackages[$package] = $version;
+            }
+        }
     }
 }

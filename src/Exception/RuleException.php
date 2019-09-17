@@ -17,7 +17,7 @@ use RuntimeException;
  *
  * @copyright 2019, raptor_MVK
  */
-class RuleException extends RuntimeException
+final class RuleException extends RuntimeException
 {
     /**
      * @param string|null $name    rule name

@@ -9,11 +9,13 @@ declare(strict_types=1);
 namespace Raptor\PHPMigrationHelper\Processor;
 
 use Iterator;
-use Raptor\PHPMigrationHelper\Rule\RuleInterface;
+use Raptor\PHPMigrationHelper\ConfigLoader\ConfigInterface;
+use Raptor\PHPMigrationHelper\ConfigLoader\RuleConfigInterface;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use RegexIterator;
 use SplFileInfo;
+use function strlen;
 
 /**
  * Processes all files in the given directory recursively with the given rules.
@@ -22,51 +24,82 @@ use SplFileInfo;
  *
  * @copyright 2019, raptor_MVK
  */
-class DirectoryProcessor implements DirectoryProcessorInterface
+final class DirectoryProcessor implements DirectoryProcessorInterface
 {
     /** @var FileProcessorInterface $fileProcessor */
     private $fileProcessor;
 
+    /** @var ConfigInterface $config */
+    private $config;
+
+    /** @var int $processedFilesCount number of processed files */
+    private $processedFilesCount;
+
+    /** @var int $processedFilesCount number of processed files */
+    private $problemFilesCount;
+
+    /** @var string[] $currentReport report that has been collected while processing */
+    private $currentReport;
+
+    /** @var string[] $currentFileWasProcessed _true_ if current file under process was processed at least once */
+    private $currentFileWasProcessed;
+
     /**
      * @param FileProcessorInterface $fileProcessor
+     * @param ConfigInterface        $config
      */
-    public function __construct(FileProcessorInterface $fileProcessor)
+    public function __construct(FileProcessorInterface $fileProcessor, ConfigInterface $config)
     {
         $this->fileProcessor = $fileProcessor;
+        $this->config = $config;
     }
 
     /**
-     * Processes all files in the given directory recursively with the given rules and returns compatibility report or
-     * null if everything is fine.
+     * Creates directory processor from config.
+     *
+     * @param ConfigInterface $config
+     *
+     * @return DirectoryProcessorInterface
+     */
+    public static function fromConfig(ConfigInterface $config): DirectoryProcessorInterface
+    {
+        return new self(new FileProcessor(), $config);
+    }
+
+    /**
+     * Processes all files in the given directory recursively and returns compatibility report or null if everything is
+     * fine.
      *
      * @param string $path
-     * @param RuleInterface[] $rules array of rules applied to each file
      *
-     * @return string[]|null strings for compatibility report if needed, or null otherwise
+     * @return string[] strings for compatibility report
      */
-    public function process(string $path, array $rules): ?array
+    public function process(string $path): ?array
     {
+        $this->init();
         $iterator = $this->prepareIterator($path);
-        // add placeholder for processing results
-        $result = [''];
-        $processedFilesCount = 0;
-        $problemFilesCount = 0;
+        $pathLength = strlen($path) + (('/' === substr($path, -1)) ? 0 : 1);
+        $ruleConfigs = $this->config->getRuleConfigs();
         foreach ($iterator as $fileInfo) {
             /** @var SplFileInfo $fileInfo */
             $unixPath = str_replace('\\', '/', $fileInfo->getPath());
             $filePath = "$unixPath/{$fileInfo->getFilename()}";
-            $fileResult = $this->fileProcessor->process($filePath, $rules);
-            if (null !== $fileResult) {
-                $result[] = $fileResult;
-                $result[] = ["\n"];
-                $problemFilesCount++;
-            }
-            $processedFilesCount++;
+            $fileNameForReport = substr($filePath, $pathLength);
+            $this->processFile($filePath, $ruleConfigs, $fileNameForReport);
         }
-        array_pop($result);
-        $result[0] = [$this->getSummary($processedFilesCount, $problemFilesCount)];
 
-        return array_merge(...$result);
+        return $this->getSummaryReport();
+    }
+
+    /**
+     * Initializes temporary fields before processing.
+     */
+    private function init(): void
+    {
+        $this->processedFilesCount = 0;
+        $this->problemFilesCount = 0;
+        // add placeholder for processing results
+        $this->currentReport = [''];
     }
 
     /**
@@ -83,22 +116,87 @@ class DirectoryProcessor implements DirectoryProcessorInterface
         $mode = RecursiveIteratorIterator::LEAVES_ONLY;
         $recursiveIteratorFlags = RecursiveIteratorIterator::CATCH_GET_CHILD;
         $recursiveIterator = new RecursiveIteratorIterator($directoryIterator, $mode, $recursiveIteratorFlags);
+
         return new RegexIterator($recursiveIterator, '/.*\.php/');
     }
 
     /**
-     * Returns summary for report based on number of processed files and number of files with potential problems.
+     * Processes file, updates counters and add lines to the current report.
      *
-     * @param int $processedFilesCount
-     * @param int $problemFilesCount
-     *
-     * @return string
+     * @param string                $fileName          name of the file to be processed
+     * @param RuleConfigInterface[] $ruleConfigs       rules and excluded directories
+     * @param string                $fileNameForReport filename for the report
      */
-    private function getSummary(int $processedFilesCount, int $problemFilesCount): string
+    private function processFile(string $fileName, array $ruleConfigs, string $fileNameForReport): void
     {
-        $processedSuffix = (1 === $processedFilesCount) ? '' : 's';
-        $problemSuffix = (1 === $problemFilesCount) ? '' : 's';
-        return "Processed $processedFilesCount file{$processedSuffix}, ".
-            "found $problemFilesCount file{$problemSuffix} with potential problems";
+        $this->currentFileWasProcessed = false;
+        $report = [];
+        foreach ($ruleConfigs as $ruleConfig) {
+            if (!$this->shouldBeProcessed($ruleConfig, $fileNameForReport)) {
+                continue;
+            }
+            $this->currentFileWasProcessed = true;
+            $fileResult = $this->fileProcessor->process($fileName, $ruleConfig->getRules());
+            if (null !== $fileResult) {
+                $report[] = $fileResult;
+                $report[] = ['--------------------------------------------------------------------------------'];
+            }
+        }
+        $this->updateReportAndCounters($report, $fileNameForReport);
+    }
+
+    /**
+     * Returns _true_ if file is not inside one of excluded directories and _false_ otherwise.
+     *
+     * @param RuleConfigInterface $ruleConfig
+     * @param string              $fileName
+     *
+     * @return bool
+     */
+    private function shouldBeProcessed(RuleConfigInterface $ruleConfig, string $fileName): bool
+    {
+        foreach ($ruleConfig->getExcludedDirs() as $excludedDir) {
+            if (0 === strcmp(substr($fileName, 0, strlen($excludedDir)), $excludedDir)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Updates counters, adds empty string into report if file has problems.
+     *
+     * @param array  $report   current file report
+     * @param string $fileName
+     */
+    private function updateReportAndCounters(array $report, string $fileName): void
+    {
+        if (count($report) > 0) {
+            array_pop($report);
+            $this->currentReport[] =
+                [$fileName, '================================================================================'];
+            $this->currentReport[] = array_merge(...$report);
+            $this->currentReport[] = ["\n"];
+            $this->problemFilesCount++;
+        }
+        $this->processedFilesCount += (int) $this->currentFileWasProcessed;
+    }
+
+    /**
+     * Returns summary report.
+     *
+     * @return string[]|null
+     */
+    private function getSummaryReport(): ?array
+    {
+        $processedSuffix = (1 === $this->processedFilesCount) ? '' : 's';
+        $problemSuffix = (1 === $this->problemFilesCount) ? '' : 's';
+
+        array_pop($this->currentReport);
+        $this->currentReport[0] = ["Processed {$this->processedFilesCount} file{$processedSuffix}, ".
+            "found {$this->problemFilesCount} file{$problemSuffix} with potential problems", ];
+
+        return array_merge(...$this->currentReport);
     }
 }

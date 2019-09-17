@@ -9,8 +9,10 @@ declare(strict_types=1);
 namespace Raptor\PHPMigrationHelper\UnitTests;
 
 use PHPUnit\Framework\TestCase;
+use Raptor\PHPMigrationHelper\ConfigLoader\Config;
+use Raptor\PHPMigrationHelper\ConfigLoader\RuleConfig;
+use Raptor\PHPMigrationHelper\ConfigLoader\RuleConfigInterface;
 use Raptor\PHPMigrationHelper\Processor\DirectoryProcessor;
-use Raptor\PHPMigrationHelper\Processor\FileProcessor;
 use Raptor\PHPMigrationHelper\Rule\Rule;
 use Raptor\TestUtils\TestDataContainer\TestDataContainer;
 use Raptor\TestUtils\WithDataLoaderTrait;
@@ -21,7 +23,7 @@ use Raptor\TestUtils\WithVFSTrait;
  *
  * @copyright 2019, raptor_MVK
  */
-class DirectoryProcessorTests extends TestCase
+final class DirectoryProcessorTests extends TestCase
 {
     use WithVFSTrait, WithDataLoaderTrait;
 
@@ -53,14 +55,12 @@ class DirectoryProcessorTests extends TestCase
     public function testLoadLoadsRulesWithAppropriateVersionsOnly(TestDataContainer $dataContainer): void
     {
         /** @var \DirectoryProcessDataContainer $dataContainer */
-        $directoryProcessor = new DirectoryProcessor(new FileProcessor());
-        $ruleMapper = static function (array $ruleParams) {
-            return Rule::fromArray('some rule', $ruleParams);
-        };
-        $rules = array_map($ruleMapper, $dataContainer->getRules());
-        $fileName = $this->getFullPath($dataContainer->getDirectory());
+        $rulConfigs = array_map([$this, 'parseRuleConfig'], $dataContainer->getRuleConfigs());
+        $config = new Config([], $rulConfigs);
+        $directoryProcessor = DirectoryProcessor::fromConfig($config);
+        $path = $this->getFullPath($dataContainer->getDirectory());
 
-        $actual = $directoryProcessor->process($fileName, $rules);
+        $actual = $directoryProcessor->process($path);
 
         static::assertSame($dataContainer->getExpectedResult(), $actual);
     }
@@ -73,5 +73,25 @@ class DirectoryProcessorTests extends TestCase
     public function processDataProvider(): array
     {
         return $this->loadDataFromFile(__DIR__.'/../data/processor/directory_process.json');
+    }
+
+    /**
+     * Returns RuleConfigInterface instance prepared from array in format
+     * [ rules => [[ regexp => ... , recommendation => ... ], ... ], excluded => [ dir1, ... ] ], ... ]
+     *
+     * @param array $ruleConfigParams
+     *
+     * @return RuleConfigInterface
+     */
+    private function parseRuleConfig(array $ruleConfigParams): RuleConfigInterface
+    {
+        $rules = [];
+        /** @var array $rules */
+        $ruleParamsList = $ruleConfigParams['rules'] ?? [];
+        foreach ($ruleParamsList as $ruleParams) {
+            $rules[] = Rule::fromArray('some_rule', $ruleParams);
+        }
+
+        return new RuleConfig($rules, $ruleConfigParams['excluded'] ?? []);
     }
 }

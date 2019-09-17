@@ -11,14 +11,8 @@ namespace Raptor\PHPMigrationHelper\Command;
 use Raptor\PHPMigrationHelper\ConfigLoader\ConfigLoader;
 use Raptor\PHPMigrationHelper\ConfigLoader\ConfigLoaderInterface;
 use Raptor\PHPMigrationHelper\Processor\DirectoryProcessor;
-use Raptor\PHPMigrationHelper\Processor\DirectoryProcessorInterface;
-use Raptor\PHPMigrationHelper\Processor\FileProcessor;
-use Raptor\TestUtils\DataLoader\ProcessingDataLoader;
-use Raptor\TestUtils\DataLoader\RecursiveDirectoryDataLoader;
-use Raptor\TestUtils\DataProcessor\GeneratorDataProcessor;
-use Raptor\TestUtils\DataProcessor\TypeFactory\GetTypeTypeFactory;
-use Raptor\TestUtils\Generator\GeneratorInterface;
-use Raptor\TestUtils\Generator\TestDataContainerGenerator;
+use Raptor\PHPMigrationHelper\VersionComparator\VersionComparator;
+use Raptor\PHPMigrationHelper\VersionComparator\VersionComparatorInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -32,7 +26,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  *
  * @copyright 2019, raptor_MVK
  */
-final class PHPMigrationHelperCommand extends Command
+final class MigrationReportCommand extends Command
 {
     /** @var int OK exit code when everything is OK */
     public const OK = 0;
@@ -40,11 +34,11 @@ final class PHPMigrationHelperCommand extends Command
     /** @var string $filePath */
     private $filePath;
 
-    /** @var DirectoryProcessorInterface $processor */
-    private $processor;
-
     /** @var ConfigLoaderInterface $configLoader */
     private $configLoader;
+
+    /** @var VersionComparatorInterface $versionComparator */
+    private $versionComparator;
 
     /**
      * @param string $filePath path to file that should be generated
@@ -52,8 +46,8 @@ final class PHPMigrationHelperCommand extends Command
     public function __construct(string $filePath)
     {
         $this->filePath = $filePath;
-        $this->processor = new DirectoryProcessor(new FileProcessor());
         $this->configLoader = new ConfigLoader();
+        $this->versionComparator = new VersionComparator();
         parent::__construct();
     }
 
@@ -82,8 +76,13 @@ final class PHPMigrationHelperCommand extends Command
         $versionFrom = $input->getArgument('from');
         $versionTo = $input->getArgument('to');
         $reportFile = $input->getArgument('report');
-        $rules = $this->configLoader->load($versionFrom, $versionTo);
-        $report = $this->processor->process($this->filePath, $rules);
+        $config = $this->configLoader->load(__DIR__.'/../Resources/configs', $versionFrom, $versionTo);
+        $installedVersions = json_decode(file_get_contents("{$this->filePath}/vendor/composer/installed.json"), true);
+        $requiredVersions = $config->getRequiredPackageVersions();
+        $processor = DirectoryProcessor::fromConfig($config);
+        $versionReport = $this->versionComparator->verifyVersions($installedVersions ?? [], $requiredVersions);
+        $fileReport = $processor->process($this->filePath);
+        $report = empty($versionReport) ? $fileReport : array_merge($versionReport, ["\n"], $fileReport);
         file_put_contents($reportFile, implode("\n", $report));
 
         return self::OK;

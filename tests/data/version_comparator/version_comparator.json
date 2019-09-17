@@ -1,0 +1,76 @@
+[
+  {
+    "_name": "single package",
+    "installed_versions": [
+      {
+        "name": "my/package",
+        "version": "1.5.0"
+      }
+    ],
+    "required_versions": {
+      "my/package": "1.7.0"
+    },
+    "expected_result": [
+      "Package compatibility report:",
+      "Update my/package at least to 1.7.0"
+    ]
+  },
+  {
+    "_name": "no installed",
+    "installed_versions": [],
+    "required_versions": {
+      "other/package": "1.7.0"
+    },
+    "expected_result": []
+  },
+  {
+    "_name": "no required",
+    "installed_versions": [
+      {
+        "name": "my/package",
+        "version": "1.5.0"
+      }
+    ],
+    "required_versions": [],
+    "expected_result": []
+  },
+  {
+    "_name": "no report",
+    "installed_versions": [
+      {
+        "name": "my/package",
+        "version": "1.5.0"
+      }
+    ],
+    "required_versions": {
+      "other/package": "1.7.0"
+    },
+    "expected_result": []
+  },
+  {
+    "_name": "multiple packages, different compare result",
+    "installed_versions": [
+      {
+        "name": "my/package",
+        "version": "1.5.0"
+      },
+      {
+        "name": "composer/semver",
+        "version": "5.4.0"
+      },
+      {
+        "name": "zend/framework",
+        "version": "2.0"
+      }
+    ],
+    "required_versions": {
+      "zend/framework": "1.7.0",
+      "my/package": "1.5.0",
+      "composer/semver": "7.1"
+    },
+    "expected_result": [
+      "Package compatibility report:",
+      "Update composer/semver at least to 7.1"
+    ]
+  }
+]

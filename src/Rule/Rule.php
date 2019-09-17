@@ -18,7 +18,7 @@ use function is_int;
  *
  * @copyright 2019, raptor_MVK
  */
-class Rule implements RuleInterface
+final class Rule implements RuleInterface
 {
     /** @var int $linesBefore */
     private $linesBefore;

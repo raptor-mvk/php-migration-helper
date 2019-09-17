@@ -22,7 +22,7 @@ interface FileProcessorInterface
     /**
      * Processes the given file with the given rules and returns compatibility report or null if everything is fine.
      *
-     * @param string          $fileName
+     * @param string          $fileName full path to the file to be processed
      * @param RuleInterface[] $rules    array of rules applied to file
      *
      * @return string[]|null strings for compatibility report if needed, or null otherwise

@@ -11,10 +11,8 @@
           }
         ],
         "expected_result": [
-          "vfs://root/file.php",
-          "================================================================================",
           "Fix this!",
-          "\t3\tregexp3"
+          "\t4\tregexp3"
         ]
       },
       {
@@ -28,20 +26,19 @@
           }
         ],
         "expected_result": [
-          "vfs://root/file.php",
-          "================================================================================",
           "Do not fix this!",
-          "\t3\tregexp3",
-          "\t4\tregexp4",
-          "\t5\tregexp5",
-          "\t6\tregexp6",
-          "\t7\tregexp7",
-          "\t8\tregexp8"
+          "\t4\tregexp3",
+          "\t5\tregexp4",
+          "\t6\tregexp5",
+          "\t7\tregexp6",
+          "\t8\tregexp7",
+          "\t9\tregexp8"
         ]
       },
       {
         "_name": "single rule, lines before first",
         "filename": "other.php",
+        "report_filename": "other.php",
         "rules": [
           {
             "regexp": "/regexp2/",
@@ -50,12 +47,10 @@
           }
         ],
         "expected_result": [
-          "vfs://root/other.php",
-          "================================================================================",
           "Some error!",
-          "\t0\tregexp0",
-          "\t1\tregexp1",
-          "\t2\tregexp2"
+          "\t1\tregexp0",
+          "\t2\tregexp1",
+          "\t3\tregexp2"
         ]
       },
       {
@@ -68,11 +63,9 @@
           }
         ],
         "expected_result": [
-          "vfs://root/file.php",
-          "================================================================================",
           "Another error!",
-          "\t8\tregexp8",
-          "\t9\tregexp9"
+          "\t9\tregexp8",
+          "\t10\tregexp9"
         ]
       },
       {
@@ -88,13 +81,11 @@
           }
         ],
         "expected_result": [
-          "vfs://root/file.php",
-          "================================================================================",
           "This is incorrect!",
-          "\t3\tregexp3",
+          "\t4\tregexp3",
           "--------------------------------------------------------------------------------",
           "See here!",
-          "\t6\tregexp6"
+          "\t7\tregexp6"
         ]
       },
       {

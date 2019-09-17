@@ -8,8 +8,6 @@ declare(strict_types=1);
 
 namespace Raptor\PHPMigrationHelper\Processor;
 
-use Raptor\PHPMigrationHelper\Rule\RuleInterface;
-
 /**
  * Interface for directory processor that processes all files in the given directory recursively with the given rules.
  *
@@ -20,13 +18,12 @@ use Raptor\PHPMigrationHelper\Rule\RuleInterface;
 interface DirectoryProcessorInterface
 {
     /**
-     * Processes all files in the given directory recursively with the given rules and returns compatibility report or
-     * null if everything is fine.
+     * Processes all files in the given directory recursively and returns compatibility report or null if everything is
+     * fine.
      *
-     * @param string          $path
-     * @param RuleInterface[] $rules array of rules applied to each file
+     * @param string $path
      *
      * @return string[]|null strings for compatibility report if needed, or null otherwise
      */
-    public function process(string $path, array $rules): ?array;
+    public function process(string $path): ?array;
 }

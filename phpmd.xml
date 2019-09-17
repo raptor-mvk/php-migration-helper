@@ -82,7 +82,7 @@ case when static access is acceptable is when used for factory methods.
         </description>
         <priority>1</priority>
         <properties>
-            <property name="exceptions" description="Comma-separated class name list of exceptions" value="\Mockery,Raptor\PHPMigrationHelper\Rule\Rule,\Symfony\Component\Yaml\Yaml"/>
+            <property name="exceptions" description="Comma-separated class name list of exceptions" value="\Mockery,Raptor\PHPMigrationHelper\Rule\Rule,\Symfony\Component\Yaml\Yaml,Raptor\PHPMigrationHelper\Processor\DirectoryProcessor,Composer\Semver\Comparator"/>
         </properties>
         <example>
             <![CDATA[

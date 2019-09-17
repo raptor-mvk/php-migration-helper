@@ -20,7 +20,7 @@ use Raptor\TestUtils\WithDataLoaderTrait;
  *
  * @copyright 2019, raptor_MVK
  */
-class RuleTests extends TestCase
+final class RuleTests extends TestCase
 {
     use ExtraUtilsTrait, WithDataLoaderTrait;
 
@@ -49,6 +49,7 @@ class RuleTests extends TestCase
     {
         return $this->loadDataFromFile(__DIR__.'/../data/rule/from_array_incorrect.json');
     }
+
     /**
      * Checks that getters returns correct values for successfully created rule.
      *

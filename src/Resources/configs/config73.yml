@@ -1,0 +1,83 @@
+version: '7.3'
+
+excluded:
+  - vendor/raptor/php-migration-helper
+  - var
+
+packages:
+  phpunit/phpunit: '8.0'
+  symfony/monolog-bundle: '3.1.2'
+
+rules:
+  heredoc:
+    regexp: '/<<</'
+    recommendation: 'Check that Heredoc/Nowdoc string does not contain closing identifier inside in the beginning of line'
+    lines_after: 6
+  pcre2:
+    regexp: '/(^|[^\w])preg_/'
+    recommendation: 'Check that pattern corresponds PCRE2 syntax'
+    lines_before: 3
+  continue:
+    regexp: '/continue;/'
+    recommendation: 'Check that continue is not inside switch, otherwise change to break or continue 2'
+    lines_before: 6
+  json_exception:
+    regexp: '/(^|[^\w])JsonException($|[^\w])/'
+    recommendation: 'Check that JsonException is not in the global namespace (now global JsonException is a part of PHP)'
+    lines_before: 3
+  json_throw_on_error:
+    regexp: '/(^|[^\w])JSON_THROW_ON_ERROR($|[^\w])/'
+    recommendation: 'Check that JSON_THROW_ON_ERROR is not in the global namespace (now global JSON_THROW_ON_ERROR is a part of PHP)'
+    lines_before: 3
+  static:
+    regexp: '/\w::\$\w/'
+    recommendation: 'Check that this is not static field assignment by reference (now they cannot be separated by assignment by reference)'
+    lines_after: 3
+  getimagesize:
+    regexp: '/(^|[^\w])getimagesize[\s\(]/'
+    recommendation: 'Check that value with key "mime" of getimagesize result is not compared to image/x-ms-bmp'
+    lines_after: 3
+  mb_ereg:
+    regexp: '/(^|[^\w])mb_ereg[_\s\(]/'
+    recommendation: 'Check usage of mb_ereg_-prefixed functions, now named captures are returned both using their group number and their name'
+    lines_after: 4
+  str_func:
+    regexp: '/(^|[^\w])strr?i?(pos|chr|str)[_\s\(]/'
+    recommendation: 'Check parameter $needle in functions strpos(), strrpos(), stripos(), strripos(), strstr(), strchr(), strrchr(), stristr(), now it should be string'
+    lines_before: 3
+  image2wbmp:
+    regexp: '/(^|[^\w])image2wbmp[\s\(]/'
+    recommendation: 'Replace image2wbmp() with imagewbmp()'
+  filter_flag_scheme_required:
+    regexp: '/(^|[^\w])FILTER_FLAG_SCHEME_REQUIRED($|[^\w])/'
+    recommendation: 'Use FILTER_VALIDATE_URL without FILTER_FLAG_SCHEME_REQUIRED'
+  filter_flag_host_required:
+    regexp: '/(^|[^\w])FILTER_FLAG_HOST_REQUIRED($|[^\w])/'
+    recommendation: 'Use FILTER_VALIDATE_URL without FILTER_FLAG_HOST_REQUIRED'
+  case_insensitive_const:
+    regexp: '/(^|[^\w])define[\s\(]/'
+    recommendation: 'Check whether case insensitive const is defined. If so, replace with usual const declaration and check all usages'
+  local_assert:
+    regexp: '/function\s*assert[\s\(]/'
+    recommendation: 'Check whether assert is declared inside namespace, now it is forbidden, change function name'
+  fgetss:
+    regexp: '/(^|[^\w])fgetss[\s\(]/'
+    recommendation: 'Replace fgetss with fgets and manual tag removal'
+  gzgetss:
+    regexp: '/(^|[^\w])gzgetss[\s\(]/'
+    recommendation: 'Replace gzgetss with gzgets and manual tag removal'
+  strip_tags_filter:
+    regexp: '/[^\w]string.strip_tags[^\w]/'
+    recommendation: 'Replace stream filter string.strip_tags with manual tag removal'
+  mbregex_encoding:
+    regexp: '/(^|[^\w])mbregex_encoding[\s\(]/'
+    recommendation: 'Replace mbregex_encoding with mb_regex_encoding'
+  mbsplit:
+    regexp: '/(^|[^\w])mbsplit[\s\(]/'
+    recommendation: 'Replace mbsplit with mb_split'
+  mbereg:
+    regexp: '/(^|[^\w])mbereg/'
+    recommendation: 'Replace mbereg-prefixed function with corresponding mb_ereg_-prefixed function'
+  json_last_error:
+    regexp: '/(^|[^\w])json_last_error/'
+    recommendation: 'Replace json_last_error and json_last_error_msg with JsonException catching'
