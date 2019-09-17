@@ -18,7 +18,7 @@ Helper contains command `php-migration-helper` that checks your project for chan
 The suggested installation method is via [composer](https://getcomposer.org/):
 
 ```sh
-php composer.phar require --dev raptor/php-migration-helper:@stable
+php composer.phar require --dev raptor/php-migration-helper:^1.0
 ```
 
 ## Usage
