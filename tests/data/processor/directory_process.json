@@ -1,0 +1,197 @@
+[
+  {
+    "_name": "single file",
+    "directory": "one/",
+    "rule_configs": [
+      {
+        "rules": [
+          {
+            "regexp": "/regexp3/",
+            "recommendation": "Fix this!"
+          }
+        ]
+      }
+    ],
+    "expected_result": [
+      "Processed 1 file, found 1 file with potential problems",
+      "file.php",
+      "================================================================================",
+      "Fix this!",
+      "\t4\tregexp3"
+    ]
+  },
+  {
+    "_name": "no files",
+    "directory": "folder",
+    "rule_configs": [
+      {
+        "rules": [
+          {
+            "regexp": "/regexp5/",
+            "recommendation": "No"
+          }
+        ]
+      }
+    ],
+    "expected_result": [
+      "Processed 0 files, found 0 files with potential problems"
+    ]
+  },
+  {
+    "_name": "not all files with problems",
+    "directory": "directory/",
+    "rule_configs": [
+      {
+        "rules": [
+          {
+            "regexp": "/regexp4/",
+            "recommendation": "Yes"
+          },
+          {
+            "regexp": "/regexp6/",
+            "recommendation": "Found"
+          }
+        ]
+      }
+    ],
+    "expected_result": [
+      "Processed 3 files, found 2 files with potential problems",
+      "other.php",
+      "================================================================================",
+      "Yes",
+      "\t5\tregexp4",
+      "--------------------------------------------------------------------------------",
+      "Found",
+      "\t7\tregexp6",
+      "\n",
+      "bad.php",
+      "================================================================================",
+      "Yes",
+      "\t5\tregexp4",
+      "--------------------------------------------------------------------------------",
+      "Found",
+      "\t7\tregexp6"
+    ]
+  },
+  {
+    "_name": "all files",
+    "directory": "/",
+    "rule_configs": [
+      {
+        "rules": [
+          {
+            "regexp": "/regexp1/",
+            "recommendation": "Awesome!"
+          }
+        ]
+      }
+    ],
+    "expected_result": [
+      "Processed 4 files, found 3 files with potential problems",
+      "one/file.php",
+      "================================================================================",
+      "Awesome!",
+      "\t2\tregexp1",
+      "\n",
+      "directory/other.php",
+      "================================================================================",
+      "Awesome!",
+      "\t2\tregexp1",
+      "\n",
+      "directory/bad.php",
+      "================================================================================",
+      "Awesome!",
+      "\t2\tregexp1"
+    ]
+  },
+  {
+    "_name": "one dir excluded",
+    "directory": "",
+    "rule_configs": [
+      {
+        "rules": [
+          {
+            "regexp": "/regexp2/",
+            "recommendation": "Warning!"
+          }
+        ],
+        "excluded": [
+          "directory"
+        ]
+      }
+    ],
+    "expected_result": [
+      "Processed 1 file, found 1 file with potential problems",
+      "one/file.php",
+      "================================================================================",
+      "Warning!",
+      "\t3\tregexp2"
+    ]
+  },
+  {
+    "_name": "all dirs excluded",
+    "directory": "",
+    "rule_configs": [
+      {
+        "rules": [
+          {
+            "regexp": "/regexp3/",
+            "recommendation": "Error!"
+          }
+        ],
+        "excluded": [
+          "directory",
+          "one"
+        ]
+      }
+    ],
+    "expected_result": [
+      "Processed 0 files, found 0 files with potential problems"
+    ]
+  },
+  {
+    "_name": "two rule configs, different exclude",
+    "directory": "",
+    "rule_configs": [
+      {
+        "rules": [
+          {
+            "regexp": "/regexp2/",
+            "recommendation": "Warning!"
+          }
+        ],
+        "excluded": [
+          "one"
+        ]
+      },
+      {
+        "rules": [
+          {
+            "regexp": "/regexp3/",
+            "recommendation": "Notice!"
+          }
+        ],
+        "excluded": [
+          "directory"
+        ]
+      }
+    ],
+    "expected_result": [
+      "Processed 4 files, found 3 files with potential problems",
+      "one/file.php",
+      "================================================================================",
+      "Notice!",
+      "\t4\tregexp3",
+      "\n",
+      "directory/other.php",
+      "================================================================================",
+      "Warning!",
+      "\t3\tregexp2",
+      "\n",
+      "directory/bad.php",
+      "================================================================================",
+      "Warning!",
+      "\t3\tregexp2"
+    ]
+  }
+]

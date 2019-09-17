@@ -1,0 +1,52 @@
+[
+  {
+    "rule_name": "good_rule",
+    "rule_array": {
+      "regexp": "/.*\\..*/",
+      "recommendation": "Do something!",
+      "lines_before": 3,
+      "lines_after": 4
+    },
+    "_children": [
+      {
+        "_name": "getRegExp",
+        "method": "getRegExp",
+        "value": "/.*\\..*/"
+      },
+      {
+        "_name": "getRecommendation",
+        "method": "getRecommendation",
+        "value": "Do something!"
+      },
+      {
+        "_name": "getLinesBeforeCount",
+        "method": "getLinesBeforeCount",
+        "value": 3
+      },
+      {
+        "_name": "getLinesAfterCount",
+        "method": "getLinesAfterCount",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "rule_name": "no_lines_rule",
+    "rule_array": {
+      "regexp": "/.*\\..*/",
+      "recommendation": "Do something!"
+    },
+    "_children": [
+      {
+        "_name": "getLinesBeforeCount with default value",
+        "method": "getLinesBeforeCount",
+        "value": 0
+      },
+      {
+        "_name": "getLinesAfterCount with default value",
+        "method": "getLinesAfterCount",
+        "value": 0
+      }
+    ]
+  }
+]

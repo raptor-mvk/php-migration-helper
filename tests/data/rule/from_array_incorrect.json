@@ -1,0 +1,58 @@
+[
+  {
+    "_name": "without recommendation",
+    "rule_name": "my_rule",
+    "rule_array": {
+      "regexp": "/.*/"
+    },
+    "message": "No recommendation was found in rule 'my_rule'"
+  },
+  {
+    "_name": "without regexp",
+    "rule_name": "other_rule",
+    "rule_array": {
+      "recommendation": "Do nothing"
+    },
+    "message": "No regexp was found in rule 'other_rule'"
+  },
+  {
+    "_name": "non-integer lines_before",
+    "rule_name": "bad_rule",
+    "rule_array": {
+      "recommendation": "Do nothing",
+      "regexp": "/.*/",
+      "lines_before": "no"
+    },
+    "message": "lines_before should be non-negative integer in rule 'bad_rule'"
+  },
+  {
+    "_name": "negative integer lines_before",
+    "rule_name": "awful_rule",
+    "rule_array": {
+      "recommendation": "Do nothing",
+      "regexp": "/.*/",
+      "lines_before": -3
+    },
+    "message": "lines_before should be non-negative integer in rule 'awful_rule'"
+  },
+  {
+    "_name": "non-integer lines_after",
+    "rule_name": "disgusting_rule",
+    "rule_array": {
+      "recommendation": "Do nothing",
+      "regexp": "/.*/",
+      "lines_after": "yes"
+    },
+    "message": "lines_after should be non-negative integer in rule 'disgusting_rule'"
+  },
+  {
+    "_name": "negative integer lines_after",
+    "rule_name": "exaggerate_rule",
+    "rule_array": {
+      "recommendation": "Do nothing",
+      "regexp": "/.*/",
+      "lines_after": -5
+    },
+    "message": "lines_after should be non-negative integer in rule 'exaggerate_rule'"
+  }
+]

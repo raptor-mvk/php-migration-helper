@@ -1,0 +1,107 @@
+[
+  {
+    "filename": "file.php",
+    "_children": [
+      {
+        "_name": "single rule, single line",
+        "rules": [
+          {
+            "regexp": "/regexp3/",
+            "recommendation": "Fix this!"
+          }
+        ],
+        "expected_result": [
+          "Fix this!",
+          "\t4\tregexp3"
+        ]
+      },
+      {
+        "_name": "single rule, lines before and after",
+        "rules": [
+          {
+            "regexp": "/regexp5/",
+            "recommendation": "Do not fix this!",
+            "lines_before": 2,
+            "lines_after": 3
+          }
+        ],
+        "expected_result": [
+          "Do not fix this!",
+          "\t4\tregexp3",
+          "\t5\tregexp4",
+          "\t6\tregexp5",
+          "\t7\tregexp6",
+          "\t8\tregexp7",
+          "\t9\tregexp8"
+        ]
+      },
+      {
+        "_name": "single rule, lines before first",
+        "filename": "other.php",
+        "report_filename": "other.php",
+        "rules": [
+          {
+            "regexp": "/regexp2/",
+            "recommendation": "Some error!",
+            "lines_before": 10
+          }
+        ],
+        "expected_result": [
+          "Some error!",
+          "\t1\tregexp0",
+          "\t2\tregexp1",
+          "\t3\tregexp2"
+        ]
+      },
+      {
+        "_name": "single rule, lines after last",
+        "rules": [
+          {
+            "regexp": "/regexp8/",
+            "recommendation": "Another error!",
+            "lines_after": 4
+          }
+        ],
+        "expected_result": [
+          "Another error!",
+          "\t9\tregexp8",
+          "\t10\tregexp9"
+        ]
+      },
+      {
+        "_name": "multiple rule",
+        "rules": [
+          {
+            "regexp": "/regexp3/",
+            "recommendation": "This is incorrect!"
+          },
+          {
+            "regexp": "/regexp6/",
+            "recommendation": "See here!"
+          }
+        ],
+        "expected_result": [
+          "This is incorrect!",
+          "\t4\tregexp3",
+          "--------------------------------------------------------------------------------",
+          "See here!",
+          "\t7\tregexp6"
+        ]
+      },
+      {
+        "_name": "multiple rule, no coincidence",
+        "rules": [
+          {
+            "regexp": "/regexp32/",
+            "recommendation": "Wrong rule!"
+          },
+          {
+            "regexp": "/regexp66/",
+            "recommendation": "Wrong too!"
+          }
+        ],
+        "expected_result": null
+      }
+    ]
+  }
+]
