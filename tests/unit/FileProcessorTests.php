@@ -25,7 +25,7 @@ final class FileProcessorTests extends TestCase
     use WithVFSTrait, WithDataLoaderTrait;
 
     /** @noinspection PhpMissingParentCallCommonInspection __approved__ method is overridden */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->setupVFS();
         $content = "regexp0\nregexp1\nregexp2\nregexp3\nregexp4\nregexp5\nregexp6\nregexp7\nregexp8\nregexp9";

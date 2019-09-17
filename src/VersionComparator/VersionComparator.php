@@ -33,8 +33,10 @@ class VersionComparator implements VersionComparatorInterface
         foreach ($installedVersions as $installedVersion) {
             if (isset($installedVersion['name'], $installedVersion['version'])) {
                 $package = $installedVersion['name'];
-                $requiredVersion = $requiredVersions[$package] ?? '0.0';
-                if (Comparator::greaterThan($requiredVersion, $installedVersion['version'])) {
+                $requiredPackageVersion = $requiredVersions[$package] ?? '0.0';
+                $installedPackageVersion = ('v' === $installedVersion['version'][0]) ?
+                    substr($installedVersion['version'], 1) : $installedVersion['version'];
+                if (Comparator::greaterThan($requiredPackageVersion, $installedPackageVersion)) {
                     $result[] = "Update $package at least to {$requiredVersions[$package]}";
                 }
             }
