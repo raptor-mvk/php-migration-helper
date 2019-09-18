@@ -13,18 +13,25 @@ excluded:
   - vendor/doctrine/doctrine-bundle
   - vendor/doctrine/doctrine-cache-bundle
   - vendor/doctrine/doctrine-fixtures-bundle
+  - vendor/doctrine/doctrine-migrations-bundle
+  - vendor/doctrine/inflector
+  - vendor/doctrine/lexer
+  - vendor/doctrine/migrations
   - vendor/doctrine/orm
   - vendor/doctrine/persistence
+  - vendor/doctrine/reflection
   - vendor/raptor/php-migration-helper
   - vendor/symfony/http-client
   - vendor/symfony/mime
   - vendor/symfony/monolog-bundle
   - vendor/symfony/phpunit-bridge
+  - vendor/symfony/polyfill-ctype
   - vendor/symfony/polyfill-intl-idn
   - vendor/symfony/polyfill-mbstring
   - vendor/symfony/polyfill-php56
   - vendor/symfony/polyfill-php70
   - vendor/symfony/polyfill-php72
+  - vendor/symfony/polyfill-php73
   - vendor/symfony/polyfill-util
   - vendor/symfony/swiftmailer-bundle
   - vendor/symfony/symfony
@@ -40,20 +47,27 @@ packages:
   doctrine/doctrine-bundle: '1.11.2'
   doctrine/doctrine-cache-bundle: '1.3.5'
   doctrine/doctrine-fixtures-bundle: '3.2.2'
+  doctrine/doctrine-migrations-bundle: '1.3.2'
+  doctrine/inflector: '1.3.0'
+  doctrine/lexer: '1.1.0'
+  doctrine/migrations: '1.8.1'
   doctrine/orm: '2.6.3'
   doctrine/persistence: '1.1.1'
+  doctrine/reflection: '1.0.0'
   phpunit/phpunit: '8.0'
   symfony/http-client: '4.3.4'
   symfony/mime: '4.3.4'
   symfony/monolog-bundle: '3.1.2'
   symfony/phpunit-bridge: '3.4.31'
+  symfony/polyfill-ctype: '1.12.0'
   symfony/polyfill-intl-idn: '1.12.0'
   symfony/polyfill-mbstring: '1.12.0'
   symfony/polyfill-php56: '1.12.0'
   symfony/polyfill-php70: '1.12.0'
   symfony/polyfill-php72: '1.12.0'
+  symfony/polyfill-php73: 'Warning (minor severity): symfony/polyfill-php73 does not have version fully compatible with PHP 7.3 (latest known 1.12.0)'
   symfony/polyfill-util: '1.12.0'
-  symfony/swiftmailer-bundle: 'Warning (minor severity): symfony/swiftmailer-bundle does not have version fully compatible with PHP 7.3 (latest known 3.2.8)'
+  symfony/swiftmailer-bundle: 'Warning (minor severity): symfony/swiftmailer-bundle does not have version fully compatible with PHP 7.2 (latest known 3.2.8)'
   symfony/symfony: '3.4.31'
 
 rules:
