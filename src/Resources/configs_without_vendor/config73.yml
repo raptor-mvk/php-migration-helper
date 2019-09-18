@@ -1,9 +1,7 @@
 version: '7.3'
 
 excluded:
-  - vendor/raptor/php-migration-helper
-  - vendor/cloudinary/cloudinary_php
-  - vendor/composer
+  - vendor
   - var
 
 packages:

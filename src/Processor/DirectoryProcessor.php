@@ -78,7 +78,7 @@ final class DirectoryProcessor implements DirectoryProcessorInterface
     {
         $this->init();
         $iterator = $this->prepareIterator($path);
-        $pathLength = strlen($path) + (('/' === substr($path, -1)) ? 0 : 1);
+        $pathLength = strlen($path) + (int) ('/' !== substr($path, -1));
         $ruleConfigs = $this->config->getRuleConfigs();
         foreach ($iterator as $fileInfo) {
             /** @var SplFileInfo $fileInfo */
