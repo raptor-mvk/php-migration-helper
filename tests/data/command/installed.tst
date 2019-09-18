@@ -40,11 +40,31 @@
     "version": "1.0"
   },
   {
+    "name": "doctrine/doctrine-migrations-bundle",
+    "version": "1.0"
+  },
+  {
+    "name": "doctrine/inflector",
+    "version": "1.0"
+  },
+  {
+    "name": "doctrine/lexer",
+    "version": "1.0"
+  },
+  {
+    "name": "doctrine/migrations",
+    "version": "1.0"
+  },
+  {
     "name": "doctrine/orm",
     "version": "1.0"
   },
   {
     "name": "doctrine/persistence",
+    "version": "1.0"
+  },
+  {
+    "name": "doctrine/reflection",
     "version": "1.0"
   },
   {
@@ -68,6 +88,10 @@
     "version": "1.0"
   },
   {
+    "name": "symfony/polyfill-ctype",
+    "version": "1.0"
+  },
+  {
     "name": "symfony/polyfill-intl-idn",
     "version": "1.0"
   },
@@ -85,6 +109,10 @@
   },
   {
     "name": "symfony/polyfill-php72",
+    "version": "1.0"
+  },
+  {
+    "name": "symfony/polyfill-php73",
     "version": "1.0"
   },
   {
