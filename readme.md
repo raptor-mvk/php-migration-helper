@@ -23,23 +23,22 @@ php composer.phar require --dev raptor/php-migration-helper:^1.0
 
 ## Usage
 
- 1. Install package.
- 
- 1. Run command (`VERSION_FROM` is current PHP version, `VERSION_TO` is desired PHP version and `REPORT_FILE` is path to
- the file with compatibility record):
+1. Install package.
+
+1. Run command (`VERSION_FROM` is current PHP version, `VERSION_TO` is desired PHP version and `REPORT_FILE` is path to
+the file with compatibility record):
 
         php vendor/raptor/php-migration-helper/migration-report VERSION_FROM VERSION_TO REPORT_FILE
 
- 1. If you do not want to process vendor folder, you can use `--no-vendor` option.
- 
- 1. View compatibility report. If it contains records from vendor path that need correction, please, make PR into
- [this repository](https://github.com/raptor-mvk/php-migration-helper) (fix `src/Resources/configs/configXX.yml` with
- 
- appropriate version) with correct minimal version of the package under consideration.
- 
- 1. Fix mentions that are really problems
- 
- 1. Remove package.
+1. If you do not want to process vendor folder, you can use `--no-vendor` option.
+
+1. View compatibility report. If it contains records from vendor path that need correction, please, make PR into
+[this repository](https://github.com/raptor-mvk/php-migration-helper) (fix `src/Resources/configs/configXX.yml` with
+appropriate version) with correct minimal version of the package under consideration.
+
+1. Fix mentions that are really problems
+
+1. Remove package.
 
 ## Authors
 - Mikhail Kamorin aka raptor_MVK
