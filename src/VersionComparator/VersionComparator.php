@@ -53,12 +53,7 @@ class VersionComparator implements VersionComparatorInterface
      */
     private function normalizeVersion(string $version): string
     {
-        if (0 === strncmp($version, 'v.', 2)) {
-            $version = substr($version, 2);
-        }
-        if (0 === strncmp($version, 'v', 1)) {
-            $version = substr($version, 1);
-        }
+        $version = preg_replace('/^v?\.?/', '', $version);
 
         return $version;
     }

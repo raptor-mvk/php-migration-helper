@@ -73,3 +73,80 @@ MYSTR;
     read_exif_data();
     define('GREET', 'Hello you.', false);
     define('GREETS', 'Hello you.');
+    strpos('a', 'b', $c);
+    strrpos('a', 'b', $c);
+    stripos('a', 'b', $c);
+    strripos(a', 'b', $c);
+    strstr('a','b', $c);
+    strchr('a',       'b', $c);
+    strrchr('a', 'b', $c);
+    stristr('a', 'b', $c);
+    public function          setUp     (        ): void
+    {
+    }
+    public function    setUpBeforeClass(        )         : void
+    {
+    }
+    public function     tearDown(   )                 :       void
+    {
+    }
+    public function tearDownAfterClass(   )   :void
+    {
+    }
+    public function assertPreConditions()    :void
+    {
+    }
+    public function assertPostConditions(): void
+    {
+    }
+    public function onNotSuccessfulTest(   ) : void
+    {
+    }
+    public function          setUp     (        )
+    {
+    }
+    public function    setUpBeforeClass(        )
+    {
+    }
+    public function     tearDown(   )                        void
+    {
+    }
+    public function tearDownAfterClass(   )
+    {
+    }
+    public function assertPreConditions()    id
+    {
+    }
+    public function assertPostConditions()
+    {
+    }
+    public function onNotSuccessfulTest(   )
+    {
+    }
+    assertInternalType($abc);
+    assertNotInternalType($def);
+    assertArraySubset(['a', 'b'], ['c', 'd']);
+    assertEquals($a, $b, 'message', 13);
+    assertEquals($d, $e, 'mess');
+    assertEquals($f, $g);
+    assertNotEquals($h, $i, 'my message', 'bbb');
+    assertNotEquals($j, $k, 'no way');
+    assertNotEquals($l, $m);
+    assertAttributeInt(345);
+    attribute(ddd);
+    attributeEqualTo        ( something);
+    readAttribute    (   other);
+    getStaticAttribute(my::attr);
+    getObjectAttribute(my->attr);
+    assertContains($a, [$b]);
+    assertNotContains    ($c, [$d]);
+    class MyTestListener implements TestListener
+    {
+      /**
+       * @expectedExceptionCode 3
+       */
+      public function testSomething()
+      {
+      }
+    }
+    }

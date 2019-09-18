@@ -34,7 +34,11 @@ final class MigrationReportCommandTests extends TestCase
         $installedFile = ['installed.json' => $installedFileContent];
         $structure = [
             'src' => $testFile,
-            'vendor' => ['raptor' => ['php-migration-helper' => $testFile], 'composer' => $installedFile],
+            'vendor' => [
+                'raptor' => ['php-migration-helper' => $testFile],
+                'composer' => $installedFile,
+                'some_vendor' => ['some_package' => $testFile],
+            ],
         ];
         $this->addStructureToVFS($structure);
     }
@@ -53,7 +57,7 @@ final class MigrationReportCommandTests extends TestCase
         $commandTester = new CommandTester($command);
         $outputPath = $this->getFullPath('report.txt');
         $params = ['from' => $dataContainer->getVersionFrom(), 'to' => $dataContainer->getVersionTo()] +
-            ['report' => $outputPath];
+            ['report' => $outputPath] + ($dataContainer->getOptions() ?? []);
 
         $commandTester->execute($params);
 

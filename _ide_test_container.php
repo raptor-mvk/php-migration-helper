@@ -3,6 +3,7 @@
 use Raptor\TestUtils\TestDataContainer\TestDataContainer;
 
 /**
+ * @method array getOptions()
  * @method string getVersionFrom()
  * @method string getVersionTo()
  * @method array getExpectedResult()

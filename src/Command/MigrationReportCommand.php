@@ -16,6 +16,7 @@ use Raptor\PHPMigrationHelper\VersionComparator\VersionComparatorInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -59,7 +60,8 @@ final class MigrationReportCommand extends Command
              ->setDescription('Generates compatibility report for PHP migration to further version')
              ->addArgument('from', InputArgument::REQUIRED, 'Enter version to migrate from:')
              ->addArgument('to', InputArgument::REQUIRED, 'Enter version to migrate to:')
-             ->addArgument('report', InputArgument::REQUIRED, 'Enter filename fore report:');
+             ->addArgument('report', InputArgument::REQUIRED, 'Enter filename fore report:')
+             ->addOption('no-vendor', null, InputOption::VALUE_NONE, 'Do not check vendor folder');
     }
 
     /** @noinspection PhpMissingParentCallCommonInspection __approved__ parent method is overridden */
@@ -76,7 +78,9 @@ final class MigrationReportCommand extends Command
         $versionFrom = $input->getArgument('from');
         $versionTo = $input->getArgument('to');
         $reportFile = $input->getArgument('report');
-        $config = $this->configLoader->load(__DIR__.'/../Resources/configs', $versionFrom, $versionTo);
+        $noVendor = $input->getOption('no-vendor');
+        $configPath = __DIR__.'/../Resources/configs'.($noVendor ? '_without_vendor' : '');
+        $config = $this->configLoader->load($configPath, $versionFrom, $versionTo);
         $installedVersions = json_decode(file_get_contents("{$this->filePath}/vendor/composer/installed.json"), true);
         $requiredVersions = $config->getRequiredPackageVersions();
         $processor = DirectoryProcessor::fromConfig($config);
