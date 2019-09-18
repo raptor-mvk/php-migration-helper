@@ -17,7 +17,7 @@ use Raptor\PHPMigrationHelper\Rule\RuleInterface;
  *
  * @copyright 2019, raptor_MVK
  */
-class RuleConfig implements RuleConfigInterface
+final class RuleConfig implements RuleConfigInterface
 {
     /** @var RuleInterface[] $rules */
     private $rules;

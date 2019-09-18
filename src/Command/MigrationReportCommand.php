@@ -47,8 +47,8 @@ final class MigrationReportCommand extends Command
     public function __construct(string $filePath)
     {
         $this->filePath = $filePath;
-        $this->configLoader = new ConfigLoader();
         $this->versionComparator = new VersionComparator();
+        $this->configLoader = new ConfigLoader($this->versionComparator);
         parent::__construct();
     }
 

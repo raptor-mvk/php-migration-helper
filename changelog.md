@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.4](https://github.com/raptor-mvk/php-migration-helper/compare/v1.0.3...v1.0.4) - 2019-09-18
+### Added
+- Add acceptable versions of doctrine and symfony packages
+- Add warning possibility for packages without acceptable versions
+
 ## [1.0.3](https://github.com/raptor-mvk/php-migration-helper/compare/v1.0.2...v1.0.3) - 2019-09-18
 ### Added
 - Add cloudinary/cloudinary_php package version

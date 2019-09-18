@@ -26,4 +26,13 @@ interface VersionComparatorInterface
      * @return array
      */
     public function verifyVersions(array $installedVersions, array $requiredVersions): array;
+
+    /**
+     * Returns _true_ if version is real version and not a warning message and _false_ otherwise.
+     *
+     * @param string $version
+     *
+     * @return bool
+     */
+    public function isRealVersion(string $version): bool;
 }

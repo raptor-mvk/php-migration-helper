@@ -11,6 +11,7 @@ namespace Raptor\PHPMigrationHelper\UnitTests;
 use PHPUnit\Framework\TestCase;
 use Raptor\PHPMigrationHelper\ConfigLoader\ConfigLoader;
 use Raptor\PHPMigrationHelper\ConfigLoader\RuleConfigInterface;
+use Raptor\PHPMigrationHelper\VersionComparator\VersionComparator;
 use Raptor\TestUtils\ExtraAssertionsTrait;
 use Raptor\TestUtils\TestDataContainer\TestDataContainer;
 use Raptor\TestUtils\WithDataLoaderTrait;
@@ -38,8 +39,8 @@ final class ConfigLoaderTests extends TestCase
                 "rules:\n  rule3:\n    regexp: 'regexp33'\n    recommendation: 'str33'",
         ];
         $packagesDir = [
-            'config1.yml' => "version: '1.1'\n\npackages:\n  package1: '1.1'\n  package2: '1.1'\n  package3: '1.1'",
-            'config2.yml' => "version: '2.2'\n\npackages:\n  package1: '1.2'\n  package3: '1.5'\n  package4: '2.2'",
+            'config1.yml' => "version: '1.1'\n\npackages:\n  package1: '1.1'\n  package2: 'use'\n  package3: '1.1'",
+            'config2.yml' => "version: '2.2'\n\npackages:\n  package1: '1.2'\n  package3: 'err'\n  package4: '2.2'",
             'config3.yml' => "version: '3.3'\n\npackages:\n  package2: '1.3'\n  package1: '1.0'\n  package5: '3.3'",
         ];
         $structure = ['rules' => $rulesDir, 'packages' => $packagesDir];
@@ -56,7 +57,7 @@ final class ConfigLoaderTests extends TestCase
     public function testLoadLoadsRuleConfigsWithAppropriateVersionsOnly(TestDataContainer $dataContainer): void
     {
         /** @var \LoadRuleConfigsDataContainer $dataContainer */
-        $configLoader = new ConfigLoader();
+        $configLoader = new ConfigLoader(new VersionComparator());
         $versionFrom = $dataContainer->getVersionFrom();
         $versionTo = $dataContainer->getVersionTo();
 
@@ -86,7 +87,7 @@ final class ConfigLoaderTests extends TestCase
     public function testLoadLoadsPackagesWithAppropriateVersionsOnly(TestDataContainer $dataContainer): void
     {
         /** @var \LoadPackagesDataContainer $dataContainer */
-        $configLoader = new ConfigLoader();
+        $configLoader = new ConfigLoader(new VersionComparator());
         $versionFrom = $dataContainer->getVersionFrom();
         $versionTo = $dataContainer->getVersionTo();
         $expectedResult = $dataContainer->getExpectedResult();

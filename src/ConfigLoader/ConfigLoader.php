@@ -11,6 +11,7 @@ namespace Raptor\PHPMigrationHelper\ConfigLoader;
 use Composer\Semver\Comparator;
 use Raptor\PHPMigrationHelper\Rule\Rule;
 use Raptor\PHPMigrationHelper\Rule\RuleInterface;
+use Raptor\PHPMigrationHelper\VersionComparator\VersionComparatorInterface;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use RegexIterator;
@@ -31,6 +32,17 @@ final class ConfigLoader
 
     /** @var RuleConfigInterface[] $currentRuleConfigs array of currently loaded rule configs */
     private $currentRuleConfigs;
+
+    /** @var VersionComparatorInterface $versionComparator */
+    private $versionComparator;
+
+    /**
+     * @param VersionComparatorInterface $versionComparator
+     */
+    public function __construct(VersionComparatorInterface $versionComparator)
+    {
+        $this->versionComparator = $versionComparator;
+    }
 
     /**
      * Loads config using given current and desired PHP versions
@@ -118,6 +130,10 @@ final class ConfigLoader
     private function updatePackages(array $packages): void
     {
         foreach ($packages as $package => $version) {
+            if (!$this->versionComparator->isRealVersion($version)) {
+                $this->currentPackages[$package] = $version;
+                continue;
+            }
             if (Comparator::greaterThan($version, $this->currentPackages[$package] ?? '0.0')) {
                 $this->currentPackages[$package] = $version;
             }
