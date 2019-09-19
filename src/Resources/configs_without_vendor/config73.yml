@@ -30,12 +30,12 @@ packages:
   symfony/polyfill-ctype: '1.12.0'
   symfony/polyfill-intl-idn: '1.12.0'
   symfony/polyfill-mbstring: '1.12.0'
-  symfony/polyfill-php56: '1.12.0'
-  symfony/polyfill-php70: '1.12.0'
-  symfony/polyfill-php72: '1.12.0'
-  symfony/polyfill-php73: 'Warning (minor severity): symfony/polyfill-php73 does not have version fully compatible with PHP 7.3 (latest known 1.12.0)'
+  symfony/polyfill-php56: 'Warning (minor severity): symfony/polyfill-php56 should not be used with PHP 7.3'
+  symfony/polyfill-php70: 'Warning (minor severity): symfony/polyfill-php70 should not be used with PHP 7.3'
+  symfony/polyfill-php72: 'Warning (minor severity): symfony/polyfill-php72 should not be used with PHP 7.3'
+  symfony/polyfill-php73: 'Warning (minor severity): symfony/polyfill-php73 should not be used with PHP 7.3'
   symfony/polyfill-util: '1.12.0'
-  symfony/swiftmailer-bundle: 'Warning (minor severity): symfony/swiftmailer-bundle does not have version fully compatible with PHP 7.2 (latest known 3.2.8)'
+  symfony/swiftmailer-bundle: 'Warning (minor severity): symfony/swiftmailer-bundle does not have version that is fully compatible with PHP 7.2 (latest known 3.2.8)'
   symfony/symfony: '3.4.31'
 
 rules:
@@ -47,6 +47,7 @@ rules:
     regexp: '/(^|(^|[^-])>|[^:>\w])preg_\w*\s*\(/'
     recommendation: 'Check that pattern corresponds PCRE2 syntax'
     lines_before: 3
+    lines_after: 1
   continue:
     regexp: '/continue;/'
     recommendation: 'Check that continue is not inside switch, otherwise change to break or continue 2'
