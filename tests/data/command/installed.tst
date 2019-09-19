@@ -80,6 +80,42 @@
     "version": "1.0"
   },
   {
+    "name": "giggsey/libphonenumber-for-php",
+    "version": "1.0"
+  },
+  {
+    "name": "giggsey/locale",
+    "version": "1.0"
+  },
+  {
+    "name": "google/auth",
+    "version": "1.0"
+  },
+  {
+    "name": "google/cloud-core",
+    "version": "1.0"
+  },
+  {
+    "name": "google/cloud-storage",
+    "version": "1.0"
+  },
+  {
+    "name": "google/crc32",
+    "version": "0.0.1"
+  },
+  {
+    "name": "guzzlehttp/guzzle",
+    "version": "1.0"
+  },
+  {
+    "name": "guzzlehttp/promises",
+    "version": "1.0"
+  },
+  {
+    "name": "guzzlehttp/psr7",
+    "version": "1.0"
+  },
+  {
     "name": "phpunit/phpunit",
     "version": "1.0"
   },

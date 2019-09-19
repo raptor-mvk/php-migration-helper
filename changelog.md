@@ -4,9 +4,17 @@ All notable changes to this project will be documented in this file.
 
 ## [1.0.6](https://github.com/raptor-mvk/php-migration-helper/compare/v1.0.5...v1.0.6) - 2019-09-19
 ### Added
-- Add acceptable versions of firebase/php-jwt, friendsofphp/php-cs-fixer, friendsofsymfony/rest-bundle
+
+- Add acceptable versions of firebase/php-jwt, friendsofphp/php-cs-fixer,
+friendsofsymfony/rest-bundle
+- Add acceptable versions of giggsey, google and guzzlehttp packages
+
 ### Changed
-- Add warning messages for symfony/polyfill-phpXX packages instead of acceptable versions 
+
+- Add warning messages for symfony/polyfill-phpXX packages instead of acceptable
+versions 
+- Improve rule str_func for PHP 7.3
+- Rule hash_functions for PHP 7.2 is divided into hash_functions and hash_init
 
 ## [1.0.5](https://github.com/raptor-mvk/php-migration-helper/compare/v1.0.4...v1.0.5) - 2019-09-18
 ### Added
