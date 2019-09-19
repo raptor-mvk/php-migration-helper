@@ -1,6 +1,6 @@
 {
   "name": "raptor/php-migration-helper",
-  "description": "Helps migrate your projects from PHP 7.1 to 7.3",
+  "description": "Helps to migrate your projects from PHP 7.1 to 7.3",
   "license": "MIT",
   "require": {
     "php": ">=7.2",

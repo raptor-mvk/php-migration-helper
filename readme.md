@@ -10,8 +10,9 @@
 
 ## Overview
 
-Helper contains command `php-migration-helper` that checks your project for changes in PHP 7.2 and
-7.3 that break backward compatibility. The report is provided as result of command execution.
+Helper contains command `php-migration-helper` that checks your project for
+changes in PHP 7.2 and 7.3 that break backward compatibility. The report is
+provided as result of command execution.
 
 ## Installation
 
@@ -25,16 +26,17 @@ php composer.phar require --dev raptor/php-migration-helper:^1.0
 
 1. Install package.
 
-1. Run command (`VERSION_FROM` is current PHP version, `VERSION_TO` is desired PHP version and `REPORT_FILE` is path to
-the file with compatibility record):
+1. Run command (`VERSION_FROM` is current PHP version, `VERSION_TO` is desired
+PHP version and `REPORT_FILE` is path to the file with compatibility record):
+`php vendor/raptor/php-migration-helper/migration-report VERSION_FROM VERSION_TO REPORT_FILE`
 
-        php vendor/raptor/php-migration-helper/migration-report VERSION_FROM VERSION_TO REPORT_FILE
+1. If you do not want to process vendor folder, you can use `--no-vendor`
+option.
 
-1. If you do not want to process vendor folder, you can use `--no-vendor` option.
-
-1. View compatibility report. If it contains records from vendor path that need correction, please, make PR into
-[this repository](https://github.com/raptor-mvk/php-migration-helper) (fix `src/Resources/configs/configXX.yml` with
-appropriate version) with correct minimal version of the package under consideration.
+1. View compatibility report. If it contains records from vendor path that need
+correction, please, make PR into [this repository](https://github.com/raptor-mvk/php-migration-helper)
+(fix `src/Resources/configs/configXX.yml` with appropriate version) with correct
+minimal version of the package under consideration.
 
 1. Fix mentions that are really problems
 

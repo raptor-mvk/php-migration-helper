@@ -28,10 +28,41 @@ excluded:
   - vendor/google/auth
   - vendor/google/cloud-core
   - vendor/google/cloud-storage
+  - vendor/google/crc32
   - vendor/guzzlehttp/guzzle
   - vendor/guzzlehttp/promises
   - vendor/guzzlehttp/psr7
+  - vendor/kreait/clock
+  - vendor/kreait/firebase-php
+  - vendor/kreait/firebase-tokens
+  - vendor/kreait/gcp-metadata
+  - vendor/ktamas77/firebase-php
+  - vendor/league/flysystem
+  - vendor/lcobucci/jwt
+  - vendor/lexik/jwt-authentication-bundle
+  - vendor/monolog/monolog
+  - vendor/myclabs/deep-copy
+  - vendor/nelmio/cors-bundle
+  - vendor/namshi/jose
+  - vendor/ocramius/package-versions
+  - vendor/ocramius/proxy-manager
+  - vendor/paragonie/random_compat
+  - vendor/phpdocumentor/reflection-docblock
+  - vendor/phpdocumentor/type-resolver
+  - vendor/phpspec/prophecy
+  - vendor/phpunit/php-code-coverage
+  - vendor/phpunit/php-timer
+  - vendor/phpunit/php-token-stream
+  - vendor/phpunit/phpunit
+  - vendor/psr/http-message
+  - vendor/psr/log
   - vendor/raptor/php-migration-helper
+  - vendor/riverline/multipart-parser
+  - vendor/sebastian/exporter
+  - vendor/sebastian/global-state
+  - vendor/sebastian/type
+  - vendor/sensio/distribution-bundle
+  - vendor/sensiolabs/security-checker
   - vendor/symfony/http-client
   - vendor/symfony/mime
   - vendor/symfony/monolog-bundle
@@ -46,6 +77,10 @@ excluded:
   - vendor/symfony/polyfill-util
   - vendor/symfony/swiftmailer-bundle
   - vendor/symfony/symfony
+  - vendor/theseer/tokenizer
+  - vendor/twig/twig
+  - vendor/webmozart/assert
+  - vendor/zendframework/zend-code
 
 packages:
   cloudinary/cloudinary_php: '1.14.0'
@@ -77,7 +112,61 @@ packages:
   guzzlehttp/guzzle: '6.3.3'
   guzzlehttp/promises: '1.3.1'
   guzzlehttp/psr7: '1.6.1'
+  incenteev/composer-parameter-handler: '2.1.3'
+  jdorn/sql-formatter: '1.2.17'
+  kreait/clock: '1.0.1'
+  kreait/firebase-php: '4.32.0'
+  kreait/firebase-tokens: '1.9.1'
+  kreait/gcp-metadata: '1.0.1'
+  ktamas77/firebase-php: '2.2.2'
+  lcobucci/jwt: '3.3.1'
+  league/flysystem: '1.0.55'
+  lexik/jwt-authentication-bundle: '2.6.4'
+  monolog/monolog: '1.25.1'
+  mtdowling/jmespath.php: '2.4.0'
+  myclabs/deep-copy: '1.9.3'
+  namshi/jose: '7.2.3'
+  nelmio/cors-bundle: 'Warning (minor severity): nelmio/cors-bundle does not have version that is fully compatible with PHP 7.3 (latest known 1.5.6)'
+  ocramius/package-versions: '1.5.1'
+  ocramius/proxy-manager: '2.2.0'
+  paragonie/random_compat: 'Warning (minor severity): paragonie/random_compat should not be used with PHP 7.3'
+  phar-io/manifest: '1.0.3'
+  phar-io/version: '2.0.1'
+  php-amqplib/php-amqplib: '2.8.0'
+  php-amqplib/rabbitmq-bundle: '1.14.4'
+  php-cs-fixer/diff: '1.3.0'
+  phpdocumentor/reflection-common: '2.0.0'
+  phpdocumentor/reflection-docblock: '4.3.2'
+  phpdocumentor/type-resolver: '1.0.1'
+  phpspec/prophecy: '1.8.1'
+  phpunit/php-code-coverage: '7.0.0'
+  phpunit/php-file-iterator: '2.0.2'
+  phpunit/php-text-template: '1.2.1'
+  phpunit/php-timer: '2.1.2'
+  phpunit/php-token-stream: '3.1.1'
   phpunit/phpunit: '8.0'
+  riverline/multipart-parser: '2.0.5'
+  rize/uri-template: '0.3.2'
+  sebastian/code-unit-reverse-lookup: '1.0.1'
+  sebastian/comparator: '3.0.2'
+  sebastian/diff: '3.0.2'
+  sebastian/environment: '4.2.2'
+  sebastian/exporter: '3.1.2'
+  sebastian/global-state: '3.0.0'
+  sebastian/object-enumerator: '3.0.3'
+  sebastian/object-reflector: '1.1.1'
+  sebastian/recursion-context: '3.0.0'
+  sebastian/resource-operations: '2.0.1'
+  sebastian/type: '1.0.0'
+  sebastian/version: '2.0.1'
+  sensio/distribution-bundle: '5.0.25'
+  sensio/generator-bundle: '3.1.7'
+  sensio/framework-extra-bundle: '3.0.29'
+  sensiolabs/security-checker: '6.0.2'
+  sentry/sentry: '1.10.0'
+  sentry/sentry-symfony: '0.8.8'
+  superbalist/flysystem-google-storage: '7.2.1'
+  swiftmailer/swiftmailer: '5.4.12'
   symfony/http-client: '4.3.4'
   symfony/mime: '4.3.4'
   symfony/monolog-bundle: '3.1.2'
@@ -92,6 +181,13 @@ packages:
   symfony/polyfill-util: '1.12.0'
   symfony/swiftmailer-bundle: 'Warning (minor severity): symfony/swiftmailer-bundle does not have version that is fully compatible with PHP 7.3 (latest known 3.2.8)'
   symfony/symfony: '3.4.31'
+  theseer/tokenizer: '1.1.3'
+  twig/twig: '2.11.3'
+  webmozart/assert: '1.5.0'
+  willdurand/jsonp-callback-validator: '1.1.0'
+  willdurand/negotiation: '2.3.1'
+  zendframework/zend-code: '3.3.2'
+  zendframework/zend-eventmanager: '3.2.1'
 
 rules:
   heredoc:

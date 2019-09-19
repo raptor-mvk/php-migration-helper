@@ -116,7 +116,223 @@
     "version": "1.0"
   },
   {
+    "name": "incenteev/composer-parameter-handler",
+    "version": "1.0"
+  },
+  {
+    "name": "jdorn/sql-formatter",
+    "version": "1.0"
+  },
+  {
+    "name": "kreait/clock",
+    "version": "1.0"
+  },
+  {
+    "name": "kreait/firebase-php",
+    "version": "1.0"
+  },
+  {
+    "name": "kreait/firebase-tokens",
+    "version": "1.0"
+  },
+  {
+    "name": "kreait/gcp-metadata",
+    "version": "1.0"
+  },
+  {
+    "name": "ktamas77/firebase-php",
+    "version": "1.0"
+  },
+  {
+    "name": "lcobucci/jwt",
+    "version": "1.0"
+  },
+  {
+    "name": "league/flysystem",
+    "version": "1.0"
+  },
+  {
+    "name": "lexik/jwt-authentication-bundle",
+    "version": "1.0"
+  },
+  {
+    "name": "monolog/monolog",
+    "version": "1.0"
+  },
+  {
+    "name": "mtdowling/jmespath.php",
+    "version": "1.0"
+  },
+  {
+    "name": "myclabs/deep-copy",
+    "version": "1.0"
+  },
+  {
+    "name": "namshi/jose",
+    "version": "1.0"
+  },
+  {
+    "name": "nelmio/cors-bundle",
+    "version": "1.0"
+  },
+  {
+    "name": "ocramius/package-versions",
+    "version": "1.0"
+  },
+  {
+    "name": "ocramius/proxy-manager",
+    "version": "1.0"
+  },
+  {
+    "name": "paragonie/random_compat",
+    "version": "1.0"
+  },
+  {
+    "name": "phar-io/manifest",
+    "version": "1.0"
+  },
+  {
+    "name": "phar-io/version",
+    "version": "1.0"
+  },
+  {
+    "name": "php-amqplib/php-amqplib",
+    "version": "1.0"
+  },
+  {
+    "name": "php-amqplib/rabbitmq-bundle",
+    "version": "1.0"
+  },
+  {
+    "name": "php-cs-fixer/diff",
+    "version": "1.0"
+  },
+  {
+    "name": "phpdocumentor/reflection-common",
+    "version": "1.0"
+  },
+  {
+    "name": "phpdocumentor/reflection-docblock",
+    "version": "1.0"
+  },
+  {
+    "name": "phpdocumentor/type-resolver",
+    "version": "1.0"
+  },
+  {
+    "name": "phpspec/prophecy",
+    "version": "1.0"
+  },
+  {
+    "name": "phpunit/php-code-coverage",
+    "version": "1.0"
+  },
+  {
+    "name": "phpunit/php-file-iterator",
+    "version": "1.0"
+  },
+  {
+    "name": "phpunit/php-text-template",
+    "version": "1.0"
+  },
+  {
+    "name": "phpunit/php-timer",
+    "version": "1.0"
+  },
+  {
+    "name": "phpunit/php-token-stream",
+    "version": "1.0"
+  },
+  {
     "name": "phpunit/phpunit",
+    "version": "1.0"
+  },
+  {
+    "name": "riverline/multipart-parser",
+    "version": "1.0"
+  },
+  {
+    "name": "rize/uri-template",
+    "version": "0.1"
+  },
+  {
+    "name": "sebastian/code-unit-reverse-lookup",
+    "version": "1.0"
+  },
+  {
+    "name": "sebastian/comparator",
+    "version": "1.0"
+  },
+  {
+    "name": "sebastian/diff",
+    "version": "1.0"
+  },
+  {
+    "name": "sebastian/environment",
+    "version": "1.0"
+  },
+  {
+    "name": "sebastian/exporter",
+    "version": "1.0"
+  },
+  {
+    "name": "sebastian/global-state",
+    "version": "1.0"
+  },
+  {
+    "name": "sebastian/object-enumerator",
+    "version": "1.0"
+  },
+  {
+    "name": "sebastian/object-reflector",
+    "version": "1.0"
+  },
+  {
+    "name": "sebastian/recursion-context",
+    "version": "1.0"
+  },
+  {
+    "name": "sebastian/resource-operations",
+    "version": "1.0"
+  },
+  {
+    "name": "sebastian/type",
+    "version": "1.0"
+  },
+  {
+    "name": "sebastian/version",
+    "version": "1.0"
+  },
+  {
+    "name": "sensio/distribution-bundle",
+    "version": "1.0"
+  },
+  {
+    "name": "sensio/generator-bundle",
+    "version": "1.0"
+  },
+  {
+    "name": "sensio/framework-extra-bundle",
+    "version": "1.0"
+  },
+  {
+    "name": "sensiolabs/security-checker",
+    "version": "1.0"
+  },
+  {
+    "name": "sentry/sentry",
+    "version": "1.0"
+  },
+  {
+    "name": "sentry/sentry-symfony",
+    "version": "1.0"
+  },
+  {
+    "name": "superbalist/flysystem-google-storage",
+    "version": "1.0"
+  },
+  {
+    "name": "swiftmailer/swiftmailer",
     "version": "1.0"
   },
   {
@@ -173,6 +389,34 @@
   },
   {
     "name": "symfony/symfony",
+    "version": "1.0"
+  },
+  {
+    "name": "theseer/tokenizer",
+    "version": "1.0"
+  },
+  {
+    "name": "twig/twig",
+    "version": "1.0"
+  },
+  {
+    "name": "webmozart/assert",
+    "version": "1.0"
+  },
+  {
+    "name": "willdurand/jsonp-callback-validator",
+    "version": "1.0"
+  },
+  {
+    "name": "willdurand/negotiation",
+    "version": "1.0"
+  },
+  {
+    "name": "zendframework/zend-code",
+    "version": "1.0"
+  },
+  {
+    "name": "zendframework/zend-eventmanager",
     "version": "1.0"
   }
 ]
