@@ -22,6 +22,7 @@ excluded:
   - vendor/doctrine/reflection
   - vendor/firebase/php-jwt
   - vendor/friendsofphp/php-cs-fixer
+  - vendor/friendsofsymfony/rest-bundle
   - vendor/raptor/php-migration-helper
   - vendor/symfony/http-client
   - vendor/symfony/mime

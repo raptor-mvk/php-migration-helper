@@ -20,6 +20,9 @@ excluded:
   - vendor/doctrine/orm
   - vendor/doctrine/persistence
   - vendor/doctrine/reflection
+  - vendor/firebase/php-jwt
+  - vendor/friendsofphp/php-cs-fixer
+  - vendor/friendsofsymfony/rest-bundle
   - vendor/raptor/php-migration-helper
   - vendor/symfony/http-client
   - vendor/symfony/mime
@@ -54,6 +57,9 @@ packages:
   doctrine/orm: '2.6.3'
   doctrine/persistence: '1.1.1'
   doctrine/reflection: '1.0.0'
+  firebase/php-jwt: '5.0.0'
+  friendsofphp/php-cs-fixer: '2.15.3'
+  friendsofsymfony/rest-bundle: 'Warning (minor severity): friendsofsymfony/rest-bundle does not have version that is fully compatible with PHP 7.3 (latest known 2.5.0)'
   phpunit/phpunit: '8.0'
   symfony/http-client: '4.3.4'
   symfony/mime: '4.3.4'

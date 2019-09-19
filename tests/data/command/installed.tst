@@ -68,6 +68,18 @@
     "version": "1.0"
   },
   {
+    "name": "firebase/php-jwt",
+    "version": "1.0"
+  },
+  {
+    "name": "friendsofphp/php-cs-fixer",
+    "version": "1.0"
+  },
+  {
+    "name": "friendsofsymfony/rest-bundle",
+    "version": "1.0"
+  },
+  {
     "name": "phpunit/phpunit",
     "version": "1.0"
   },
