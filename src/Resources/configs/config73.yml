@@ -23,6 +23,14 @@ excluded:
   - vendor/firebase/php-jwt
   - vendor/friendsofphp/php-cs-fixer
   - vendor/friendsofsymfony/rest-bundle
+  - vendor/giggsey/libphonenumber-for-php
+  - vendor/giggsey/locale
+  - vendor/google/auth
+  - vendor/google/cloud-core
+  - vendor/google/cloud-storage
+  - vendor/guzzlehttp/guzzle
+  - vendor/guzzlehttp/promises
+  - vendor/guzzlehttp/psr7
   - vendor/raptor/php-migration-helper
   - vendor/symfony/http-client
   - vendor/symfony/mime
