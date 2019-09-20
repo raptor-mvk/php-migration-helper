@@ -325,7 +325,7 @@
   },
   {
     "name": "sentry/sentry-symfony",
-    "version": "1.0"
+    "version": "0.1"
   },
   {
     "name": "superbalist/flysystem-google-storage",

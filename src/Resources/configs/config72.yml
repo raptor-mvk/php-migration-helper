@@ -20,6 +20,7 @@ excluded:
   - vendor/doctrine/orm
   - vendor/doctrine/persistence
   - vendor/doctrine/reflection
+  - vendor/egulias/email-validator
   - vendor/firebase/php-jwt
   - vendor/friendsofphp/php-cs-fixer
   - vendor/friendsofsymfony/rest-bundle
@@ -68,11 +69,21 @@ excluded:
   - vendor/psr/log
   - vendor/raptor/php-migration-helper
   - vendor/riverline/multipart-parser
+  - vendor/rize/uri-template
+  - vendor/sebastian/code-unit-reverse-lookup
+  - vendor/sebastian/comparator
+  - vendor/sebastian/environment
   - vendor/sebastian/exporter
   - vendor/sebastian/global-state
+  - vendor/sebastian/object-enumerator
+  - vendor/sebastian/object-reflector
+  - vendor/sebastian/recursion-context
+  - vendor/sebastian/resource-operations
   - vendor/sebastian/type
+  - vendor/sebastian/version
   - vendor/sensio/distribution-bundle
   - vendor/sensiolabs/security-checker
+  - vendor/sentry/sentry-symfony
   - vendor/superbalist/flysystem-google-storage
   - vendor/swiftmailer/swiftmailer
   - vendor/symfony/http-client
@@ -80,6 +91,7 @@ excluded:
   - vendor/symfony/monolog-bundle
   - vendor/symfony/phpunit-bridge
   - vendor/symfony/polyfill-ctype
+  - vendor/symfony/polyfill-iconv
   - vendor/symfony/polyfill-intl-idn
   - vendor/symfony/polyfill-mbstring
   - vendor/symfony/polyfill-php56
@@ -115,6 +127,7 @@ packages:
   doctrine/orm: '2.6.3'
   doctrine/persistence: '1.1.1'
   doctrine/reflection: '1.0.0'
+  egulias/email-validator: '2.1.11'
   firebase/php-jwt: '5.0.0'
   friendsofphp/php-cs-fixer: '2.15.3'
   friendsofsymfony/rest-bundle: 'Warning (minor severity): friendsofsymfony/rest-bundle does not have version that is fully compatible with PHP 7.2 (latest known 2.5.0)'
@@ -161,7 +174,7 @@ packages:
   phpunit/php-token-stream: '3.1.1'
   phpunit/phpunit: '8.0'
   riverline/multipart-parser: '2.0.5'
-  rize/uri-template: '0.3.2'
+  rize/uri-template: 'Warning (minor severity): rize/uri-template does not have version that is fully compatible with PHP 7.2 (latest known 0.3.2)'
   sebastian/code-unit-reverse-lookup: '1.0.1'
   sebastian/comparator: '3.0.2'
   sebastian/diff: '3.0.2'
@@ -179,7 +192,7 @@ packages:
   sensio/framework-extra-bundle: '3.0.29'
   sensiolabs/security-checker: '6.0.2'
   sentry/sentry: '1.10.0'
-  sentry/sentry-symfony: '0.8.8'
+  sentry/sentry-symfony: '1.0.3'
   superbalist/flysystem-google-storage: '7.2.1'
   swiftmailer/swiftmailer: '6.2.1'
   symfony/http-client: '4.3.4'
@@ -187,6 +200,7 @@ packages:
   symfony/monolog-bundle: '3.1.2'
   symfony/phpunit-bridge: '3.4.31'
   symfony/polyfill-ctype: '1.12.0'
+  symfony/polyfill-iconv: '1.12.0'
   symfony/polyfill-intl-idn: '1.12.0'
   symfony/polyfill-mbstring: '1.12.0'
   symfony/polyfill-php56: 'Warning (minor severity): symfony/polyfill-php56 should not be used with PHP 7.2'

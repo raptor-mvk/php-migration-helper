@@ -65,6 +65,11 @@
         "test.php": null
       }
     },
+    "egulias": {
+      "email-validator": {
+        "test.php": null
+      }
+    },
     "firebase": {
       "php-jwt": {
         "test.php": null
@@ -262,14 +267,43 @@
         "test.php": null
       }
     },
+    "rize": {
+      "uri-template": {
+        "test.php": null
+      }
+    },
     "sebastian": {
+      "code-unit-reverse-lookup": {
+        "test.php": null
+      },
+      "comparator": {
+        "test.php": null
+      },
+      "environment": {
+        "test.php": null
+      },
       "exporter": {
         "test.php": null
       },
       "global-state": {
         "test.php": null
       },
+      "object-enumerator": {
+        "test.php": null
+      },
+      "object-reflector": {
+        "test.php": null
+      },
+      "recursion-context": {
+        "test.php": null
+      },
+      "resource-operations": {
+        "test.php": null
+      },
       "type": {
+        "test.php": null
+      },
+      "version": {
         "test.php": null
       }
     },
@@ -280,6 +314,11 @@
     },
     "sensiolabs": {
       "security-checker": {
+        "test.php": null
+      }
+    },
+    "sentry": {
+      "sentry-symfony": {
         "test.php": null
       }
     },
@@ -309,6 +348,9 @@
         "test.php": null
       },
       "phpunit-bridge": {
+        "test.php": null
+      },
+      "polyfill-iconv": {
         "test.php": null
       },
       "polyfill-intl-idn": {

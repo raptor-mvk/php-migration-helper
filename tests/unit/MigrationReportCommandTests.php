@@ -72,7 +72,7 @@ final class MigrationReportCommandTests extends TestCase
      * Recursively parse structure and put content to files. Returns updated structure.
      *
      * @param array|null $structure
-     * @param array $contents
+     * @param array      $contents
      *
      * @return array|null
      */
@@ -82,7 +82,7 @@ final class MigrationReportCommandTests extends TestCase
             return $structure;
         }
         $result = [];
-        foreach($structure as $folder => $file) {
+        foreach ($structure as $folder => $file) {
             $result[$folder] = $contents[$folder] ?? $this->addContentToStructure($file, $contents);
         }
 
