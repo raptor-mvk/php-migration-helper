@@ -32,6 +32,8 @@ excluded:
   - vendor/guzzlehttp/guzzle
   - vendor/guzzlehttp/promises
   - vendor/guzzlehttp/psr7
+  - vendor/incenteev/composer-parameter-handler
+  - vendor/jdorn/sql-formatter
   - vendor/kreait/clock
   - vendor/kreait/firebase-php
   - vendor/kreait/firebase-tokens
@@ -41,16 +43,24 @@ excluded:
   - vendor/league/flysystem
   - vendor/lexik/jwt-authentication-bundle
   - vendor/monolog/monolog
+  - vendor/mtdowling/jmespath.php
   - vendor/myclabs/deep-copy
   - vendor/namshi/jose
   - vendor/nelmio/cors-bundle
   - vendor/ocramius/package-versions
   - vendor/ocramius/proxy-manager
   - vendor/paragonie/random_compat
+  - vendor/phar-io/manifest
+  - vendor/phar-io/version
+  - vendor/php-amqplib/php-amqplib
+  - vendor/php-amqplib/rabbitmq-bundle
+  - vendor/phpdocumentor/reflection-common
   - vendor/phpdocumentor/reflection-docblock
   - vendor/phpdocumentor/type-resolver
   - vendor/phpspec/prophecy
   - vendor/phpunit/php-code-coverage
+  - vendor/phpunit/php-file-iterator
+  - vendor/phpunit/php-text-template
   - vendor/phpunit/php-timer
   - vendor/phpunit/php-token-stream
   - vendor/phpunit/phpunit
@@ -63,6 +73,8 @@ excluded:
   - vendor/sebastian/type
   - vendor/sensio/distribution-bundle
   - vendor/sensiolabs/security-checker
+  - vendor/superbalist/flysystem-google-storage
+  - vendor/swiftmailer/swiftmailer
   - vendor/symfony/http-client
   - vendor/symfony/mime
   - vendor/symfony/monolog-bundle
@@ -80,7 +92,10 @@ excluded:
   - vendor/theseer/tokenizer
   - vendor/twig/twig
   - vendor/webmozart/assert
+  - vendor/willdurand/jsonp-callback-validator
+  - vendor/willdurand/negotiation
   - vendor/zendframework/zend-code
+  - vendor/zendframework/zend-eventmanager
 
 packages:
   cloudinary/cloudinary_php: '1.14.0'
@@ -133,7 +148,7 @@ packages:
   phar-io/manifest: '1.0.3'
   phar-io/version: '2.0.1'
   php-amqplib/php-amqplib: '2.8.0'
-  php-amqplib/rabbitmq-bundle: '1.14.4'
+  php-amqplib/rabbitmq-bundle: 'Warning (minor severity): php-amqplib/rabbitmq-bundle does not have version that is fully compatible with PHP 7.2 (latest known 1.14.4)'
   php-cs-fixer/diff: '1.3.0'
   phpdocumentor/reflection-common: '2.0.0'
   phpdocumentor/reflection-docblock: '4.3.2'
@@ -166,7 +181,7 @@ packages:
   sentry/sentry: '1.10.0'
   sentry/sentry-symfony: '0.8.8'
   superbalist/flysystem-google-storage: '7.2.1'
-  swiftmailer/swiftmailer: '5.4.12'
+  swiftmailer/swiftmailer: '6.2.1'
   symfony/http-client: '4.3.4'
   symfony/mime: '4.3.4'
   symfony/monolog-bundle: '3.1.2'

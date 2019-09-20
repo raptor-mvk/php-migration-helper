@@ -113,6 +113,16 @@
         "test.php": null
       }
     },
+    "incenteev": {
+      "composer-parameter-handler": {
+        "test.php": null
+      }
+    },
+    "jdorn": {
+      "sql-formatter": {
+        "test.php": null
+      }
+    },
     "kreait": {
       "clock": {
         "test.php": null
@@ -152,6 +162,11 @@
         "test.php": null
       }
     },
+    "mtdowling": {
+      "jmespath.php": {
+        "test.php": null
+      }
+    },
     "myclabs": {
       "deep-copy": {
         "test.php": null
@@ -180,6 +195,22 @@
         "test.php": null
       }
     },
+    "phar-io": {
+      "manifest": {
+        "test.php": null
+      },
+      "version": {
+        "test.php": null
+      }
+    },
+    "php-amqplib": {
+      "php-amqplib": {
+        "test.php": null
+      },
+      "rabbitmq-bundle": {
+        "test.php": null
+      }
+    },
     "phpdocumentor": {
       "reflection-docblock": {
         "test.php": null
@@ -195,6 +226,12 @@
     },
     "phpunit": {
       "php-code-coverage": {
+        "test.php": null
+      },
+      "php-file-iterator": {
+        "test.php": null
+      },
+      "php-text-template": {
         "test.php": null
       },
       "php-timer": {
@@ -248,6 +285,16 @@
     },
     "some_vendor": {
       "some_package": {
+        "test.php": null
+      }
+    },
+    "superbalist": {
+      "flysystem-google-storage": {
+        "test.php": null
+      }
+    },
+    "swiftmailer": {
+      "swiftmailer": {
         "test.php": null
       }
     },
@@ -307,8 +354,19 @@
         "test.php": null
       }
     },
+    "willdurand": {
+      "jsonp-callback-validator": {
+        "test.php": null
+      },
+      "negotiation": {
+        "test.php": null
+      }
+    },
     "zendframework": {
       "zend-code": {
+        "test.php": null
+      },
+      "zend-eventmanager": {
         "test.php": null
       }
     }
