@@ -37,13 +37,13 @@ excluded:
   - vendor/kreait/firebase-tokens
   - vendor/kreait/gcp-metadata
   - vendor/ktamas77/firebase-php
-  - vendor/league/flysystem
   - vendor/lcobucci/jwt
+  - vendor/league/flysystem
   - vendor/lexik/jwt-authentication-bundle
   - vendor/monolog/monolog
   - vendor/myclabs/deep-copy
-  - vendor/nelmio/cors-bundle
   - vendor/namshi/jose
+  - vendor/nelmio/cors-bundle
   - vendor/ocramius/package-versions
   - vendor/ocramius/proxy-manager
   - vendor/paragonie/random_compat

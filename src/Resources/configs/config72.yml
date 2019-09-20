@@ -32,7 +32,37 @@ excluded:
   - vendor/guzzlehttp/guzzle
   - vendor/guzzlehttp/promises
   - vendor/guzzlehttp/psr7
+  - vendor/kreait/clock
+  - vendor/kreait/firebase-php
+  - vendor/kreait/firebase-tokens
+  - vendor/kreait/gcp-metadata
+  - vendor/ktamas77/firebase-php
+  - vendor/lcobucci/jwt
+  - vendor/league/flysystem
+  - vendor/lexik/jwt-authentication-bundle
+  - vendor/monolog/monolog
+  - vendor/myclabs/deep-copy
+  - vendor/namshi/jose
+  - vendor/nelmio/cors-bundle
+  - vendor/ocramius/package-versions
+  - vendor/ocramius/proxy-manager
+  - vendor/paragonie/random_compat
+  - vendor/phpdocumentor/reflection-docblock
+  - vendor/phpdocumentor/type-resolver
+  - vendor/phpspec/prophecy
+  - vendor/phpunit/php-code-coverage
+  - vendor/phpunit/php-timer
+  - vendor/phpunit/php-token-stream
+  - vendor/phpunit/phpunit
+  - vendor/psr/http-message
+  - vendor/psr/log
   - vendor/raptor/php-migration-helper
+  - vendor/riverline/multipart-parser
+  - vendor/sebastian/exporter
+  - vendor/sebastian/global-state
+  - vendor/sebastian/type
+  - vendor/sensio/distribution-bundle
+  - vendor/sensiolabs/security-checker
   - vendor/symfony/http-client
   - vendor/symfony/mime
   - vendor/symfony/monolog-bundle
@@ -47,6 +77,10 @@ excluded:
   - vendor/symfony/polyfill-util
   - vendor/symfony/swiftmailer-bundle
   - vendor/symfony/symfony
+  - vendor/theseer/tokenizer
+  - vendor/twig/twig
+  - vendor/webmozart/assert
+  - vendor/zendframework/zend-code
 
 packages:
   cloudinary/cloudinary_php: '1.14.0'

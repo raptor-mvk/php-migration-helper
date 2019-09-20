@@ -14,6 +14,7 @@ use Raptor\TestUtils\TestDataContainer\TestDataContainer;
 use Raptor\TestUtils\WithDataLoaderTrait;
 use Raptor\TestUtils\WithVFSTrait;
 use Symfony\Component\Console\Tester\CommandTester;
+use function is_array;
 
 /**
  * @author Mikhail Kamorin aka raptor_MVK
@@ -29,18 +30,11 @@ final class MigrationReportCommandTests extends TestCase
     {
         $this->setupVFS();
         $testFileContent = file_get_contents(__DIR__.'/../data/command/php.tst');
-        $testFile = ['test.php' => $testFileContent];
         $installedFileContent = file_get_contents(__DIR__.'/../data/command/installed.tst');
-        $installedFile = ['installed.json' => $installedFileContent];
-        $structure = [
-            'src' => $testFile,
-            'vendor' => [
-                'raptor' => ['php-migration-helper' => $testFile],
-                'composer' => $installedFile,
-                'some_vendor' => ['some_package' => $testFile],
-            ],
-        ];
-        $this->addStructureToVFS($structure);
+        $structure = json_decode(file_get_contents(__DIR__.'/../data/command/structure.tst'), true);
+        $contents = ['test.php' => $testFileContent, 'installed.json' => $installedFileContent];
+        $structureWithContents = $this->addContentToStructure($structure, $contents);
+        $this->addStructureToVFS($structureWithContents);
     }
 
     /**
@@ -72,5 +66,26 @@ final class MigrationReportCommandTests extends TestCase
     public function commandDataProvider(): array
     {
         return $this->loadDataFromFile(__DIR__.'/../data/command/command.json');
+    }
+
+    /**
+     * Recursively parse structure and put content to files. Returns updated structure.
+     *
+     * @param array|null $structure
+     * @param array $contents
+     *
+     * @return array|null
+     */
+    private function addContentToStructure(?array $structure, array $contents): ?array
+    {
+        if (!is_array($structure)) {
+            return $structure;
+        }
+        $result = [];
+        foreach($structure as $folder => $file) {
+            $result[$folder] = $contents[$folder] ?? $this->addContentToStructure($file, $contents);
+        }
+
+        return $result;
     }
 }
