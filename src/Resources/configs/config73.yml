@@ -3,6 +3,7 @@ version: '7.3'
 excluded:
   - var
   - vendor/cloudinary/cloudinary_php
+  - vendor/clue/stream-filter
   - vendor/composer
   - vendor/doctrine/annotations
   - vendor/doctrine/cache
@@ -35,6 +36,7 @@ excluded:
   - vendor/guzzlehttp/psr7
   - vendor/incenteev/composer-parameter-handler
   - vendor/jdorn/sql-formatter
+  - vendor/jean85/pretty-package-versions
   - vendor/kreait/clock
   - vendor/kreait/firebase-php
   - vendor/kreait/firebase-tokens
@@ -56,6 +58,10 @@ excluded:
   - vendor/php-amqplib/php-amqplib
   - vendor/php-amqplib/rabbitmq-bundle
   - vendor/php-cs-fixer/diff
+  - vendor/php-http/client-common
+  - vendor/php-http/curl-client
+  - vendor/php-http/discovery
+  - vendor/php-http/message
   - vendor/phpdocumentor/reflection-common
   - vendor/phpdocumentor/reflection-docblock
   - vendor/phpdocumentor/type-resolver
@@ -68,6 +74,7 @@ excluded:
   - vendor/phpunit/phpunit
   - vendor/psr/http-message
   - vendor/psr/log
+  - vendor/ramsey/uuid
   - vendor/raptor/php-migration-helper
   - vendor/riverline/multipart-parser
   - vendor/rize/uri-template
@@ -87,7 +94,9 @@ excluded:
   - vendor/sensio/framework-extra-bundle
   - vendor/sensio/generator-bundle
   - vendor/sensiolabs/security-checker
+  - vendor/sentry/sdk
   - vendor/sentry/sentry-symfony
+  - vendor/sentry/sentry
   - vendor/superbalist/flysystem-google-storage
   - vendor/swiftmailer/swiftmailer
   - vendor/symfony/http-client
@@ -111,10 +120,12 @@ excluded:
   - vendor/willdurand/jsonp-callback-validator
   - vendor/willdurand/negotiation
   - vendor/zendframework/zend-code
+  - vendor/zendframework/zend-diactoros
   - vendor/zendframework/zend-eventmanager
 
 packages:
   cloudinary/cloudinary_php: '1.14.0'
+  clue/stream-filter: '1.4.1'
   doctrine/annotations: '1.7.0'
   doctrine/cache: '1.8.0'
   doctrine/collections: '1.6.2'
@@ -146,6 +157,7 @@ packages:
   guzzlehttp/psr7: '1.6.1'
   incenteev/composer-parameter-handler: '2.1.3'
   jdorn/sql-formatter: '1.2.17'
+  jean85/pretty-package-versions: '1.2'
   kreait/clock: '1.0.1'
   kreait/firebase-php: '4.32.0'
   kreait/firebase-tokens: '1.9.1'
@@ -167,6 +179,10 @@ packages:
   php-amqplib/php-amqplib: '2.8.0'
   php-amqplib/rabbitmq-bundle: 'Warning (minor severity): php-amqplib/rabbitmq-bundle does not have version that is fully compatible with PHP 7.3 (latest known 1.14.4)'
   php-cs-fixer/diff: '1.3.0'
+  php-http/client-common: '2.0.0'
+  php-http/curl-client: '2.0.0'
+  php-http/discovery: '1.7.0'
+  php-http/message: '1.8.0'
   phpdocumentor/reflection-common: '2.0.0'
   phpdocumentor/reflection-docblock: '4.3.2'
   phpdocumentor/type-resolver: '1.0.1'
@@ -177,6 +193,7 @@ packages:
   phpunit/php-timer: '2.1.2'
   phpunit/php-token-stream: '3.1.1'
   phpunit/phpunit: '8.0'
+  ramsey/uuid: '3.8.0'
   riverline/multipart-parser: '2.0.5'
   rize/uri-template: 'Warning (minor severity): rize/uri-template does not have version that is fully compatible with PHP 7.3 (latest known 0.3.2)'
   sebastian/code-unit-reverse-lookup: '1.0.1'
@@ -195,8 +212,9 @@ packages:
   sensio/generator-bundle: '3.1.7'
   sensio/framework-extra-bundle: '5.4.1'
   sensiolabs/security-checker: '6.0.2'
-  sentry/sentry: '1.10.0'
-  sentry/sentry-symfony: '1.0.3'
+  sentry/sdk: '2.0.4'
+  sentry/sentry: '2.1.3'
+  sentry/sentry-symfony: '3.1.0'
   superbalist/flysystem-google-storage: '7.2.1'
   swiftmailer/swiftmailer: '6.2.1'
   symfony/http-client: '4.3.4'
@@ -220,6 +238,7 @@ packages:
   willdurand/jsonp-callback-validator: '1.1.0'
   willdurand/negotiation: '2.3.1'
   zendframework/zend-code: '3.3.2'
+  zendframework/zend-diactoros: '2.1.3'
   zendframework/zend-eventmanager: '3.2.1'
 
 rules:

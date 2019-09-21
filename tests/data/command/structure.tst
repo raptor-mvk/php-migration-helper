@@ -11,6 +11,11 @@
         "test.php": null
       }
     },
+    "clue": {
+      "stream-filter": {
+        "test.php": null
+      }
+    },
     "composer": {
       "installed.json": null,
       "test.php": null
@@ -128,6 +133,11 @@
         "test.php": null
       }
     },
+    "jean85": {
+      "pretty-package-versions": {
+        "test.php": null
+      }
+    },
     "kreait": {
       "clock": {
         "test.php": null
@@ -221,6 +231,20 @@
         "test.php": null
       }
     },
+    "php-http": {
+      "client-common": {
+        "test.php": null
+      },
+      "curl-client": {
+        "test.php": null
+      },
+      "discovery": {
+        "test.php": null
+      },
+      "message": {
+        "test.php": null
+      }
+    },
     "phpdocumentor": {
       "reflection-docblock": {
         "test.php": null
@@ -259,6 +283,11 @@
         "test.php": null
       },
       "log": {
+        "test.php": null
+      }
+    },
+    "ramsey": {
+      "uuid": {
         "test.php": null
       }
     },
@@ -332,7 +361,13 @@
       }
     },
     "sentry": {
+      "sdk": {
+        "test.php": null
+      },
       "sentry-symfony": {
+        "test.php": null
+      },
+      "sentry": {
         "test.php": null
       }
     },
@@ -420,6 +455,9 @@
     },
     "zendframework": {
       "zend-code": {
+        "test.php": null
+      },
+      "zend-diactoros": {
         "test.php": null
       },
       "zend-eventmanager": {

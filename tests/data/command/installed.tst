@@ -4,6 +4,10 @@
     "version": "1.0"
   },
   {
+    "name": "clue/stream-filter",
+    "version": "1.0"
+  },
+  {
     "name": "doctrine/annotations",
     "version": "1.0"
   },
@@ -124,6 +128,10 @@
     "version": "1.0"
   },
   {
+    "name": "jean85/pretty-package-versions",
+    "version": "1.0"
+  },
+  {
     "name": "kreait/clock",
     "version": "1.0"
   },
@@ -205,6 +213,22 @@
   },
   {
     "name": "php-cs-fixer/diff",
+    "version": "1.0"
+  },
+  {
+    "name": "php-http/client-common",
+    "version": "1.0"
+  },
+  {
+    "name": "php-http/curl-client",
+    "version": "1.0"
+  },
+  {
+    "name": "php-http/discovery",
+    "version": "1.0"
+  },
+  {
+    "name": "php-http/message",
     "version": "1.0"
   },
   {
@@ -320,12 +344,16 @@
     "version": "1.0"
   },
   {
+    "name": "sentry/sdk",
+    "version": "1.0"
+  },
+  {
     "name": "sentry/sentry",
     "version": "1.0"
   },
   {
     "name": "sentry/sentry-symfony",
-    "version": "0.1"
+    "version": "1.0"
   },
   {
     "name": "superbalist/flysystem-google-storage",
@@ -413,6 +441,10 @@
   },
   {
     "name": "zendframework/zend-code",
+    "version": "1.0"
+  },
+  {
+    "name": "zendframework/zend-diactoros",
     "version": "1.0"
   },
   {
