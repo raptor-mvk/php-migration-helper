@@ -84,7 +84,7 @@ excluded:
   - vendor/sebastian/type
   - vendor/sebastian/version
   - vendor/sensio/distribution-bundle
-  - vendor/sensio/extra-framework-bundle
+  - vendor/sensio/framework-extra-bundle
   - vendor/sensio/generator-bundle
   - vendor/sensiolabs/security-checker
   - vendor/sentry/sentry-symfony

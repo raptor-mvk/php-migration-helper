@@ -319,7 +319,7 @@
       "distribution-bundle": {
         "test.php": null
       },
-      "extra-framework-bundle": {
+      "framework-extra-bundle": {
         "test.php": null
       },
       "generator-bundle": {
