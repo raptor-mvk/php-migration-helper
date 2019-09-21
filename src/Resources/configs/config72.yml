@@ -22,6 +22,7 @@ excluded:
   - vendor/doctrine/persistence
   - vendor/doctrine/reflection
   - vendor/egulias/email-validator
+  - vendor/fig/link-util
   - vendor/firebase/php-jwt
   - vendor/friendsofphp/php-cs-fixer
   - vendor/friendsofsymfony/rest-bundle
