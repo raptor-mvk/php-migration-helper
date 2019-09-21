@@ -55,6 +55,7 @@ excluded:
   - vendor/phar-io/version
   - vendor/php-amqplib/php-amqplib
   - vendor/php-amqplib/rabbitmq-bundle
+  - vendor/php-cs-fixer/diff
   - vendor/phpdocumentor/reflection-common
   - vendor/phpdocumentor/reflection-docblock
   - vendor/phpdocumentor/type-resolver
@@ -72,6 +73,7 @@ excluded:
   - vendor/rize/uri-template
   - vendor/sebastian/code-unit-reverse-lookup
   - vendor/sebastian/comparator
+  - vendor/sebastian/diff
   - vendor/sebastian/environment
   - vendor/sebastian/exporter
   - vendor/sebastian/global-state
@@ -82,6 +84,8 @@ excluded:
   - vendor/sebastian/type
   - vendor/sebastian/version
   - vendor/sensio/distribution-bundle
+  - vendor/sensio/extra-framework-bundle
+  - vendor/sensio/generator-bundle
   - vendor/sensiolabs/security-checker
   - vendor/sentry/sentry-symfony
   - vendor/superbalist/flysystem-google-storage
@@ -189,7 +193,7 @@ packages:
   sebastian/version: '2.0.1'
   sensio/distribution-bundle: '5.0.25'
   sensio/generator-bundle: '3.1.7'
-  sensio/framework-extra-bundle: '3.0.29'
+  sensio/framework-extra-bundle: '5.4.1'
   sensiolabs/security-checker: '6.0.2'
   sentry/sentry: '1.10.0'
   sentry/sentry-symfony: '1.0.3'

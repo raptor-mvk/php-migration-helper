@@ -84,7 +84,7 @@ packages:
   sebastian/version: '2.0.1'
   sensio/distribution-bundle: '5.0.25'
   sensio/generator-bundle: '3.1.7'
-  sensio/framework-extra-bundle: '3.0.29'
+  sensio/framework-extra-bundle: '5.4.1'
   sensiolabs/security-checker: '6.0.2'
   sentry/sentry: '1.10.0'
   sentry/sentry-symfony: '1.0.3'

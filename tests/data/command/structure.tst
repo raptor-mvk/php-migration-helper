@@ -216,6 +216,11 @@
         "test.php": null
       }
     },
+    "php-cs-fixer": {
+      "diff": {
+        "test.php": null
+      }
+    },
     "phpdocumentor": {
       "reflection-docblock": {
         "test.php": null
@@ -279,6 +284,9 @@
       "comparator": {
         "test.php": null
       },
+      "diff": {
+        "test.php": null
+      },
       "environment": {
         "test.php": null
       },
@@ -309,6 +317,12 @@
     },
     "sensio": {
       "distribution-bundle": {
+        "test.php": null
+      },
+      "extra-framework-bundle": {
+        "test.php": null
+      },
+      "generator-bundle": {
         "test.php": null
       }
     },
