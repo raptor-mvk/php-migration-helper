@@ -221,28 +221,28 @@ rules:
     regexp: '/function\s*onNotSuccessfulTest\s*\(\s*\)[^:]*$/'
     recommendation: 'Add void return type hint to onNotSuccessfulTest'
   assert_internal_type:
-    regexp: '/(^|(^|[^-])>|[^:>\w])assert(Not)?InternalType\s*\(/'
+    regexp: '/(:|>)assert(Not)?InternalType\s*\(/'
     recommendation: 'Replace assertInternalType and assertNotInternalType methods with more specific methods'
   assert_array_subset:
-    regexp: '/(^|(^|[^-])>|[^:>\w])assertArraySubset\s*\(/'
+    regexp: '/(:|>)assertArraySubset\s*\(/'
     recommendation: 'Remove assertArraySubset usage, refactor to manual check'
   assert_equals:
-    regexp: '/(^|(^|[^-])>|[^:>\w])assert(Not)?Equals\s*\([^,]*,[^,]*,[^,]*,/'
+    regexp: '/(:|>)assert(Not)?Equals\s*\([^,]*,[^,]*,[^,]*,/'
     recommendation: 'Replace usage of optional arguments of assertEquals and assertNotEquals with more specific assertions'
   assert_attribute:
-    regexp: '/(^|(^|[^-])>|[^:>\w])assertAttribute\w*\s*\(/'
+    regexp: '/(:|>)assertAttribute\w*\s*\(/'
     recommendation: 'Replace usage of assertAttribute-prefixed methods with manual processing'
   attribute:
-    regexp: '/(^|(^|[^-])>|[^:>\w])attribute(EqualTo)?\s*\(/'
+    regexp: '/(:|>)attribute(EqualTo)?\s*\(/'
     recommendation: 'Replace usage of attribute and attributeEqualTo methods with manual processing'
   read_attribute:
-    regexp: '/(^|(^|[^-])>|[^:>\w])readAttribute\s*\(/'
+    regexp: '/(:|>)readAttribute\s*\(/'
     recommendation: 'Replace usage of readAttribute method with manual processing'
   get_attribute:
-    regexp: '/(^|(^|[^-])>|[^:>\w])get(Static|Object)Attribute\s*\(/'
+    regexp: '/(:|>)get(Static|Object)Attribute\s*\(/'
     recommendation: 'Replace usage of getStaticAttribute or getObjectAttribute methods with manual processing'
   assert_contains:
-    regexp: '/(^|(^|[^-])>|[^:>\w])assert(Not)?Contains\w*\s*\(/'
+    regexp: '/(:|>)assert(Not)?Contains\w*\s*\(/'
     recommendation: 'Replace usage of assertContains and assertNotContains methods with more specified method (for string or for array)'
   test_listener:
     regexp: '/(^|(^|[^-])>|[^:>\w])TestListener($|[^\w])/'

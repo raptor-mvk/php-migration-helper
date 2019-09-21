@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.0.6](https://github.com/raptor-mvk/php-migration-helper/compare/v1.0.5-dev...v1.0.6-dev) - 2019-09-19
+## [1.0.6](https://github.com/raptor-mvk/php-migration-helper/compare/v1.0.5-dev...v1.0.6-dev) - 2019-09-21
 ### Added
 - Add acceptable versions of many tested packages
 

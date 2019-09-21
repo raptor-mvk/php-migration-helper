@@ -123,23 +123,23 @@ MYSTR;
     public function onNotSuccessfulTest(   )
     {
     }
-    assertInternalType($abc);
-    assertNotInternalType($def);
-    assertArraySubset(['a', 'b'], ['c', 'd']);
-    assertEquals($a, $b, 'message', 13);
-    assertEquals($d, $e, 'mess');
-    assertEquals($f, $g);
-    assertNotEquals($h, $i, 'my message', 'bbb');
-    assertNotEquals($j, $k, 'no way');
-    assertNotEquals($l, $m);
-    assertAttributeInt(345);
-    attribute(ddd);
-    attributeEqualTo        ( something);
-    readAttribute    (   other);
-    getStaticAttribute(my::attr);
-    getObjectAttribute(my->attr);
-    assertContains($a, [$b]);
-    assertNotContains    ($c, [$d]);
+    $this->assertInternalType($abc);
+    static::assertNotInternalType($def);
+    self::assertArraySubset(['a', 'b'], ['c', 'd']);
+    $this->assertEquals($a, $b, 'message', 13);
+    static::assertEquals($d, $e, 'mess');
+    self::assertEquals($f, $g);
+    $this->assertNotEquals($h, $i, 'my message', 'bbb');
+    static::assertNotEquals($j, $k, 'no way');
+    self::assertNotEquals($l, $m);
+    $this->assertAttributeInt(345);
+    static::attribute(ddd);
+    self::attributeEqualTo        ( something);
+    $this->readAttribute    (   other);
+    static::getStaticAttribute(my::attr);
+    self::getObjectAttribute(my->attr);
+    $this->assertContains($a, [$b]);
+    static::assertNotContains    ($c, [$d]);
     class MyTestListener implements TestListener
     {
       /**
