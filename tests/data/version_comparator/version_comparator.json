@@ -106,5 +106,43 @@
       "my/package": "1.4.0"
     },
     "expected_result": []
+  },
+  {
+    "_name": "message without version conflict",
+    "installed_versions": [
+      {
+        "name": "my/package",
+        "version": "v.1.5.0"
+      }
+    ],
+    "required_versions": {
+      "my/package": {
+        "version": "1.4.0",
+        "message": "Some package message"
+      }
+    },
+    "expected_result": [
+      "Package compatibility report:",
+      "Some package message"
+    ]
+  },
+  {
+    "_name": "message with version conflict",
+    "installed_versions": [
+      {
+        "name": "my/package",
+        "version": "v.1.5.0"
+      }
+    ],
+    "required_versions": {
+      "my/package": {
+        "version": "1.6.0",
+        "message": "Some package message"
+      }
+    },
+    "expected_result": [
+      "Package compatibility report:",
+      "Update my/package at least to 1.6.0\nSome package message"
+    ]
   }
 ]

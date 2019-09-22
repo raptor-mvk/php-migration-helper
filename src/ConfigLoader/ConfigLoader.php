@@ -11,12 +11,13 @@ namespace Raptor\PHPMigrationHelper\ConfigLoader;
 use Composer\Semver\Comparator;
 use Raptor\PHPMigrationHelper\Rule\Rule;
 use Raptor\PHPMigrationHelper\Rule\RuleInterface;
-use Raptor\PHPMigrationHelper\VersionComparator\VersionComparatorInterface;
+use Raptor\PHPMigrationHelper\VersionComparator\RequiredPackageVersion;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use RegexIterator;
 use SplFileInfo;
 use Symfony\Component\Yaml\Yaml;
+use function is_string;
 
 /**
  * Loads rules config using given current and desired PHP versions.
@@ -32,17 +33,6 @@ final class ConfigLoader
 
     /** @var RuleConfigInterface[] $currentRuleConfigs array of currently loaded rule configs */
     private $currentRuleConfigs;
-
-    /** @var VersionComparatorInterface $versionComparator */
-    private $versionComparator;
-
-    /**
-     * @param VersionComparatorInterface $versionComparator
-     */
-    public function __construct(VersionComparatorInterface $versionComparator)
-    {
-        $this->versionComparator = $versionComparator;
-    }
 
     /**
      * Loads config using given current and desired PHP versions
@@ -129,13 +119,13 @@ final class ConfigLoader
      */
     private function updatePackages(array $packages): void
     {
-        foreach ($packages as $package => $version) {
-            if (!$this->versionComparator->isRealVersion($version)) {
-                $this->currentPackages[$package] = $version;
-                continue;
-            }
-            if (Comparator::greaterThan($version, $this->currentPackages[$package] ?? '0.0')) {
-                $this->currentPackages[$package] = $version;
+        foreach ($packages as $package => $data) {
+            $version = is_string($data) ? $data : $data['version'];
+            $message = is_string($data) ? null : $data['message'];
+            /** @var RequiredPackageVersion $currentPackageVersion */
+            $currentPackageVersion = $this->currentPackages[$package] ?? new RequiredPackageVersion('0.0');
+            if (Comparator::greaterThanOrEqualTo($version, $currentPackageVersion->getVersion())) {
+                $this->currentPackages[$package] = new RequiredPackageVersion($version, $message);
             }
         }
     }
