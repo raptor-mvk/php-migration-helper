@@ -2,6 +2,8 @@ version: '7.2'
 
 excluded:
   - var
+  - vendor/aws/aws-sdk-php
+  - vendor/bin/jp.php
   - vendor/cloudinary/cloudinary_php
   - vendor/clue/stream-filter
   - vendor/composer
@@ -25,6 +27,8 @@ excluded:
   - vendor/fig/link-util
   - vendor/firebase/php-jwt
   - vendor/friendsofphp/php-cs-fixer
+  - vendor/friendsofsymfony/oauth-server-bundle
+  - vendor/friendsofsymfony/oauth2-php
   - vendor/friendsofsymfony/rest-bundle
   - vendor/giggsey/libphonenumber-for-php
   - vendor/giggsey/locale
@@ -46,11 +50,13 @@ excluded:
   - vendor/lcobucci/jwt
   - vendor/league/flysystem
   - vendor/lexik/jwt-authentication-bundle
+  - vendor/michelf/php-markdown
   - vendor/monolog/monolog
   - vendor/mtdowling/jmespath.php
   - vendor/myclabs/deep-copy
   - vendor/namshi/jose
   - vendor/nelmio/cors-bundle
+  - vendor/nelmio/api-doc-bundle
   - vendor/ocramius/package-versions
   - vendor/ocramius/proxy-manager
   - vendor/paragonie/random_compat
@@ -98,6 +104,7 @@ excluded:
   - vendor/sentry/sdk
   - vendor/sentry/sentry-symfony
   - vendor/sentry/sentry
+  - vendor/shuber/curl
   - vendor/superbalist/flysystem-google-storage
   - vendor/swiftmailer/swiftmailer
   - vendor/symfony/http-client
@@ -125,6 +132,7 @@ excluded:
   - vendor/zendframework/zend-eventmanager
 
 packages:
+  aws/aws-sdk-php: '3.112.5'
   cloudinary/cloudinary_php: '1.14.0'
   clue/stream-filter: '1.4.1'
   doctrine/annotations: '1.7.0'
@@ -147,6 +155,8 @@ packages:
   firebase/php-jwt: '5.0.0'
   friendsofphp/php-cs-fixer: '2.15.3'
   friendsofsymfony/rest-bundle: 'Warning (minor severity): friendsofsymfony/rest-bundle does not have version that is fully compatible with PHP 7.2 (latest known 2.5.0)'
+  friendsofsymfony/oauth-server-bundle: '2.0.0'
+  friendsofsymfony/oauth2-php: '1.2.3'
   giggsey/libphonenumber-for-php: '8.10.19'
   giggsey/locale: '1.7.1'
   google/auth: '1.5.2'
@@ -167,11 +177,13 @@ packages:
   lcobucci/jwt: '3.3.1'
   league/flysystem: '1.0.55'
   lexik/jwt-authentication-bundle: '2.6.4'
+  michelf/php-markdown: '1.8.0'
   monolog/monolog: '1.25.1'
   mtdowling/jmespath.php: '2.4.0'
   myclabs/deep-copy: '1.9.3'
   namshi/jose: '7.2.3'
   nelmio/cors-bundle: 'Warning (minor severity): nelmio/cors-bundle does not have version that is fully compatible with PHP 7.2 (latest known 1.5.6)'
+  nelmio/api-doc-bundle: '2.13.4'
   ocramius/package-versions: '1.5.1'
   ocramius/proxy-manager: '2.2.0'
   paragonie/random_compat: 'Warning (minor severity): paragonie/random_compat should not be used with PHP 7.2'

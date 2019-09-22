@@ -2,11 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.7](https://github.com/raptor-mvk/php-migration-helper/compare/v1.0.6-dev...v1.0.7-dev) - 2019-09-23
+### Added in 1.0.7
+- Add acceptable versions of some other packages
+
 ## [1.0.6](https://github.com/raptor-mvk/php-migration-helper/compare/v1.0.5-dev...v1.0.6-dev) - 2019-09-21
-### Added
+### Added in 1.0.6
 - Add acceptable versions of many tested packages
 
-### Changed
+### Changed in 1.0.6
 
 - Add warning messages for symfony/polyfill-phpXX packages instead of acceptable
   versions 
