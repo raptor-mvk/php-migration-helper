@@ -6,6 +6,11 @@
     "test.php": null
   },
   "vendor": {
+    "aws": {
+      "aws-sdk-php": {
+        "test.php": null
+      }
+    },
     "cloudinary": {
       "cloudinary_php": {
         "test.php": null
@@ -86,6 +91,12 @@
       }
     },
     "friendsofsymfony": {
+      "oauth-server-bundle": {
+        "test.php": null
+      },
+      "oauth2-php": {
+        "test.php": null
+      },
       "rest-bundle": {
         "test.php": null
       }
@@ -172,6 +183,11 @@
         "test.php": null
       }
     },
+    "michelf": {
+      "php-markdown": {
+        "test.php": null
+      }
+    },
     "monolog": {
       "monolog": {
         "test.php": null
@@ -194,6 +210,9 @@
     },
     "nelmio": {
       "cors-bundle": {
+        "test.php": null
+      },
+      "api-doc-bundle": {
         "test.php": null
       }
     },
@@ -368,6 +387,11 @@
         "test.php": null
       },
       "sentry": {
+        "test.php": null
+      }
+    },
+    "shuber": {
+      "curl": {
         "test.php": null
       }
     },

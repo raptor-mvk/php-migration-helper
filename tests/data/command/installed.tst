@@ -1,5 +1,9 @@
 [
   {
+    "name": "aws/aws-sdk-php",
+    "version": "1.0"
+  },
+  {
     "name": "cloudinary/cloudinary_php",
     "version": "1.0"
   },
@@ -77,6 +81,14 @@
   },
   {
     "name": "friendsofphp/php-cs-fixer",
+    "version": "1.0"
+  },
+  {
+    "name": "friendsofsymfony/oauth-server-bundle",
+    "version": "1.0"
+  },
+  {
+    "name": "friendsofsymfony/oauth2-php",
     "version": "1.0"
   },
   {
@@ -164,6 +176,10 @@
     "version": "1.0"
   },
   {
+    "name": "michelf/php-markdown",
+    "version": "1.0"
+  },
+  {
     "name": "monolog/monolog",
     "version": "1.0"
   },
@@ -181,6 +197,10 @@
   },
   {
     "name": "nelmio/cors-bundle",
+    "version": "1.0"
+  },
+  {
+    "name": "nelmio/api-doc-bundle",
     "version": "1.0"
   },
   {

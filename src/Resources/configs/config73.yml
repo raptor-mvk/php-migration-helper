@@ -2,6 +2,8 @@ version: '7.3'
 
 excluded:
   - var
+  - vendor/aws/aws-sdk-php
+  - vendor/bin/jp.php
   - vendor/cloudinary/cloudinary_php
   - vendor/clue/stream-filter
   - vendor/composer
@@ -25,6 +27,8 @@ excluded:
   - vendor/fig/link-util
   - vendor/firebase/php-jwt
   - vendor/friendsofphp/php-cs-fixer
+  - vendor/friendsofsymfony/oauth-server-bundle
+  - vendor/friendsofsymfony/oauth2-php
   - vendor/friendsofsymfony/rest-bundle
   - vendor/giggsey/libphonenumber-for-php
   - vendor/giggsey/locale
@@ -46,11 +50,13 @@ excluded:
   - vendor/lcobucci/jwt
   - vendor/league/flysystem
   - vendor/lexik/jwt-authentication-bundle
+  - vendor/michelf/php-markdown
   - vendor/monolog/monolog
   - vendor/mtdowling/jmespath.php
   - vendor/myclabs/deep-copy
   - vendor/namshi/jose
   - vendor/nelmio/cors-bundle
+  - vendor/nelmio/api-doc-bundle
   - vendor/ocramius/package-versions
   - vendor/ocramius/proxy-manager
   - vendor/paragonie/random_compat
@@ -98,6 +104,7 @@ excluded:
   - vendor/sentry/sdk
   - vendor/sentry/sentry-symfony
   - vendor/sentry/sentry
+  - vendor/shuber/curl
   - vendor/superbalist/flysystem-google-storage
   - vendor/swiftmailer/swiftmailer
   - vendor/symfony/http-client
@@ -125,6 +132,7 @@ excluded:
   - vendor/zendframework/zend-eventmanager
 
 packages:
+  aws/aws-sdk-php: '3.112.5'
   cloudinary/cloudinary_php: '1.14.0'
   clue/stream-filter: '1.4.1'
   doctrine/annotations: '1.7.0'
@@ -146,7 +154,11 @@ packages:
   egulias/email-validator: '2.1.11'
   firebase/php-jwt: '5.0.0'
   friendsofphp/php-cs-fixer: '2.15.3'
-  friendsofsymfony/rest-bundle: 'Warning (minor severity): friendsofsymfony/rest-bundle does not have version that is fully compatible with PHP 7.3 (latest known 2.5.0)'
+  friendsofsymfony/rest-bundle:
+    version: '2.5.0'
+    message: 'Warning (minor severity): friendsofsymfony/rest-bundle does not have version that is fully compatible with PHP 7.3 (latest known 2.5.0)'
+  friendsofsymfony/oauth-server-bundle: '2.0.0'
+  friendsofsymfony/oauth2-php: '1.2.3'
   giggsey/libphonenumber-for-php: '8.10.19'
   giggsey/locale: '1.7.1'
   google/auth: '1.5.2'
@@ -167,18 +179,23 @@ packages:
   lcobucci/jwt: '3.3.1'
   league/flysystem: '1.0.55'
   lexik/jwt-authentication-bundle: '2.6.4'
+  michelf/php-markdown: '1.8.0'
   monolog/monolog: '1.25.1'
   mtdowling/jmespath.php: '2.4.0'
   myclabs/deep-copy: '1.9.3'
   namshi/jose: '7.2.3'
-  nelmio/cors-bundle: 'Warning (minor severity): nelmio/cors-bundle does not have version that is fully compatible with PHP 7.3 (latest known 1.5.6)'
+  nelmio/cors-bundle:
+    version: '1.5.6'
+    message: 'Warning (minor severity): nelmio/cors-bundle does not have version that is fully compatible with PHP 7.3 (latest known 1.5.6)'
+  nelmio/api-doc-bundle: '2.13.4'
   ocramius/package-versions: '1.5.1'
   ocramius/proxy-manager: '2.2.0'
-  paragonie/random_compat: 'Warning (minor severity): paragonie/random_compat should not be used with PHP 7.3'
   phar-io/manifest: '1.0.3'
   phar-io/version: '2.0.1'
   php-amqplib/php-amqplib: '2.8.0'
-  php-amqplib/rabbitmq-bundle: 'Warning (minor severity): php-amqplib/rabbitmq-bundle does not have version that is fully compatible with PHP 7.3 (latest known 1.14.4)'
+  php-amqplib/rabbitmq-bundle:
+    version: '1.14.4'
+    message: 'Warning (minor severity): php-amqplib/rabbitmq-bundle does not have version that is fully compatible with PHP 7.3 (latest known 1.14.4)'
   php-cs-fixer/diff: '1.3.0'
   php-http/client-common: '2.0.0'
   php-http/curl-client: '2.0.0'
@@ -196,7 +213,9 @@ packages:
   phpunit/phpunit: '8.0'
   ramsey/uuid: '3.8.0'
   riverline/multipart-parser: '2.0.5'
-  rize/uri-template: 'Warning (minor severity): rize/uri-template does not have version that is fully compatible with PHP 7.3 (latest known 0.3.2)'
+  rize/uri-template:
+    version: '0.3.2'
+    message: 'Warning (minor severity): rize/uri-template does not have version that is fully compatible with PHP 7.3 (latest known 0.3.2)'
   sebastian/code-unit-reverse-lookup: '1.0.1'
   sebastian/comparator: '3.0.2'
   sebastian/diff: '3.0.2'
@@ -226,12 +245,10 @@ packages:
   symfony/polyfill-iconv: '1.12.0'
   symfony/polyfill-intl-idn: '1.12.0'
   symfony/polyfill-mbstring: '1.12.0'
-  symfony/polyfill-php56: 'Warning (minor severity): symfony/polyfill-php56 should not be used with PHP 7.3'
-  symfony/polyfill-php70: 'Warning (minor severity): symfony/polyfill-php70 should not be used with PHP 7.3'
-  symfony/polyfill-php72: 'Warning (minor severity): symfony/polyfill-php72 should not be used with PHP 7.3'
-  symfony/polyfill-php73: 'Warning (minor severity): symfony/polyfill-php73 should not be used with PHP 7.3'
   symfony/polyfill-util: '1.12.0'
-  symfony/swiftmailer-bundle: 'Warning (minor severity): symfony/swiftmailer-bundle does not have version that is fully compatible with PHP 7.3 (latest known 3.2.8)'
+  symfony/swiftmailer-bundle:
+    version: '3.2.8'
+    message: 'Warning (minor severity): symfony/swiftmailer-bundle does not have version that is fully compatible with PHP 7.3 (latest known 3.2.8)'
   symfony/symfony: '3.4.31'
   theseer/tokenizer: '1.1.3'
   twig/twig: '2.11.3'

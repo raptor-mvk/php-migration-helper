@@ -22,8 +22,8 @@ final class VersionComparator implements VersionComparatorInterface
     /**
      * Returns compatibility report in a line-per-element array.
      *
-     * @param array $installedVersions array of installedVersions (from installed.json)
-     * @param array $requiredVersions  array of requiredVersions
+     * @param array                    $installedVersions array of installedVersions (from installed.json)
+     * @param RequiredPackageVersion[] $requiredVersions  array of requiredVersions
      *
      * @return array
      */
@@ -33,7 +33,7 @@ final class VersionComparator implements VersionComparatorInterface
         foreach ($installedVersions as $installedVersion) {
             if (isset($installedVersion['name'], $installedVersion['version'])) {
                 $package = $installedVersion['name'];
-                $requiredVersion = $requiredVersions[$package] ?? '0.0';
+                $requiredVersion = $requiredVersions[$package] ?? new RequiredPackageVersion('0.0');
                 $reportLine = $this->getReportLine($package, $requiredVersion, $installedVersion['version']);
                 if (null !== $reportLine) {
                     $result[] = $reportLine;
@@ -45,35 +45,26 @@ final class VersionComparator implements VersionComparatorInterface
     }
 
     /**
-     * Returns _true_ if version is real version and not a warning message and _false_ otherwise.
-     *
-     * @param string $version
-     *
-     * @return bool
-     */
-    public function isRealVersion(string $version): bool
-    {
-        return 1 === preg_match('/^\d+(\.\d+(\.\d+)?)?$/', $version);
-    }
-
-    /**
      * Returns report line for package if necessary or null otherwise.
      *
-     * @param string $package
-     * @param string $requiredVersion
-     * @param string $installedVersion
+     * @param string                          $package
+     * @param RequiredPackageVersionInterface $requiredPackageVersion
+     * @param string                          $installedVersion
      *
      * @return string|null
      */
-    private function getReportLine(string $package, string $requiredVersion, string $installedVersion): ?string
+    private function getReportLine(string $package, RequiredPackageVersionInterface $requiredPackageVersion, string $installedVersion): ?string
     {
         $installedVersion = $this->normalizeVersion($installedVersion);
-        if (!$this->isRealVersion($requiredVersion)) {
-            return $requiredVersion;
+        $requiredVersion = $requiredPackageVersion->getVersion();
+        $versionLine = Comparator::greaterThan($requiredVersion, $installedVersion) ?
+            "Update $package at least to {$requiredVersion}" : null;
+        $message = $requiredPackageVersion->getMessage();
+        if (null !== $message) {
+            $versionLine = ((null === $versionLine) ? '' : "{$versionLine}\n").$message;
         }
 
-        return Comparator::greaterThan($requiredVersion, $installedVersion) ?
-            "Update $package at least to {$requiredVersion}" : null;
+        return $versionLine;
     }
 
     /**

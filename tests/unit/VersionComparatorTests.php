@@ -9,11 +9,13 @@ declare(strict_types=1);
 namespace Raptor\PHPMigrationHelper\UnitTests;
 
 use PHPUnit\Framework\TestCase;
+use Raptor\PHPMigrationHelper\VersionComparator\RequiredPackageVersion;
 use Raptor\PHPMigrationHelper\VersionComparator\VersionComparator;
 use Raptor\TestUtils\ExtraAssertionsTrait;
 use Raptor\TestUtils\TestDataContainer\TestDataContainer;
 use Raptor\TestUtils\WithDataLoaderTrait;
 use VersionComparatorDataContainer;
+use function is_string;
 
 /**
  * @author Mikhail Kamorin aka raptor_MVK
@@ -36,7 +38,14 @@ class VersionComparatorTests extends TestCase
         /** @var VersionComparatorDataContainer $dataContainer */
         $versionComparator = new VersionComparator();
         $installedVersions = $dataContainer->getInstalledVersions();
-        $requiredVersions = $dataContainer->getRequiredVersions();
+        $mapper = static function ($arg) {
+            if (is_string($arg)) {
+                return new RequiredPackageVersion($arg);
+            }
+
+            return new RequiredPackageVersion($arg['version'] ?? '0.0', $arg['message'] ?? null);
+        };
+        $requiredVersions = array_map($mapper, $dataContainer->getRequiredVersions());
 
         $actual = $versionComparator->verifyVersions($installedVersions, $requiredVersions);
 

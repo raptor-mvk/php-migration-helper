@@ -11,7 +11,7 @@ namespace Raptor\PHPMigrationHelper\UnitTests;
 use PHPUnit\Framework\TestCase;
 use Raptor\PHPMigrationHelper\ConfigLoader\ConfigLoader;
 use Raptor\PHPMigrationHelper\ConfigLoader\RuleConfigInterface;
-use Raptor\PHPMigrationHelper\VersionComparator\VersionComparator;
+use Raptor\PHPMigrationHelper\VersionComparator\RequiredPackageVersionInterface;
 use Raptor\TestUtils\ExtraAssertionsTrait;
 use Raptor\TestUtils\TestDataContainer\TestDataContainer;
 use Raptor\TestUtils\WithDataLoaderTrait;
@@ -30,19 +30,8 @@ final class ConfigLoaderTests extends TestCase
     protected function setUp(): void
     {
         $this->setupVFS();
-        $rulesDir = [
-            'config1.yml' => "version: '1.1'\n\nexcluded:\n  - package1\n  - package2\n  - package3\n\n".
-                "rules:\n  rule1:\n    regexp: 'regexp11'\n    recommendation: 'str11'",
-            'config2.yml' => "version: '2.2'\n\nexcluded:\n  - package1\n  - package3\n  - package4\n\n".
-                "rules:\n  rule2:\n    regexp: 'regexp22'\n    recommendation: 'str22'",
-            'config3.yml' => "version: '3.3'\n\nexcluded:\n  - package2\n  - package1\n  - package5\n\n".
-                "rules:\n  rule3:\n    regexp: 'regexp33'\n    recommendation: 'str33'",
-        ];
-        $packagesDir = [
-            'config1.yml' => "version: '1.1'\n\npackages:\n  package1: '1.1'\n  package2: 'use'\n  package3: '1.1'",
-            'config2.yml' => "version: '2.2'\n\npackages:\n  package1: '1.2'\n  package3: 'err'\n  package4: '2.2'",
-            'config3.yml' => "version: '3.3'\n\npackages:\n  package2: '1.3'\n  package1: '1.0'\n  package5: '3.3'",
-        ];
+        $rulesDir = json_decode(file_get_contents(__DIR__.'/../data/config_loader/rules.tst'), true);
+        $packagesDir = json_decode(file_get_contents(__DIR__.'/../data/config_loader/packages.tst'), true);
         $structure = ['rules' => $rulesDir, 'packages' => $packagesDir];
         $this->addStructureToVFS($structure);
     }
@@ -57,7 +46,7 @@ final class ConfigLoaderTests extends TestCase
     public function testLoadLoadsRuleConfigsWithAppropriateVersionsOnly(TestDataContainer $dataContainer): void
     {
         /** @var \LoadRuleConfigsDataContainer $dataContainer */
-        $configLoader = new ConfigLoader(new VersionComparator());
+        $configLoader = new ConfigLoader();
         $versionFrom = $dataContainer->getVersionFrom();
         $versionTo = $dataContainer->getVersionTo();
 
@@ -87,14 +76,18 @@ final class ConfigLoaderTests extends TestCase
     public function testLoadLoadsPackagesWithAppropriateVersionsOnly(TestDataContainer $dataContainer): void
     {
         /** @var \LoadPackagesDataContainer $dataContainer */
-        $configLoader = new ConfigLoader(new VersionComparator());
+        $configLoader = new ConfigLoader();
         $versionFrom = $dataContainer->getVersionFrom();
         $versionTo = $dataContainer->getVersionTo();
         $expectedResult = $dataContainer->getExpectedResult();
+        $mapper = static function (RequiredPackageVersionInterface $arg) {
+            return ['version' => $arg->getVersion(), 'message' => $arg->getMessage()];
+        };
 
         $config = $configLoader->load($this->getFullPath('/packages'), $versionFrom, $versionTo);
 
-        static::assertArraysAreSameIgnoringOrder($expectedResult, $config->getRequiredPackageVersions());
+        $actual = array_map($mapper, $config->getRequiredPackageVersions());
+        static::assertArraysAreSameIgnoringOrder($expectedResult, $actual);
     }
 
     /**
