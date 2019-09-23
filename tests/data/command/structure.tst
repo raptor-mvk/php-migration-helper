@@ -90,6 +90,11 @@
         "test.php": null
       }
     },
+    "drewm": {
+      "mailchimp-api": {
+        "test.php": null
+      }
+    },
     "egulias": {
       "email-validator": {
         "test.php": null
@@ -154,6 +159,11 @@
         "test.php": null
       },
       "psr7": {
+        "test.php": null
+      }
+    },
+    "helpscout": {
+      "api": {
         "test.php": null
       }
     },
@@ -360,6 +370,11 @@
         "test.php": null
       }
     },
+    "ql": {
+      "uri-template": {
+        "test.php": null
+      }
+    },
     "ralouphie": {
       "getallheaders": {
         "test.php": null
@@ -541,7 +556,12 @@
         "test.php": null
       }
     },
-    "willdurand": {
+    "welp": {
+      "mailchimp-bundle": {
+        "test.php": null
+      }
+    },
+   "willdurand": {
       "jsonp-callback-validator": {
         "test.php": null
       },

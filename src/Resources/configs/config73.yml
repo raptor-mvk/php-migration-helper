@@ -26,6 +26,7 @@ excluded:
   - vendor/doctrine/orm
   - vendor/doctrine/persistence
   - vendor/doctrine/reflection
+  - vendor/drewm/mailchimp-api
   - vendor/egulias/email-validator
   - vendor/fig/http-message-util
   - vendor/fig/link-util
@@ -43,6 +44,7 @@ excluded:
   - vendor/guzzlehttp/guzzle
   - vendor/guzzlehttp/promises
   - vendor/guzzlehttp/psr7
+  - vendor/helpscout/api
   - vendor/http-interop/http-factory-guzzle
   - vendor/incenteev/composer-parameter-handler
   - vendor/jdorn/sql-formatter
@@ -96,6 +98,7 @@ excluded:
   - vendor/phpunit/php-token-stream
   - vendor/phpunit/phpunit
   - vendor/psr/http-message
+  - vendor/ql/uri-template
   - vendor/psr/log
   - vendor/ralouphie/getallheaders
   - vendor/ramsey/uuid
@@ -145,6 +148,7 @@ excluded:
   - vendor/theseer/tokenizer
   - vendor/twig/twig
   - vendor/webmozart/assert
+  - vendor/welp/mailchimp-bundle
   - vendor/willdurand/jsonp-callback-validator
   - vendor/willdurand/negotiation
   - vendor/zendframework/zend-code
@@ -176,6 +180,7 @@ packages:
   doctrine/orm: '2.6.3'
   doctrine/persistence: '1.1.1'
   doctrine/reflection: '1.0.0'
+  drewm/mailchimp-api: '2.5.4'
   egulias/email-validator: '2.1.11'
   fig/http-message-util: '1.1.3'
   fig/link-util: '1.0.0'
@@ -195,6 +200,7 @@ packages:
   guzzlehttp/guzzle: '6.3.3'
   guzzlehttp/promises: '1.3.1'
   guzzlehttp/psr7: '1.6.1'
+  helpscout/api: '2.4.0'
   http-interop/http-factory-guzzle: '1.0.0'
   incenteev/composer-parameter-handler: '2.1.3'
   jdorn/sql-formatter: '1.2.17'
@@ -251,6 +257,7 @@ packages:
   psr/link: '0.0'
   psr/log: '0.0'
   psr/simple-cache: '0.0'
+  ql/uri-template: '1.1.3'
   ralouphie/getallheaders: '3.0.3'
   ramsey/uuid: '3.8.0'
   raptor/php-migration-helper: '0.0'
@@ -303,6 +310,7 @@ packages:
   theseer/tokenizer: '1.1.3'
   twig/twig: '2.11.3'
   webmozart/assert: '1.5.0'
+  welp/mailchimp-bundle: '1.2.3'
   willdurand/jsonp-callback-validator: '1.1.0'
   willdurand/negotiation: '2.3.1'
   zendframework/zend-code: '3.3.2'

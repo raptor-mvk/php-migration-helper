@@ -96,6 +96,10 @@
     "version": "1.0"
   },
   {
+    "name": "drewm/mailchimp-api",
+    "version": "1.0"
+  },
+  {
     "name": "egulias/email-validator",
     "version": "1.0"
   },
@@ -161,6 +165,10 @@
   },
   {
     "name": "guzzlehttp/psr7",
+    "version": "1.0"
+  },
+  {
+    "name": "helpscout/api",
     "version": "1.0"
   },
   {
@@ -372,6 +380,10 @@
     "version": "0.1"
   },
   {
+    "name": "ql/uri-template",
+    "version": "1.0"
+  },
+  {
     "name": "ralouphie/getallheaders",
     "version": "1.0"
   },
@@ -561,6 +573,10 @@
   },
   {
     "name": "webmozart/assert",
+    "version": "1.0"
+  },
+  {
+    "name": "welp/mailchimp-bundle",
     "version": "1.0"
   },
   {
