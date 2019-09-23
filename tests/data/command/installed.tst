@@ -4,6 +4,10 @@
     "version": "1.0"
   },
   {
+    "name": "aws/aws-sdk-php-symfony",
+    "version": "1.0"
+  },
+  {
     "name": "cloudinary/cloudinary_php",
     "version": "1.0"
   },

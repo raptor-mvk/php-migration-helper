@@ -9,6 +9,9 @@
     "aws": {
       "aws-sdk-php": {
         "test.php": null
+      },
+      "aws-sdk-php-symfony": {
+        "test.php": null
       }
     },
     "cloudinary": {
