@@ -22,6 +22,12 @@
       }
     },
     "composer": {
+      "semver": {
+        "test.php": null
+      },
+      "xdebug-handler": {
+        "test.php": null
+      },
       "installed.json": null,
       "test.php": null
     },
@@ -56,7 +62,13 @@
       "doctrine-migrations-bundle": {
         "test.php": null
       },
+      "event-manager": {
+        "test.php": null
+      },
       "inflector": {
+        "test.php": null
+      },
+      "instantiator": {
         "test.php": null
       },
       "lexer": {
@@ -77,6 +89,14 @@
     },
     "egulias": {
       "email-validator": {
+        "test.php": null
+      }
+    },
+    "fig": {
+      "http-message-util": {
+        "test.php": null
+      },
+      "link-util": {
         "test.php": null
       }
     },
@@ -131,6 +151,11 @@
         "test.php": null
       },
       "psr7": {
+        "test.php": null
+      }
+    },
+    "http-interop": {
+      "http-factory-guzzle": {
         "test.php": null
       }
     },
@@ -260,7 +285,16 @@
       "discovery": {
         "test.php": null
       },
+      "httplug": {
+        "test.php": null
+      },
       "message": {
+        "test.php": null
+      },
+      "message-factory": {
+        "test.php": null
+      },
+      "promise": {
         "test.php": null
       }
     },
@@ -298,10 +332,33 @@
       }
     },
     "psr": {
+      "cache": {
+        "test.php": null
+      },
+      "container": {
+        "test.php": null
+      },
+      "http-client": {
+        "test.php": null
+      },
+      "http-factory": {
+        "test.php": null
+      },
       "http-message": {
         "test.php": null
       },
+      "link": {
+        "test.php": null
+      },
       "log": {
+        "test.php": null
+      },
+      "simple-cache": {
+        "test.php": null
+      }
+    },
+    "ralouphie": {
+      "getallheaders": {
         "test.php": null
       }
     },
@@ -414,6 +471,9 @@
       "http-client": {
         "test.php": null
       },
+      "http-client-contracts": {
+        "test.php": null
+      },
       "mime": {
         "test.php": null
       },
@@ -423,7 +483,16 @@
       "phpunit-bridge": {
         "test.php": null
       },
+      "polyfill-apcu": {
+        "test.php": null
+      },
+      "polyfill-ctype": {
+        "test.php": null
+      },
       "polyfill-iconv": {
+        "test.php": null
+      },
+      "polyfill-intl-icu": {
         "test.php": null
       },
       "polyfill-intl-idn": {
