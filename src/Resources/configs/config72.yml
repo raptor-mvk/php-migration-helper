@@ -190,6 +190,7 @@ packages:
   nelmio/api-doc-bundle: '2.13.4'
   ocramius/package-versions: '1.5.1'
   ocramius/proxy-manager: '2.2.0'
+  paragonie/random_compat: '0.0'
   phar-io/manifest: '1.0.3'
   phar-io/version: '2.0.1'
   php-amqplib/php-amqplib: '2.8.0'
@@ -245,6 +246,10 @@ packages:
   symfony/polyfill-iconv: '1.12.0'
   symfony/polyfill-intl-idn: '1.12.0'
   symfony/polyfill-mbstring: '1.12.0'
+  symfony/polyfill-php56: '0.0'
+  symfony/polyfill-php70: '0.0'
+  symfony/polyfill-php72: '0.0'
+  symfony/polyfill-php73: '0.0'
   symfony/polyfill-util: '1.12.0'
   symfony/swiftmailer-bundle:
     version: '3.2.8'

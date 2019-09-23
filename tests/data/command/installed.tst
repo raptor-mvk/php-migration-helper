@@ -376,6 +376,10 @@
     "version": "1.0"
   },
   {
+    "name": "some_vendor/some_package",
+    "version": "1.2.3"
+  },
+  {
     "name": "superbalist/flysystem-google-storage",
     "version": "1.0"
   },

@@ -33,8 +33,9 @@ final class VersionComparator implements VersionComparatorInterface
         foreach ($installedVersions as $installedVersion) {
             if (isset($installedVersion['name'], $installedVersion['version'])) {
                 $package = $installedVersion['name'];
-                $requiredVersion = $requiredVersions[$package] ?? new RequiredPackageVersion('0.0');
-                $reportLine = $this->getReportLine($package, $requiredVersion, $installedVersion['version']);
+                $reportLine = isset($requiredVersions[$package]) ?
+                    $this->getReportLine($package, $requiredVersions[$package], $installedVersion['version']) :
+                    "Unknown package $package version {$installedVersion['version']}";
                 if (null !== $reportLine) {
                     $result[] = $reportLine;
                 }
