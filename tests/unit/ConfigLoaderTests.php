@@ -30,8 +30,10 @@ final class ConfigLoaderTests extends TestCase
     protected function setUp(): void
     {
         $this->setupVFS();
-        $rulesDir = json_decode(file_get_contents(__DIR__.'/../data/config_loader/rules.tst'), true);
-        $packagesDir = json_decode(file_get_contents(__DIR__.'/../data/config_loader/packages.tst'), true);
+        $rulesJson = file_get_contents(__DIR__.'/../data/config_loader/rules.tst');
+        $rulesDir = json_decode($rulesJson, true, 512, JSON_THROW_ON_ERROR);
+        $packagesJson = file_get_contents(__DIR__.'/../data/config_loader/packages.tst');
+        $packagesDir = json_decode($packagesJson, true, 512, JSON_THROW_ON_ERROR);
         $structure = ['rules' => $rulesDir, 'packages' => $packagesDir];
         $this->addStructureToVFS($structure);
     }

@@ -33,9 +33,8 @@ final class VersionComparator implements VersionComparatorInterface
         foreach ($installedVersions as $installedVersion) {
             if (isset($installedVersion['name'], $installedVersion['version'])) {
                 $package = $installedVersion['name'];
-                $reportLine = isset($requiredVersions[$package]) ?
-                    $this->getReportLine($package, $requiredVersions[$package], $installedVersion['version']) :
-                    "Unknown package $package version {$installedVersion['version']}";
+                $requiredPackageVersion = $requiredVersions[$package] ?? null;
+                $reportLine = $this->getReportLine($package, $requiredPackageVersion, $installedVersion['version']);
                 if (null !== $reportLine) {
                     $result[] = $reportLine;
                 }
@@ -48,24 +47,23 @@ final class VersionComparator implements VersionComparatorInterface
     /**
      * Returns report line for package if necessary or null otherwise.
      *
-     * @param string                          $package
-     * @param RequiredPackageVersionInterface $requiredPackageVersion
-     * @param string                          $installedVersion
+     * @param string                               $package
+     * @param RequiredPackageVersionInterface|null $requiredPackageVersion
+     * @param string                               $installedVersion
      *
      * @return string|null
      */
-    private function getReportLine(string $package, RequiredPackageVersionInterface $requiredPackageVersion, string $installedVersion): ?string
+    private function getReportLine(string $package, ?RequiredPackageVersionInterface $requiredPackageVersion, string $installedVersion): ?string
     {
+        if (null === $requiredPackageVersion) {
+            return "Unknown package $package version $installedVersion";
+        }
         $installedVersion = $this->normalizeVersion($installedVersion);
         $requiredVersion = $requiredPackageVersion->getVersion();
         $versionLine = Comparator::greaterThan($requiredVersion, $installedVersion) ?
             "Update $package at least to {$requiredVersion}" : null;
-        $message = $requiredPackageVersion->getMessage();
-        if (null !== $message) {
-            $versionLine = ((null === $versionLine) ? '' : "{$versionLine}\n").$message;
-        }
 
-        return $versionLine;
+        return $this->glueReportLine($versionLine, $requiredPackageVersion->getMessage());
     }
 
     /**
@@ -80,5 +78,22 @@ final class VersionComparator implements VersionComparatorInterface
         $version = preg_replace('/^v?\.?/', '', $version);
 
         return $version;
+    }
+
+    /**
+     * Returns line that concatenates $versionLine with $message using \n and is aware of possible null in both of them.
+     *
+     * @param string|null $versionLine
+     * @param string|null $message
+     *
+     * @return string|null
+     */
+    private function glueReportLine(?string $versionLine, ?string $message): ?string
+    {
+        if (null === $versionLine) {
+            return $message;
+        }
+
+        return (null === $message) ? $versionLine : "$versionLine\n$message";
     }
 }
