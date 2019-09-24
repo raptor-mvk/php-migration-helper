@@ -9,6 +9,9 @@
     "aws": {
       "aws-sdk-php": {
         "test.php": null
+      },
+      "aws-sdk-php-symfony": {
+        "test.php": null
       }
     },
     "cloudinary": {
@@ -22,6 +25,12 @@
       }
     },
     "composer": {
+      "semver": {
+        "test.php": null
+      },
+      "xdebug-handler": {
+        "test.php": null
+      },
       "installed.json": null,
       "test.php": null
     },
@@ -56,7 +65,13 @@
       "doctrine-migrations-bundle": {
         "test.php": null
       },
+      "event-manager": {
+        "test.php": null
+      },
       "inflector": {
+        "test.php": null
+      },
+      "instantiator": {
         "test.php": null
       },
       "lexer": {
@@ -75,8 +90,21 @@
         "test.php": null
       }
     },
+    "drewm": {
+      "mailchimp-api": {
+        "test.php": null
+      }
+    },
     "egulias": {
       "email-validator": {
+        "test.php": null
+      }
+    },
+    "fig": {
+      "http-message-util": {
+        "test.php": null
+      },
+      "link-util": {
         "test.php": null
       }
     },
@@ -131,6 +159,16 @@
         "test.php": null
       },
       "psr7": {
+        "test.php": null
+      }
+    },
+    "helpscout": {
+      "api": {
+        "test.php": null
+      }
+    },
+    "http-interop": {
+      "http-factory-guzzle": {
         "test.php": null
       }
     },
@@ -260,7 +298,16 @@
       "discovery": {
         "test.php": null
       },
+      "httplug": {
+        "test.php": null
+      },
       "message": {
+        "test.php": null
+      },
+      "message-factory": {
+        "test.php": null
+      },
+      "promise": {
         "test.php": null
       }
     },
@@ -298,10 +345,38 @@
       }
     },
     "psr": {
+      "cache": {
+        "test.php": null
+      },
+      "container": {
+        "test.php": null
+      },
+      "http-client": {
+        "test.php": null
+      },
+      "http-factory": {
+        "test.php": null
+      },
       "http-message": {
         "test.php": null
       },
+      "link": {
+        "test.php": null
+      },
       "log": {
+        "test.php": null
+      },
+      "simple-cache": {
+        "test.php": null
+      }
+    },
+    "ql": {
+      "uri-template": {
+        "test.php": null
+      }
+    },
+    "ralouphie": {
+      "getallheaders": {
         "test.php": null
       }
     },
@@ -395,6 +470,17 @@
         "test.php": null
       }
     },
+    "skyeng": {
+      "auth-bundle": {
+        "test.php": null
+      },
+      "common-bundle": {
+        "test.php": null
+      },
+      "php-lemmatizer": {
+        "test.php": null
+      }
+    },
     "some_vendor": {
       "some_package": {
         "test.php": null
@@ -414,6 +500,9 @@
       "http-client": {
         "test.php": null
       },
+      "http-client-contracts": {
+        "test.php": null
+      },
       "mime": {
         "test.php": null
       },
@@ -423,7 +512,16 @@
       "phpunit-bridge": {
         "test.php": null
       },
+      "polyfill-apcu": {
+        "test.php": null
+      },
+      "polyfill-ctype": {
+        "test.php": null
+      },
       "polyfill-iconv": {
+        "test.php": null
+      },
+      "polyfill-intl-icu": {
         "test.php": null
       },
       "polyfill-intl-idn": {
@@ -469,7 +567,12 @@
         "test.php": null
       }
     },
-    "willdurand": {
+    "welp": {
+      "mailchimp-bundle": {
+        "test.php": null
+      }
+    },
+   "willdurand": {
       "jsonp-callback-validator": {
         "test.php": null
       },

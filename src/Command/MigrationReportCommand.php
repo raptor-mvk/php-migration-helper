@@ -81,7 +81,8 @@ final class MigrationReportCommand extends Command
         $noVendor = $input->getOption('no-vendor');
         $configPath = __DIR__.'/../Resources/configs'.($noVendor ? '_without_vendor' : '');
         $config = $this->configLoader->load($configPath, $versionFrom, $versionTo);
-        $installedVersions = json_decode(file_get_contents("{$this->filePath}/vendor/composer/installed.json"), true);
+        $installedJson = file_get_contents("{$this->filePath}/vendor/composer/installed.json");
+        $installedVersions = json_decode($installedJson, true, 512, JSON_THROW_ON_ERROR);
         $requiredVersions = $config->getRequiredPackageVersions();
         $processor = DirectoryProcessor::fromConfig($config);
         $versionReport = $this->versionComparator->verifyVersions($installedVersions ?? [], $requiredVersions);

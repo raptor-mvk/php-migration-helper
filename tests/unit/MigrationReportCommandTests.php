@@ -31,7 +31,8 @@ final class MigrationReportCommandTests extends TestCase
         $this->setupVFS();
         $testFileContent = file_get_contents(__DIR__.'/../data/command/php.tst');
         $installedFileContent = file_get_contents(__DIR__.'/../data/command/installed.tst');
-        $structure = json_decode(file_get_contents(__DIR__.'/../data/command/structure.tst'), true);
+        $structureJson = file_get_contents(__DIR__.'/../data/command/structure.tst');
+        $structure = json_decode($structureJson, true, 512, JSON_THROW_ON_ERROR);
         $contents = ['test.php' => $testFileContent, 'installed.json' => $installedFileContent];
         $structureWithContents = $this->addContentToStructure($structure, $contents);
         $this->addStructureToVFS($structureWithContents);

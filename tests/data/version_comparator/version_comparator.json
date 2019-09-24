@@ -32,7 +32,10 @@
       }
     ],
     "required_versions": [],
-    "expected_result": []
+    "expected_result": [
+      "Package compatibility report:",
+      "Unknown package my/package version 1.5.0"
+    ]
   },
   {
     "_name": "no report",
@@ -43,7 +46,7 @@
       }
     ],
     "required_versions": {
-      "other/package": "1.7.0"
+      "my/package": "1.2.0"
     },
     "expected_result": []
   },
@@ -79,10 +82,6 @@
       {
         "name": "my/package",
         "version": "v1.5.0"
-      },
-      {
-        "name": "other/package",
-        "version": "v1.2.0"
       }
     ],
     "required_versions": {
@@ -96,10 +95,6 @@
       {
         "name": "my/package",
         "version": "v.1.5.0"
-      },
-      {
-        "name": "other/package",
-        "version": "v.1.2.0"
       }
     ],
     "required_versions": {

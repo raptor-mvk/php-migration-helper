@@ -3,6 +3,7 @@ version: '7.3'
 excluded:
   - var
   - vendor/aws/aws-sdk-php
+  - vendor/aws/aws-sdk-php-symfony
   - vendor/bin/jp.php
   - vendor/cloudinary/cloudinary_php
   - vendor/clue/stream-filter
@@ -17,13 +18,17 @@ excluded:
   - vendor/doctrine/doctrine-cache-bundle
   - vendor/doctrine/doctrine-fixtures-bundle
   - vendor/doctrine/doctrine-migrations-bundle
+  - vendor/doctrine/event-manager
   - vendor/doctrine/inflector
+  - vendor/doctrine/instantiator
   - vendor/doctrine/lexer
   - vendor/doctrine/migrations
   - vendor/doctrine/orm
   - vendor/doctrine/persistence
   - vendor/doctrine/reflection
+  - vendor/drewm/mailchimp-api
   - vendor/egulias/email-validator
+  - vendor/fig/http-message-util
   - vendor/fig/link-util
   - vendor/firebase/php-jwt
   - vendor/friendsofphp/php-cs-fixer
@@ -39,6 +44,8 @@ excluded:
   - vendor/guzzlehttp/guzzle
   - vendor/guzzlehttp/promises
   - vendor/guzzlehttp/psr7
+  - vendor/helpscout/api
+  - vendor/http-interop/http-factory-guzzle
   - vendor/incenteev/composer-parameter-handler
   - vendor/jdorn/sql-formatter
   - vendor/jean85/pretty-package-versions
@@ -68,7 +75,18 @@ excluded:
   - vendor/php-http/client-common
   - vendor/php-http/curl-client
   - vendor/php-http/discovery
+  - vendor/php-http/httplug
   - vendor/php-http/message
+  - vendor/php-http/message-factory
+  - vendor/php-http/promise
+  - vendor/psr/cache
+  - vendor/psr/container
+  - vendor/psr/http-client
+  - vendor/psr/http-factory
+  - vendor/psr/http-message
+  - vendor/psr/link
+  - vendor/psr/log
+  - vendor/psr/simple-cache
   - vendor/phpdocumentor/reflection-common
   - vendor/phpdocumentor/reflection-docblock
   - vendor/phpdocumentor/type-resolver
@@ -80,7 +98,9 @@ excluded:
   - vendor/phpunit/php-token-stream
   - vendor/phpunit/phpunit
   - vendor/psr/http-message
+  - vendor/ql/uri-template
   - vendor/psr/log
+  - vendor/ralouphie/getallheaders
   - vendor/ramsey/uuid
   - vendor/raptor/php-migration-helper
   - vendor/riverline/multipart-parser
@@ -105,15 +125,21 @@ excluded:
   - vendor/sentry/sentry-symfony
   - vendor/sentry/sentry
   - vendor/shuber/curl
+  - vendor/skyeng/auth-bundle
+  - vendor/skyeng/common-bundle
+  - vendor/skyeng/php-lemmatizer
   - vendor/superbalist/flysystem-google-storage
   - vendor/swiftmailer/swiftmailer
   - vendor/symfony/http-client
+  - vendor/symfony/http-client-contracts
   - vendor/symfony/mime
   - vendor/symfony/monolog-bundle
   - vendor/symfony/phpunit-bridge
+  - vendor/symfony/polyfill-apcu
   - vendor/symfony/polyfill-ctype
   - vendor/symfony/polyfill-iconv
   - vendor/symfony/polyfill-intl-idn
+  - vendor/symfony/polyfill-intl-icu
   - vendor/symfony/polyfill-mbstring
   - vendor/symfony/polyfill-php56
   - vendor/symfony/polyfill-php70
@@ -125,6 +151,7 @@ excluded:
   - vendor/theseer/tokenizer
   - vendor/twig/twig
   - vendor/webmozart/assert
+  - vendor/welp/mailchimp-bundle
   - vendor/willdurand/jsonp-callback-validator
   - vendor/willdurand/negotiation
   - vendor/zendframework/zend-code
@@ -133,8 +160,11 @@ excluded:
 
 packages:
   aws/aws-sdk-php: '3.112.5'
+  aws/aws-sdk-php-symfony: '1.3.0'
   cloudinary/cloudinary_php: '1.14.0'
   clue/stream-filter: '1.4.1'
+  composer/semver: '1.5.0'
+  composer/xdebug-handler: '1.3.3'
   doctrine/annotations: '1.7.0'
   doctrine/cache: '1.8.0'
   doctrine/collections: '1.6.2'
@@ -145,20 +175,25 @@ packages:
   doctrine/doctrine-cache-bundle: '1.3.5'
   doctrine/doctrine-fixtures-bundle: '3.2.2'
   doctrine/doctrine-migrations-bundle: '1.3.2'
+  doctrine/event-manager: '1.0.0'
   doctrine/inflector: '1.3.0'
+  doctrine/instantiator: '1.2.0'
   doctrine/lexer: '1.1.0'
   doctrine/migrations: '1.8.1'
   doctrine/orm: '2.6.3'
   doctrine/persistence: '1.1.1'
   doctrine/reflection: '1.0.0'
+  drewm/mailchimp-api: '2.5.4'
   egulias/email-validator: '2.1.11'
+  fig/http-message-util: '1.1.3'
+  fig/link-util: '1.0.0'
   firebase/php-jwt: '5.0.0'
   friendsofphp/php-cs-fixer: '2.15.3'
+  friendsofsymfony/oauth-server-bundle: '2.0.0'
+  friendsofsymfony/oauth2-php: '1.2.3'
   friendsofsymfony/rest-bundle:
     version: '2.5.0'
     message: 'Warning (minor severity): friendsofsymfony/rest-bundle does not have version that is fully compatible with PHP 7.3 (latest known 2.5.0)'
-  friendsofsymfony/oauth-server-bundle: '2.0.0'
-  friendsofsymfony/oauth2-php: '1.2.3'
   giggsey/libphonenumber-for-php: '8.10.19'
   giggsey/locale: '1.7.1'
   google/auth: '1.5.2'
@@ -168,6 +203,8 @@ packages:
   guzzlehttp/guzzle: '6.3.3'
   guzzlehttp/promises: '1.3.1'
   guzzlehttp/psr7: '1.6.1'
+  helpscout/api: '2.4.0'
+  http-interop/http-factory-guzzle: '1.0.0'
   incenteev/composer-parameter-handler: '2.1.3'
   jdorn/sql-formatter: '1.2.17'
   jean85/pretty-package-versions: '1.2'
@@ -190,6 +227,7 @@ packages:
   nelmio/api-doc-bundle: '2.13.4'
   ocramius/package-versions: '1.5.1'
   ocramius/proxy-manager: '2.2.0'
+  paragonie/random_compat: '0.0'
   phar-io/manifest: '1.0.3'
   phar-io/version: '2.0.1'
   php-amqplib/php-amqplib: '2.8.0'
@@ -200,7 +238,10 @@ packages:
   php-http/client-common: '2.0.0'
   php-http/curl-client: '2.0.0'
   php-http/discovery: '1.7.0'
+  php-http/httplug: '2.0.0'
   php-http/message: '1.8.0'
+  php-http/message-factory: '1.0.2'
+  php-http/promise: '1.0.0'
   phpdocumentor/reflection-common: '2.0.0'
   phpdocumentor/reflection-docblock: '4.3.2'
   phpdocumentor/type-resolver: '1.0.1'
@@ -211,7 +252,18 @@ packages:
   phpunit/php-timer: '2.1.2'
   phpunit/php-token-stream: '3.1.1'
   phpunit/phpunit: '8.0'
+  psr/cache: '0.0'
+  psr/container: '0.0'
+  psr/http-client: '0.0'
+  psr/http-factory: '0.0'
+  psr/http-message: '0.0'
+  psr/link: '0.0'
+  psr/log: '0.0'
+  psr/simple-cache: '0.0'
+  ql/uri-template: '1.1.3'
+  ralouphie/getallheaders: '3.0.3'
   ramsey/uuid: '3.8.0'
+  raptor/php-migration-helper: '0.0'
   riverline/multipart-parser: '2.0.5'
   rize/uri-template:
     version: '0.3.2'
@@ -235,16 +287,27 @@ packages:
   sentry/sdk: '2.0.4'
   sentry/sentry: '2.1.3'
   sentry/sentry-symfony: '3.1.0'
+  shuber/curl: '0.0'
+  skyeng/auth-bundle: '0.0'
+  skyeng/common-bundle: '0.0'
+  skyeng/php-lemmatizer: '1.0.3'
   superbalist/flysystem-google-storage: '7.2.1'
   swiftmailer/swiftmailer: '6.2.1'
   symfony/http-client: '4.3.4'
+  symfony/http-client-contracts: '1.1.6'
   symfony/mime: '4.3.4'
   symfony/monolog-bundle: '3.1.2'
   symfony/phpunit-bridge: '3.4.31'
+  symfony/polyfill-apcu: '1.12.0'
   symfony/polyfill-ctype: '1.12.0'
   symfony/polyfill-iconv: '1.12.0'
+  symfony/polyfill-intl-icu: '1.12.0'
   symfony/polyfill-intl-idn: '1.12.0'
   symfony/polyfill-mbstring: '1.12.0'
+  symfony/polyfill-php56: '0.0'
+  symfony/polyfill-php70: '0.0'
+  symfony/polyfill-php72: '0.0'
+  symfony/polyfill-php73: '0.0'
   symfony/polyfill-util: '1.12.0'
   symfony/swiftmailer-bundle:
     version: '3.2.8'
@@ -253,6 +316,7 @@ packages:
   theseer/tokenizer: '1.1.3'
   twig/twig: '2.11.3'
   webmozart/assert: '1.5.0'
+  welp/mailchimp-bundle: '1.2.3'
   willdurand/jsonp-callback-validator: '1.1.0'
   willdurand/negotiation: '2.3.1'
   zendframework/zend-code: '3.3.2'

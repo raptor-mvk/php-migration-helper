@@ -4,11 +4,23 @@
     "version": "1.0"
   },
   {
+    "name": "aws/aws-sdk-php-symfony",
+    "version": "1.0"
+  },
+  {
     "name": "cloudinary/cloudinary_php",
     "version": "1.0"
   },
   {
     "name": "clue/stream-filter",
+    "version": "1.0"
+  },
+  {
+    "name": "composer/semver",
+    "version": "1.0"
+  },
+  {
+    "name": "composer/xdebug-handler",
     "version": "1.0"
   },
   {
@@ -52,7 +64,15 @@
     "version": "1.0"
   },
   {
+    "name": "doctrine/event-manager",
+    "version": "0.1"
+  },
+  {
     "name": "doctrine/inflector",
+    "version": "1.0"
+  },
+  {
+    "name": "doctrine/instantiator",
     "version": "1.0"
   },
   {
@@ -73,6 +93,22 @@
   },
   {
     "name": "doctrine/reflection",
+    "version": "1.0"
+  },
+  {
+    "name": "drewm/mailchimp-api",
+    "version": "1.0"
+  },
+  {
+    "name": "egulias/email-validator",
+    "version": "1.0"
+  },
+  {
+    "name": "fig/http-message-util",
+    "version": "1.0"
+  },
+  {
+    "name": "fig/link-util",
     "version": "1.0"
   },
   {
@@ -130,6 +166,14 @@
   {
     "name": "guzzlehttp/psr7",
     "version": "1.0"
+  },
+  {
+    "name": "helpscout/api",
+    "version": "1.0"
+  },
+  {
+    "name": "http-interop/http-factory-guzzle",
+    "version": "0.1"
   },
   {
     "name": "incenteev/composer-parameter-handler",
@@ -248,7 +292,19 @@
     "version": "1.0"
   },
   {
+    "name": "php-http/httplug",
+    "version": "1.0"
+  },
+  {
     "name": "php-http/message",
+    "version": "1.0"
+  },
+  {
+    "name": "php-http/message-factory",
+    "version": "0.1"
+  },
+  {
+    "name": "php-http/promise",
     "version": "1.0"
   },
   {
@@ -289,6 +345,54 @@
   },
   {
     "name": "phpunit/phpunit",
+    "version": "1.0"
+  },
+  {
+    "name": "psr/cache",
+    "version": "0.1"
+  },
+  {
+    "name": "psr/container",
+    "version": "0.1"
+  },
+  {
+    "name": "psr/http-client",
+    "version": "0.1"
+  },
+  {
+    "name": "psr/http-factory",
+    "version": "0.1"
+  },
+  {
+    "name": "psr/http-message",
+    "version": "0.1"
+  },
+  {
+    "name": "psr/link",
+    "version": "0.1"
+  },
+  {
+    "name": "psr/log",
+    "version": "0.1"
+  },
+  {
+    "name": "psr/simple-cache",
+    "version": "0.1"
+  },
+  {
+    "name": "ql/uri-template",
+    "version": "1.0"
+  },
+  {
+    "name": "ralouphie/getallheaders",
+    "version": "1.0"
+  },
+  {
+    "name": "ramsey/uuid",
+    "version": "1.0"
+  },
+  {
+    "name": "raptor/php-migration-helper",
     "version": "1.0"
   },
   {
@@ -376,6 +480,14 @@
     "version": "1.0"
   },
   {
+    "name": "skyeng/php-lemmatizer",
+    "version": "1.0"
+  },
+  {
+    "name": "some_vendor/some_package",
+    "version": "1.2.3"
+  },
+  {
     "name": "superbalist/flysystem-google-storage",
     "version": "1.0"
   },
@@ -385,6 +497,10 @@
   },
   {
     "name": "symfony/http-client",
+    "version": "1.0"
+  },
+  {
+    "name": "symfony/http-client-contracts",
     "version": "1.0"
   },
   {
@@ -400,7 +516,19 @@
     "version": "1.0"
   },
   {
+    "name": "symfony/polyfill-apcu",
+    "version": "1.0"
+  },
+  {
     "name": "symfony/polyfill-ctype",
+    "version": "1.0"
+  },
+  {
+    "name": "symfony/polyfill-iconv",
+    "version": "1.0"
+  },
+  {
+    "name": "symfony/polyfill-intl-icu",
     "version": "1.0"
   },
   {
@@ -449,6 +577,10 @@
   },
   {
     "name": "webmozart/assert",
+    "version": "1.0"
+  },
+  {
+    "name": "welp/mailchimp-bundle",
     "version": "1.0"
   },
   {
