@@ -480,6 +480,10 @@
     "version": "1.0"
   },
   {
+    "name": "skyeng/php-lemmatizer",
+    "version": "1.0"
+  },
+  {
     "name": "some_vendor/some_package",
     "version": "1.2.3"
   },

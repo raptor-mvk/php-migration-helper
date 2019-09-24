@@ -470,6 +470,17 @@
         "test.php": null
       }
     },
+    "skyeng": {
+      "auth-bundle": {
+        "test.php": null
+      },
+      "common-bundle": {
+        "test.php": null
+      },
+      "php-lemmatizer": {
+        "test.php": null
+      }
+    },
     "some_vendor": {
       "some_package": {
         "test.php": null
