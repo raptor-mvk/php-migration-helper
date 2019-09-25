@@ -2,9 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.0.9](https://github.com/raptor-mvk/php-migration-helper/compare/v1.0.8-stable...v1.0.9-stable) - 
+## [1.0.9](https://github.com/raptor-mvk/php-migration-helper/compare/v1.0.8-stable...v1.0.9-stable) - 2019-09-25
 ### Added in 1.0.9
 - Add some known packages without problems
+
+### Changed in 1.0.9
+- Fix recommendation for assert_contains rule
 
 ## [1.0.8](https://github.com/raptor-mvk/php-migration-helper/compare/v1.0.7-dev...v1.0.8-stable) - 2019-09-24
 ### Added in 1.0.8

@@ -294,7 +294,7 @@ rules:
     recommendation: 'Replace usage of getStaticAttribute or getObjectAttribute methods with manual processing'
   assert_contains:
     regexp: '/(:|>)assert(Not)?Contains\w*\s*\(/'
-    recommendation: 'Replace usage of assertContains and assertNotContains methods with more specified method (for string or for array)'
+    recommendation: 'Check that assertContains or assertNotContains does not use string $haystack or additional parameters, otherwise use string-methods assertStringContainsString or assertStringNotContainsString'
   test_listener:
     regexp: '/(^|(^|[^-])>|[^:>\w])TestListener($|[^\w])/'
     recommendation: 'Remove usage of TestListener'
