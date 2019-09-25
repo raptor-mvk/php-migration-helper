@@ -254,6 +254,11 @@
         "test.php": null
       }
     },
+    "noxlogic": {
+      "ratelimit-bundle": {
+        "test.php": null
+      }
+    },
     "ocramius": {
       "package-versions": {
         "test.php": null
@@ -472,6 +477,9 @@
     },
     "skyeng": {
       "auth-bundle": {
+        "test.php": null
+      },
+      "billing-api-client": {
         "test.php": null
       },
       "common-bundle": {

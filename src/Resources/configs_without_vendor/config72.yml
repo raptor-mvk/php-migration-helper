@@ -71,6 +71,9 @@ packages:
     version: '1.5.6'
     message: 'Warning (minor severity): nelmio/cors-bundle does not have version that is fully compatible with PHP 7.2 (latest known 1.5.6)'
   nelmio/api-doc-bundle: '2.13.4'
+  noxlogic/ratelimit-bundle:
+    version: '1.14.0'
+    message: 'Warning (minor severity): noxlogic/ratelimit-bundle does not have version that is fully compatible with PHP 7.2 (latest known 1.14.0)'
   ocramius/package-versions: '1.5.1'
   ocramius/proxy-manager: '2.2.0'
   paragonie/random_compat: '0.0'
@@ -135,6 +138,7 @@ packages:
   sentry/sentry-symfony: '3.1.0'
   shuber/curl: '0.0'
   skyeng/auth-bundle: '0.0'
+  skyeng/billing-api-client: '0.0'
   skyeng/common-bundle: '0.0'
   skyeng/php-lemmatizer: '1.0.3'
   superbalist/flysystem-google-storage: '7.2.1'
@@ -290,7 +294,7 @@ rules:
     recommendation: 'Replace usage of getStaticAttribute or getObjectAttribute methods with manual processing'
   assert_contains:
     regexp: '/(:|>)assert(Not)?Contains\w*\s*\(/'
-    recommendation: 'Replace usage of assertContains and assertNotContains methods with more specified method (for string or for array)'
+    recommendation: 'Check that assertContains or assertNotContains does not use string $haystack or additional parameters, otherwise use string-methods assertStringContainsString or assertStringNotContainsString'
   test_listener:
     regexp: '/(^|(^|[^-])>|[^:>\w])TestListener($|[^\w])/'
     recommendation: 'Remove usage of TestListener'

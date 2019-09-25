@@ -248,6 +248,10 @@
     "version": "1.0"
   },
   {
+    "name": "noxlogic/ratelimit-bundle",
+    "version": "1.0"
+  },
+  {
     "name": "ocramius/package-versions",
     "version": "1.0"
   },
