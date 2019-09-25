@@ -64,6 +64,7 @@ excluded:
   - vendor/namshi/jose
   - vendor/nelmio/cors-bundle
   - vendor/nelmio/api-doc-bundle
+  - vendor/noxlogic/ratelimit-bundle
   - vendor/ocramius/package-versions
   - vendor/ocramius/proxy-manager
   - vendor/paragonie/random_compat
@@ -126,6 +127,7 @@ excluded:
   - vendor/sentry/sentry
   - vendor/shuber/curl
   - vendor/skyeng/auth-bundle
+  - vendor/skyeng/billing-api-client
   - vendor/skyeng/common-bundle
   - vendor/skyeng/php-lemmatizer
   - vendor/superbalist/flysystem-google-storage
@@ -225,6 +227,9 @@ packages:
     version: '1.5.6'
     message: 'Warning (minor severity): nelmio/cors-bundle does not have version that is fully compatible with PHP 7.3 (latest known 1.5.6)'
   nelmio/api-doc-bundle: '2.13.4'
+  noxlogic/ratelimit-bundle:
+    version: '1.14.0'
+    message: 'Warning (minor severity): noxlogic/ratelimit-bundle does not have version that is fully compatible with PHP 7.3 (latest known 1.14.0)'
   ocramius/package-versions: '1.5.1'
   ocramius/proxy-manager: '2.2.0'
   paragonie/random_compat: '0.0'
@@ -289,6 +294,7 @@ packages:
   sentry/sentry-symfony: '3.1.0'
   shuber/curl: '0.0'
   skyeng/auth-bundle: '0.0'
+  skyeng/billing-api-client: '0.0'
   skyeng/common-bundle: '0.0'
   skyeng/php-lemmatizer: '1.0.3'
   superbalist/flysystem-google-storage: '7.2.1'

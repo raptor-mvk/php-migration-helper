@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.9](https://github.com/raptor-mvk/php-migration-helper/compare/v1.0.8-stable...v1.0.9-stable) - 
+### Added in 1.0.9
+- Add some known packages without problems
+
 ## [1.0.8](https://github.com/raptor-mvk/php-migration-helper/compare/v1.0.7-dev...v1.0.8-stable) - 2019-09-24
 ### Added in 1.0.8
 - Add messages about unknown packages
