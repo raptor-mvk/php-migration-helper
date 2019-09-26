@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.10](https://github.com/raptor-mvk/php-migration-helper/compare/v1.0.9-stable...v1.0.10-stable) - 2019-09-26
+### Added in 1.0.10
+- Add some known packages without problems
+
+### Changed in 1.0.10
+- Exclude preg_quote from pcre2 rule
+
 ## [1.0.9](https://github.com/raptor-mvk/php-migration-helper/compare/v1.0.8-stable...v1.0.9-stable) - 2019-09-25
 ### Added in 1.0.9
 - Add some known packages without problems

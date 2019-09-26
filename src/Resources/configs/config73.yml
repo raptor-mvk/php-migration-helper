@@ -339,7 +339,7 @@ rules:
     recommendation: 'Check that Heredoc/Nowdoc string does not contain closing identifier inside in the beginning of line'
     lines_after: 6
   pcre2:
-    regexp: '/(^|(^|[^-])>|[^:>\w])preg_\w*\s*\(/'
+    regexp: '/(^|(^|[^-])>|[^:>\w])preg_[^q]\w*\s*\(/'
     recommendation: 'Check that pattern corresponds PCRE2 syntax'
     lines_before: 3
     lines_after: 1

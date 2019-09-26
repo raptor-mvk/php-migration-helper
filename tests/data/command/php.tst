@@ -152,3 +152,4 @@ MYSTR;
     hash_hmac      ('crc32', 'my_data');
     hash_pbkdf2      ('crc32', 'my_data');
     hash_init       ('crc32',        HASH_HMAC);
+    preg_quote("AA", "BB");
