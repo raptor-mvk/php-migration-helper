@@ -140,6 +140,14 @@
     "version": "1.0"
   },
   {
+    "name": "google/apiclient",
+    "version": "1.0"
+  },
+  {
+    "name": "google/apiclient-services",
+    "version": "0.1"
+  },
+  {
     "name": "google/auth",
     "version": "1.0"
   },
@@ -325,6 +333,10 @@
   },
   {
     "name": "phpdocumentor/type-resolver",
+    "version": "1.0"
+  },
+  {
+    "name": "phpseclib/phpseclib",
     "version": "1.0"
   },
   {

@@ -138,6 +138,12 @@
       }
     },
     "google": {
+      "apiclient": {
+        "test.php": null
+      },
+      "apiclient-services": {
+        "test.php": null
+      },
       "auth": {
         "test.php": null
       },
@@ -326,6 +332,11 @@
         "test.php": null
       },
       "type-resolver": {
+        "test.php": null
+      }
+    },
+    "phpseclib": {
+      "phpseclib": {
         "test.php": null
       }
     },

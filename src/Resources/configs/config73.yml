@@ -37,6 +37,8 @@ excluded:
   - vendor/friendsofsymfony/rest-bundle
   - vendor/giggsey/libphonenumber-for-php
   - vendor/giggsey/locale
+  - vendor/google/apiclient
+  - vendor/google/apiclient-services
   - vendor/google/auth
   - vendor/google/cloud-core
   - vendor/google/cloud-storage
@@ -81,6 +83,17 @@ excluded:
   - vendor/php-http/message
   - vendor/php-http/message-factory
   - vendor/php-http/promise
+  - vendor/phpdocumentor/reflection-common
+  - vendor/phpdocumentor/reflection-docblock
+  - vendor/phpdocumentor/type-resolver
+  - vendor/phpspec/prophecy
+  - vendor/phpseclib/phpseclib
+  - vendor/phpunit/php-code-coverage
+  - vendor/phpunit/php-file-iterator
+  - vendor/phpunit/php-text-template
+  - vendor/phpunit/php-timer
+  - vendor/phpunit/php-token-stream
+  - vendor/phpunit/phpunit
   - vendor/psr/cache
   - vendor/psr/container
   - vendor/psr/http-client
@@ -89,19 +102,7 @@ excluded:
   - vendor/psr/link
   - vendor/psr/log
   - vendor/psr/simple-cache
-  - vendor/phpdocumentor/reflection-common
-  - vendor/phpdocumentor/reflection-docblock
-  - vendor/phpdocumentor/type-resolver
-  - vendor/phpspec/prophecy
-  - vendor/phpunit/php-code-coverage
-  - vendor/phpunit/php-file-iterator
-  - vendor/phpunit/php-text-template
-  - vendor/phpunit/php-timer
-  - vendor/phpunit/php-token-stream
-  - vendor/phpunit/phpunit
-  - vendor/psr/http-message
   - vendor/ql/uri-template
-  - vendor/psr/log
   - vendor/ralouphie/getallheaders
   - vendor/ramsey/uuid
   - vendor/raptor/php-migration-helper
@@ -200,6 +201,8 @@ packages:
     message: 'Warning (minor severity): friendsofsymfony/rest-bundle does not have version that is fully compatible with PHP 7.3 (latest known 2.5.0)'
   giggsey/libphonenumber-for-php: '8.10.19'
   giggsey/locale: '1.7.1'
+  google/apiclient: '2.4.0'
+  google/apiclient-services: '0.115'
   google/auth: '1.5.2'
   google/cloud-core: '1.33.0'
   google/cloud-storage: '1.14.0'
@@ -253,6 +256,7 @@ packages:
   phpdocumentor/reflection-common: '2.0.0'
   phpdocumentor/reflection-docblock: '4.3.2'
   phpdocumentor/type-resolver: '1.0.1'
+  phpseclib/phpseclib: '2.0.23'
   phpspec/prophecy: '1.8.1'
   phpunit/php-code-coverage: '7.0.0'
   phpunit/php-file-iterator: '2.0.2'
