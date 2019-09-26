@@ -204,6 +204,10 @@
     "version": "1.0"
   },
   {
+    "name": "kriswallsmith/assetic",
+    "version": "1.0"
+  },
+  {
     "name": "ktamas77/firebase-php",
     "version": "1.0"
   },
@@ -497,6 +501,10 @@
   },
   {
     "name": "swiftmailer/swiftmailer",
+    "version": "1.0"
+  },
+  {
+    "name": "symfony/assetic-bundle",
     "version": "1.0"
   },
   {
