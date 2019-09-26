@@ -58,6 +58,7 @@ packages:
   kreait/firebase-php: '4.32.0'
   kreait/firebase-tokens: '1.9.1'
   kreait/gcp-metadata: '1.0.1'
+  kriswallsmith/assetic: '1.4.0'
   ktamas77/firebase-php: '2.2.2'
   lcobucci/jwt: '3.3.1'
   league/flysystem: '1.0.55'
@@ -143,6 +144,7 @@ packages:
   skyeng/php-lemmatizer: '1.0.3'
   superbalist/flysystem-google-storage: '7.2.1'
   swiftmailer/swiftmailer: '6.2.1'
+  symfony/assetic-bundle: '2.8.2'
   symfony/http-client: '4.3.4'
   symfony/http-client-contracts: '1.1.6'
   symfony/mime: '4.3.4'
@@ -179,7 +181,7 @@ rules:
     recommendation: 'Check that Heredoc/Nowdoc string does not contain closing identifier inside in the beginning of line'
     lines_after: 6
   pcre2:
-    regexp: '/(^|(^|[^-])>|[^:>\w])preg_\w*\s*\(/'
+    regexp: '/(^|(^|[^-])>|[^:>\w])preg_[^q]\w*\s*\(/'
     recommendation: 'Check that pattern corresponds PCRE2 syntax'
     lines_before: 3
     lines_after: 1

@@ -201,6 +201,11 @@
         "test.php": null
       }
     },
+    "kriswallsmith": {
+      "assetic": {
+        "test.php": null
+      }
+    },
     "ktamas77": {
       "firebase-php": {
         "test.php": null
@@ -505,6 +510,9 @@
       }
     },
     "symfony": {
+      "assetic-bundle": {
+        "test.php": null
+      },
       "http-client": {
         "test.php": null
       },
