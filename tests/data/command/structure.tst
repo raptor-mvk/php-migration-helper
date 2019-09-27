@@ -14,6 +14,11 @@
         "test.php": null
       }
     },
+    "cloudconvert": {
+      "cloudconvert-php": {
+        "test.php": null
+      }
+    },
     "cloudinary": {
       "cloudinary_php": {
         "test.php": null

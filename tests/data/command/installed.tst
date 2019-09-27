@@ -8,6 +8,10 @@
     "version": "1.0"
   },
   {
+    "name": "cloudconvert/cloudconvert-php",
+    "version": "1.0"
+  },
+  {
     "name": "cloudinary/cloudinary_php",
     "version": "1.0"
   },

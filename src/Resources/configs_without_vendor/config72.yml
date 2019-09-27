@@ -7,6 +7,7 @@ excluded:
 packages:
   aws/aws-sdk-php: '3.112.5'
   aws/aws-sdk-php-symfony: '1.3.0'
+  cloudconvert/cloudconvert-php: '2.2.1'
   cloudinary/cloudinary_php: '1.14.0'
   clue/stream-filter: '1.4.1'
   composer/semver: '1.5.0'
