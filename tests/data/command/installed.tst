@@ -200,6 +200,18 @@
     "version": "1.0"
   },
   {
+    "name": "jms/metadata",
+    "version": "1.0"
+  },
+  {
+    "name": "jms/serializer",
+    "version": "1.0"
+  },
+  {
+    "name": "jms/serializer-bundle",
+    "version": "1.0"
+  },
+  {
     "name": "kreait/clock",
     "version": "1.0"
   },
@@ -273,6 +285,10 @@
   },
   {
     "name": "ocramius/proxy-manager",
+    "version": "1.0"
+  },
+  {
+    "name": "opis/json-schema",
     "version": "1.0"
   },
   {

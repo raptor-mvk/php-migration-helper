@@ -198,6 +198,17 @@
         "test.php": null
       }
     },
+    "jms": {
+      "metadata": {
+        "test.php": null
+      },
+      "serializer": {
+        "test.php": null
+      },
+      "serializer-bundle": {
+        "test.php": null
+      }
+    },
     "kreait": {
       "clock": {
         "test.php": null
@@ -280,6 +291,11 @@
         "test.php": null
       },
       "proxy-manager": {
+        "test.php": null
+      }
+    },
+    "opis": {
+      "json-schema": {
         "test.php": null
       }
     },

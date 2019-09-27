@@ -52,6 +52,9 @@ excluded:
   - vendor/incenteev/composer-parameter-handler
   - vendor/jdorn/sql-formatter
   - vendor/jean85/pretty-package-versions
+  - vendor/jms/metadata
+  - vendor/jms/serializer
+  - vendor/jms/serializer-bundle
   - vendor/kreait/clock
   - vendor/kreait/firebase-php
   - vendor/kreait/firebase-tokens
@@ -71,6 +74,7 @@ excluded:
   - vendor/noxlogic/ratelimit-bundle
   - vendor/ocramius/package-versions
   - vendor/ocramius/proxy-manager
+  - vendor/opis/json-schema
   - vendor/paragonie/random_compat
   - vendor/phar-io/manifest
   - vendor/phar-io/version
@@ -217,6 +221,9 @@ packages:
   incenteev/composer-parameter-handler: '2.1.3'
   jdorn/sql-formatter: '1.2.17'
   jean85/pretty-package-versions: '1.2'
+  jms/metadata: '2.1.0'
+  jms/serializer: '3.3.0'
+  jms/serializer-bundle: '3.4.1'
   kreait/clock: '1.0.1'
   kreait/firebase-php: '4.32.0'
   kreait/firebase-tokens: '1.9.1'
@@ -240,6 +247,7 @@ packages:
     message: 'Warning (minor severity): noxlogic/ratelimit-bundle does not have version that is fully compatible with PHP 7.3 (latest known 1.14.0)'
   ocramius/package-versions: '1.5.1'
   ocramius/proxy-manager: '2.2.0'
+  opis/json-schema: '1.0.18'
   paragonie/random_compat: '0.0'
   phar-io/manifest: '1.0.3'
   phar-io/version: '2.0.1'
