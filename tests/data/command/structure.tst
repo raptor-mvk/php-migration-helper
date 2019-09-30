@@ -178,6 +178,47 @@
         "test.php": null
       }
     },
+    "hoa": {
+      "compiler": {
+        "test.php": null
+      },
+      "consistency": {
+        "test.php": null
+      },
+      "event": {
+        "test.php": null
+      },
+      "exception": {
+        "test.php": null
+      },
+      "file": {
+        "test.php": null
+      },
+      "iterator": {
+        "test.php": null
+      },
+      "math": {
+        "test.php": null
+      },
+      "protocol": {
+        "test.php": null
+      },
+      "regex": {
+        "test.php": null
+      },
+      "stream": {
+        "test.php": null
+      },
+      "ustring": {
+        "test.php": null
+      },
+      "visitor": {
+        "test.php": null
+      },
+      "zformat": {
+        "test.php": null
+      }
+    },
     "http-interop": {
       "http-factory-guzzle": {
         "test.php": null

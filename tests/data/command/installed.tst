@@ -184,6 +184,58 @@
     "version": "1.0"
   },
   {
+    "name": "hoa/compiler",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/consistency",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/event",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/exception",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/file",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/iterator",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/math",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/protocol",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/regex",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/stream",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/ustring",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/visitor",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/zformat",
+    "version": "1.0"
+  },
+  {
     "name": "http-interop/http-factory-guzzle",
     "version": "0.1"
   },
