@@ -120,6 +120,10 @@
     "version": "1.0"
   },
   {
+    "name": "fresh/doctrine-enum-bundle",
+    "version": "1.0"
+  },
+  {
     "name": "friendsofphp/php-cs-fixer",
     "version": "1.0"
   },
@@ -304,6 +308,10 @@
     "version": "1.0"
   },
   {
+    "name": "mobiledetect/mobiledetectlib",
+    "version": "1.0"
+  },
+  {
     "name": "monolog/monolog",
     "version": "1.0"
   },
@@ -313,6 +321,10 @@
   },
   {
     "name": "myclabs/deep-copy",
+    "version": "1.0"
+  },
+  {
+    "name": "myclabs/php-enum",
     "version": "1.0"
   },
   {
@@ -578,6 +590,10 @@
   {
     "name": "some_vendor/some_package",
     "version": "1.2.3"
+  },
+  {
+    "name": "suncat/mobile-detect-bundle",
+    "version": "1.0"
   },
   {
     "name": "superbalist/flysystem-google-storage",

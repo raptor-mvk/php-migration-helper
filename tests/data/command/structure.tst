@@ -118,6 +118,11 @@
         "test.php": null
       }
     },
+    "fresh": {
+      "doctrine-enum-bundle": {
+        "test.php": null
+      }
+    },
     "friendsofphp": {
       "php-cs-fixer": {
         "test.php": null
@@ -294,6 +299,11 @@
         "test.php": null
       }
     },
+    "mobiledetect": {
+      "mobiledetectlib": {
+        "test.php": null
+      }
+    },
     "monolog": {
       "monolog": {
         "test.php": null
@@ -306,6 +316,9 @@
     },
     "myclabs": {
       "deep-copy": {
+        "test.php": null
+      },
+      "php-enum": {
         "test.php": null
       }
     },
@@ -569,6 +582,11 @@
     },
     "some_vendor": {
       "some_package": {
+        "test.php": null
+      }
+    },
+    "suncat": {
+      "mobile-detect-bundle": {
         "test.php": null
       }
     },
