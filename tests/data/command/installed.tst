@@ -8,6 +8,10 @@
     "version": "1.0"
   },
   {
+    "name": "captioning/captioning",
+    "version": "1.0"
+  },
+  {
     "name": "cloudconvert/cloudconvert-php",
     "version": "1.0"
   },
@@ -105,6 +109,10 @@
   },
   {
     "name": "egulias/email-validator",
+    "version": "1.0"
+  },
+  {
+    "name": "elasticsearch/elasticsearch",
     "version": "1.0"
   },
   {
@@ -289,6 +297,10 @@
   },
   {
     "name": "ktamas77/firebase-php",
+    "version": "1.0"
+  },
+  {
+    "name": "kylekatarnls/update-helper",
     "version": "1.0"
   },
   {

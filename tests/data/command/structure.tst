@@ -14,6 +14,11 @@
         "test.php": null
       }
     },
+    "captioning": {
+      "captioning": {
+        "test.php": null
+      }
+    },
     "cloudconvert": {
       "cloudconvert-php": {
         "test.php": null
@@ -102,6 +107,11 @@
     },
     "egulias": {
       "email-validator": {
+        "test.php": null
+      }
+    },
+    "elasticsearch": {
+      "elasticsearch": {
         "test.php": null
       }
     },
@@ -276,6 +286,11 @@
     },
     "ktamas77": {
       "firebase-php": {
+        "test.php": null
+      }
+    },
+    "kylekatarnls": {
+      "update-helper": {
         "test.php": null
       }
     },
