@@ -604,6 +604,15 @@
       "assetic-bundle": {
         "test.php": null
       },
+      "console": {
+        "test.php": null
+      },
+      "debug": {
+        "test.php": null
+      },
+      "filesystem": {
+        "test.php": null
+      },
       "http-client": {
         "test.php": null
       },
@@ -652,10 +661,22 @@
       "polyfill-util": {
         "test.php": null
       },
+      "process": {
+        "test.php": null
+      },
       "swiftmailer-bundle": {
         "test.php": null
       },
       "symfony": {
+        "test.php": null
+      },
+      "translation": {
+        "test.php": null
+      },
+      "translation-contracts": {
+        "test.php": null
+      },
+      "yaml": {
         "test.php": null
       }
     },

@@ -608,6 +608,18 @@
     "version": "1.0"
   },
   {
+    "name": "symfony/console",
+    "version": "1.0"
+  },
+  {
+    "name": "symfony/debug",
+    "version": "1.0"
+  },
+  {
+    "name": "symfony/filesystem",
+    "version": "1.0"
+  },
+  {
     "name": "symfony/http-client",
     "version": "1.0"
   },
@@ -672,11 +684,27 @@
     "version": "1.0"
   },
   {
+    "name": "symfony/process",
+    "version": "1.0"
+  },
+  {
     "name": "symfony/swiftmailer-bundle",
     "version": "1.0"
   },
   {
     "name": "symfony/symfony",
+    "version": "1.0"
+  },
+  {
+    "name": "symfony/translation",
+    "version": "1.0"
+  },
+  {
+    "name": "symfony/translation-contracts",
+    "version": "1.0"
+  },
+  {
+    "name": "symfony/yaml",
     "version": "1.0"
   },
   {
