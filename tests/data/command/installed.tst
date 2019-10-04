@@ -104,11 +104,19 @@
     "version": "1.0"
   },
   {
+    "name": "domnikl/statsd",
+    "version": "1.0"
+  },
+  {
     "name": "drewm/mailchimp-api",
     "version": "1.0"
   },
   {
     "name": "egulias/email-validator",
+    "version": "1.0"
+  },
+  {
+    "name": "ekino/newrelic-bundle",
     "version": "1.0"
   },
   {
@@ -340,6 +348,10 @@
     "version": "1.0"
   },
   {
+    "name": "mikey179/vfsstream",
+    "version": "1.0"
+  },
+  {
     "name": "mobiledetect/mobiledetectlib",
     "version": "1.0"
   },
@@ -389,6 +401,10 @@
   },
   {
     "name": "opis/json-schema",
+    "version": "1.0"
+  },
+  {
+    "name": "paquettg/php-html-parser",
     "version": "1.0"
   },
   {
@@ -517,6 +533,10 @@
   },
   {
     "name": "psr/simple-cache",
+    "version": "0.1"
+  },
+  {
+    "name": "pusher/pusher-php-server",
     "version": "0.1"
   },
   {

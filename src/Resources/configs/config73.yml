@@ -28,8 +28,10 @@ excluded:
   - vendor/doctrine/orm
   - vendor/doctrine/persistence
   - vendor/doctrine/reflection
+  - vendor/domnikl/statsd
   - vendor/drewm/mailchimp-api
   - vendor/egulias/email-validator
+  - vendor/ekino/newrelic-bundle
   - vendor/elasticsearch/elasticsearch
   - vendor/fig/http-message-util
   - vendor/fig/link-util
@@ -87,6 +89,7 @@ excluded:
   - vendor/lexik/jwt-authentication-bundle
   - vendor/mhor/php-mediainfo
   - vendor/michelf/php-markdown
+  - vendor/mikey179/vfsstream
   - vendor/mobiledetect/mobiledetectlib
   - vendor/monolog/monolog
   - vendor/mtdowling/jmespath.php
@@ -100,6 +103,7 @@ excluded:
   - vendor/ocramius/package-versions
   - vendor/ocramius/proxy-manager
   - vendor/opis/json-schema
+  - vendor/paquettg/php-html-parser
   - vendor/paragonie/random_compat
   - vendor/phar-io/manifest
   - vendor/phar-io/version
@@ -132,6 +136,7 @@ excluded:
   - vendor/psr/link
   - vendor/psr/log
   - vendor/psr/simple-cache
+  - vendor/pusher/pusher-php-server
   - vendor/ql/uri-template
   - vendor/ralouphie/getallheaders
   - vendor/ramsey/uuid
@@ -234,8 +239,10 @@ packages:
   doctrine/orm: '2.6.3'
   doctrine/persistence: '1.1.1'
   doctrine/reflection: '1.0.0'
+  domnikl/statsd: '3.0.0'
   drewm/mailchimp-api: '2.5.4'
   egulias/email-validator: '2.1.11'
+  ekino/newrelic-bundle: '2.1.0'
   elasticsearch/elasticsearch: '6.7.2'
   fig/http-message-util: '1.1.3'
   fig/link-util: '1.0.0'
@@ -299,6 +306,7 @@ packages:
   lexik/jwt-authentication-bundle: '2.6.4'
   mhor/php-mediainfo: '4.1.2'
   michelf/php-markdown: '1.8.0'
+  mikey179/vfsstream: '1.6.7'
   mobiledetect/mobiledetectlib: '2.8.34'
   monolog/monolog: '1.25.1'
   mtdowling/jmespath.php: '2.4.0'
@@ -316,6 +324,7 @@ packages:
   ocramius/package-versions: '1.5.1'
   ocramius/proxy-manager: '2.2.0'
   opis/json-schema: '1.0.18'
+  paquettg/php-html-parser: '2.1.0'
   paragonie/random_compat: '0.0'
   phar-io/manifest: '1.0.3'
   phar-io/version: '2.0.1'
@@ -350,6 +359,7 @@ packages:
   psr/link: '0.0'
   psr/log: '0.0'
   psr/simple-cache: '0.0'
+  pusher/pusher-php-server: '4.0.0'
   ql/uri-template: '1.1.3'
   ralouphie/getallheaders: '3.0.3'
   ramsey/uuid: '3.8.0'

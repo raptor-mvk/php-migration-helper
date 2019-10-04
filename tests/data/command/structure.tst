@@ -100,6 +100,11 @@
         "test.php": null
       }
     },
+    "domnikl": {
+      "statsd": {
+        "test.php": null
+      }
+    },
     "drewm": {
       "mailchimp-api": {
         "test.php": null
@@ -107,6 +112,11 @@
     },
     "egulias": {
       "email-validator": {
+        "test.php": null
+      }
+    },
+    "ekino": {
+      "newrelic-bundle": {
         "test.php": null
       }
     },
@@ -335,6 +345,11 @@
         "test.php": null
       }
     },
+    "mikey179": {
+      "vfsstream": {
+        "test.php": null
+      }
+    },
     "mobiledetect": {
       "mobiledetectlib": {
         "test.php": null
@@ -391,6 +406,11 @@
     },
     "opis": {
       "json-schema": {
+        "test.php": null
+      }
+    },
+    "paquettg": {
+      "php-html-parser": {
         "test.php": null
       }
     },
@@ -504,6 +524,11 @@
         "test.php": null
       },
       "simple-cache": {
+        "test.php": null
+      }
+    },
+    "pusher": {
+      "pusher-php-server": {
         "test.php": null
       }
     },
