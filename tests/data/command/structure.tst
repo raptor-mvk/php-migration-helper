@@ -186,6 +186,12 @@
       },
       "psr7": {
         "test.php": null
+      },
+      "ringphp": {
+        "test.php": null
+      },
+      "streams": {
+        "test.php": null
       }
     },
     "helpscout": {
@@ -244,6 +250,11 @@
         "test.php": null
       }
     },
+    "intersvyaz": {
+      "yii-sentry": {
+        "test.php": null
+      }
+    },
     "jdorn": {
       "sql-formatter": {
         "test.php": null
@@ -262,6 +273,11 @@
         "test.php": null
       },
       "serializer-bundle": {
+        "test.php": null
+      }
+    },
+    "knplabs": {
+      "gaufrette": {
         "test.php": null
       }
     },
@@ -314,6 +330,11 @@
         "test.php": null
       }
     },
+    "mhor": {
+      "php-mediainfo": {
+        "test.php": null
+      }
+    },
     "mobiledetect": {
       "mobiledetectlib": {
         "test.php": null
@@ -347,6 +368,11 @@
         "test.php": null
       },
       "api-doc-bundle": {
+        "test.php": null
+      }
+    },
+    "nesbot": {
+      "carbon": {
         "test.php": null
       }
     },
@@ -501,6 +527,11 @@
     },
     "raptor": {
       "php-migration-helper": {
+        "test.php": null
+      }
+    },
+    "raven": {
+      "raven": {
         "test.php": null
       }
     },

@@ -192,6 +192,14 @@
     "version": "1.0"
   },
   {
+    "name": "guzzlehttp/ringphp",
+    "version": "1.0"
+  },
+  {
+    "name": "guzzlehttp/streams",
+    "version": "1.0"
+  },
+  {
     "name": "helpscout/api",
     "version": "1.0"
   },
@@ -256,6 +264,10 @@
     "version": "1.0"
   },
   {
+    "name": "intersvyaz/yii-sentry",
+    "version": "1.0"
+  },
+  {
     "name": "jdorn/sql-formatter",
     "version": "1.0"
   },
@@ -274,6 +286,10 @@
   {
     "name": "jms/serializer-bundle",
     "version": "1.0"
+  },
+  {
+    "name": "knplabs/gaufrette",
+    "version": "0.1"
   },
   {
     "name": "kreait/clock",
@@ -320,6 +336,10 @@
     "version": "1.0"
   },
   {
+    "name": "mhor/php-mediainfo",
+    "version": "1.0"
+  },
+  {
     "name": "mobiledetect/mobiledetectlib",
     "version": "1.0"
   },
@@ -349,6 +369,10 @@
   },
   {
     "name": "nelmio/api-doc-bundle",
+    "version": "1.0"
+  },
+  {
+    "name": "nesbot/carbon",
     "version": "1.0"
   },
   {
@@ -514,6 +538,10 @@
   {
     "name": "raptor/php-migration-helper",
     "version": "1.0"
+  },
+  {
+    "name": "raven/raven",
+    "version": "0.1"
   },
   {
     "name": "react/promise",

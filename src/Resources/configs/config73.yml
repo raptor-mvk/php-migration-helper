@@ -50,6 +50,8 @@ excluded:
   - vendor/guzzlehttp/guzzle
   - vendor/guzzlehttp/promises
   - vendor/guzzlehttp/psr7
+  - vendor/guzzlehttp/ringphp
+  - vendor/guzzlehttp/streams
   - vendor/helpscout/api
   - vendor/hoa/compiler
   - vendor/hoa/consistency
@@ -66,11 +68,13 @@ excluded:
   - vendor/hoa/zformat
   - vendor/http-interop/http-factory-guzzle
   - vendor/incenteev/composer-parameter-handler
+  - vendor/intersvyaz/yii-sentry
   - vendor/jdorn/sql-formatter
   - vendor/jean85/pretty-package-versions
   - vendor/jms/metadata
   - vendor/jms/serializer
   - vendor/jms/serializer-bundle
+  - vendor/knplabs/gaufrette
   - vendor/kreait/clock
   - vendor/kreait/firebase-php
   - vendor/kreait/firebase-tokens
@@ -81,6 +85,7 @@ excluded:
   - vendor/lcobucci/jwt
   - vendor/league/flysystem
   - vendor/lexik/jwt-authentication-bundle
+  - vendor/mhor/php-mediainfo
   - vendor/michelf/php-markdown
   - vendor/mobiledetect/mobiledetectlib
   - vendor/monolog/monolog
@@ -90,6 +95,7 @@ excluded:
   - vendor/namshi/jose
   - vendor/nelmio/cors-bundle
   - vendor/nelmio/api-doc-bundle
+  - vendor/nesbot/carbon
   - vendor/noxlogic/ratelimit-bundle
   - vendor/ocramius/package-versions
   - vendor/ocramius/proxy-manager
@@ -131,6 +137,7 @@ excluded:
   - vendor/ramsey/uuid
   - vendor/ramsey/uuid-doctrine
   - vendor/raptor/php-migration-helper
+  - vendor/raven/raven
   - vendor/react/promise
   - vendor/riverline/multipart-parser
   - vendor/rize/uri-template
@@ -251,6 +258,8 @@ packages:
   guzzlehttp/guzzle: '6.3.3'
   guzzlehttp/promises: '1.3.1'
   guzzlehttp/psr7: '1.6.1'
+  guzzlehttp/ringphp: '1.1.1'
+  guzzlehttp/streams: '3.0.0'
   helpscout/api: '2.4.0'
   hoa/compiler:
     version: '3.17.08.08'
@@ -269,11 +278,15 @@ packages:
   hoa/zformat: '1.17.01.10'
   http-interop/http-factory-guzzle: '1.0.0'
   incenteev/composer-parameter-handler: '2.1.3'
+  intersvyaz/yii-sentry: '1.0.5'
   jdorn/sql-formatter: '1.2.17'
   jean85/pretty-package-versions: '1.2'
   jms/metadata: '2.1.0'
   jms/serializer: '3.3.0'
   jms/serializer-bundle: '3.4.1'
+  knplabs/gaufrette:
+    version: '0.8.3'
+    message: 'Warning (minor severity): knplabs/gaufrette does not have version that is fully compatible with PHP 7.3 (latest known 0.8.3)'
   kreait/clock: '1.0.1'
   kreait/firebase-php: '4.32.0'
   kreait/firebase-tokens: '1.9.1'
@@ -284,6 +297,7 @@ packages:
   lcobucci/jwt: '3.3.1'
   league/flysystem: '1.0.55'
   lexik/jwt-authentication-bundle: '2.6.4'
+  mhor/php-mediainfo: '4.1.2'
   michelf/php-markdown: '1.8.0'
   mobiledetect/mobiledetectlib: '2.8.34'
   monolog/monolog: '1.25.1'
@@ -295,6 +309,7 @@ packages:
     version: '1.5.6'
     message: 'Warning (minor severity): nelmio/cors-bundle does not have version that is fully compatible with PHP 7.3 (latest known 1.5.6)'
   nelmio/api-doc-bundle: '2.13.4'
+  nesbot/carbon: '1.39.0'
   noxlogic/ratelimit-bundle:
     version: '1.14.0'
     message: 'Warning (minor severity): noxlogic/ratelimit-bundle does not have version that is fully compatible with PHP 7.3 (latest known 1.14.0)'
@@ -340,6 +355,7 @@ packages:
   ramsey/uuid: '3.8.0'
   ramsey/uuid-doctrine: '1.5.0'
   raptor/php-migration-helper: '0.0'
+  raven/raven: '0.15.0'
   react/promise: '2.7.1'
   riverline/multipart-parser: '2.0.5'
   rize/uri-template:
