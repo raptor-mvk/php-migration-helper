@@ -494,10 +494,18 @@
     "ramsey": {
       "uuid": {
         "test.php": null
+      },
+      "uuid-doctrine": {
+        "test.php": null
       }
     },
     "raptor": {
       "php-migration-helper": {
+        "test.php": null
+      }
+    },
+    "react": {
+      "promise": {
         "test.php": null
       }
     },
@@ -589,6 +597,15 @@
         "test.php": null
       },
       "common-bundle": {
+        "test.php": null
+      },
+      "external-libs": {
+        "test.php": null
+      },
+      "lego-core-module": {
+        "test.php": null
+      },
+      "lego-yii-module": {
         "test.php": null
       },
       "php-lemmatizer": {

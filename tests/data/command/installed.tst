@@ -508,7 +508,15 @@
     "version": "1.0"
   },
   {
+    "name": "ramsey/uuid-doctrine",
+    "version": "1.0"
+  },
+  {
     "name": "raptor/php-migration-helper",
+    "version": "1.0"
+  },
+  {
+    "name": "react/promise",
     "version": "1.0"
   },
   {
@@ -593,6 +601,18 @@
   },
   {
     "name": "sentry/sentry-symfony",
+    "version": "1.0"
+  },
+  {
+    "name": "skyeng/external-libs",
+    "version": "1.0"
+  },
+  {
+    "name": "skyeng/lego-core-module",
+    "version": "1.0"
+  },
+  {
+    "name": "skyeng/lego-yii-module",
     "version": "1.0"
   },
   {
