@@ -14,6 +14,16 @@
         "test.php": null
       }
     },
+    "captioning": {
+      "captioning": {
+        "test.php": null
+      }
+    },
+    "cloudconvert": {
+      "cloudconvert-php": {
+        "test.php": null
+      }
+    },
     "cloudinary": {
       "cloudinary_php": {
         "test.php": null
@@ -90,6 +100,11 @@
         "test.php": null
       }
     },
+    "domnikl": {
+      "statsd": {
+        "test.php": null
+      }
+    },
     "drewm": {
       "mailchimp-api": {
         "test.php": null
@@ -97,6 +112,21 @@
     },
     "egulias": {
       "email-validator": {
+        "test.php": null
+      }
+    },
+    "ekino": {
+      "newrelic-bundle": {
+        "test.php": null
+      }
+    },
+    "elasticsearch": {
+      "elasticsearch": {
+        "test.php": null
+      }
+    },
+    "exsyst": {
+      "swagger": {
         "test.php": null
       }
     },
@@ -110,6 +140,11 @@
     },
     "firebase": {
       "php-jwt": {
+        "test.php": null
+      }
+    },
+    "fresh": {
+      "doctrine-enum-bundle": {
         "test.php": null
       }
     },
@@ -138,6 +173,12 @@
       }
     },
     "google": {
+      "apiclient": {
+        "test.php": null
+      },
+      "apiclient-services": {
+        "test.php": null
+      },
       "auth": {
         "test.php": null
       },
@@ -160,10 +201,57 @@
       },
       "psr7": {
         "test.php": null
+      },
+      "ringphp": {
+        "test.php": null
+      },
+      "streams": {
+        "test.php": null
       }
     },
     "helpscout": {
       "api": {
+        "test.php": null
+      }
+    },
+    "hoa": {
+      "compiler": {
+        "test.php": null
+      },
+      "consistency": {
+        "test.php": null
+      },
+      "event": {
+        "test.php": null
+      },
+      "exception": {
+        "test.php": null
+      },
+      "file": {
+        "test.php": null
+      },
+      "iterator": {
+        "test.php": null
+      },
+      "math": {
+        "test.php": null
+      },
+      "protocol": {
+        "test.php": null
+      },
+      "regex": {
+        "test.php": null
+      },
+      "stream": {
+        "test.php": null
+      },
+      "ustring": {
+        "test.php": null
+      },
+      "visitor": {
+        "test.php": null
+      },
+      "zformat": {
         "test.php": null
       }
     },
@@ -177,6 +265,11 @@
         "test.php": null
       }
     },
+    "intersvyaz": {
+      "yii-sentry": {
+        "test.php": null
+      }
+    },
     "jdorn": {
       "sql-formatter": {
         "test.php": null
@@ -184,6 +277,22 @@
     },
     "jean85": {
       "pretty-package-versions": {
+        "test.php": null
+      }
+    },
+    "jms": {
+      "metadata": {
+        "test.php": null
+      },
+      "serializer": {
+        "test.php": null
+      },
+      "serializer-bundle": {
+        "test.php": null
+      }
+    },
+    "knplabs": {
+      "gaufrette": {
         "test.php": null
       }
     },
@@ -211,6 +320,11 @@
         "test.php": null
       }
     },
+    "kylekatarnls": {
+      "update-helper": {
+        "test.php": null
+      }
+    },
     "lcobucci": {
       "jwt": {
         "test.php": null
@@ -231,6 +345,21 @@
         "test.php": null
       }
     },
+    "mhor": {
+      "php-mediainfo": {
+        "test.php": null
+      }
+    },
+    "mikey179": {
+      "vfsstream": {
+        "test.php": null
+      }
+    },
+    "mobiledetect": {
+      "mobiledetectlib": {
+        "test.php": null
+      }
+    },
     "monolog": {
       "monolog": {
         "test.php": null
@@ -243,6 +372,9 @@
     },
     "myclabs": {
       "deep-copy": {
+        "test.php": null
+      },
+      "php-enum": {
         "test.php": null
       }
     },
@@ -259,6 +391,16 @@
         "test.php": null
       }
     },
+    "nesbot": {
+      "carbon": {
+        "test.php": null
+      }
+    },
+    "nikic": {
+      "php-parser": {
+        "test.php": null
+      }
+    },
     "noxlogic": {
       "ratelimit-bundle": {
         "test.php": null
@@ -272,8 +414,24 @@
         "test.php": null
       }
     },
+    "opis": {
+      "json-schema": {
+        "test.php": null
+      }
+    },
+    "paquettg": {
+      "php-html-parser": {
+        "test.php": null
+      },
+      "string-encode": {
+        "test.php": null
+      }
+    },
     "paragonie": {
       "random_compat": {
+        "test.php": null
+      },
+      "sodium_compat": {
         "test.php": null
       }
     },
@@ -322,10 +480,21 @@
       }
     },
     "phpdocumentor": {
+      "reflection": {
+        "test.php": null
+      },
+      "reflection-common": {
+        "test.php": null
+      },
       "reflection-docblock": {
         "test.php": null
       },
       "type-resolver": {
+        "test.php": null
+      }
+    },
+    "phpseclib": {
+      "phpseclib": {
         "test.php": null
       }
     },
@@ -380,6 +549,11 @@
         "test.php": null
       }
     },
+    "pusher": {
+      "pusher-php-server": {
+        "test.php": null
+      }
+    },
     "ql": {
       "uri-template": {
         "test.php": null
@@ -393,10 +567,23 @@
     "ramsey": {
       "uuid": {
         "test.php": null
+      },
+      "uuid-doctrine": {
+        "test.php": null
       }
     },
     "raptor": {
       "php-migration-helper": {
+        "test.php": null
+      }
+    },
+    "raven": {
+      "raven": {
+        "test.php": null
+      }
+    },
+    "react": {
+      "promise": {
         "test.php": null
       }
     },
@@ -490,12 +677,26 @@
       "common-bundle": {
         "test.php": null
       },
+      "external-libs": {
+        "test.php": null
+      },
+      "lego-core-module": {
+        "test.php": null
+      },
+      "lego-yii-module": {
+        "test.php": null
+      },
       "php-lemmatizer": {
         "test.php": null
       }
     },
     "some_vendor": {
       "some_package": {
+        "test.php": null
+      }
+    },
+    "suncat": {
+      "mobile-detect-bundle": {
         "test.php": null
       }
     },
@@ -509,8 +710,22 @@
         "test.php": null
       }
     },
+    "sybio": {
+      "gif-creator": {
+        "test.php": null
+      }
+    },
     "symfony": {
       "assetic-bundle": {
+        "test.php": null
+      },
+      "console": {
+        "test.php": null
+      },
+      "debug": {
+        "test.php": null
+      },
+      "filesystem": {
         "test.php": null
       },
       "http-client": {
@@ -561,10 +776,22 @@
       "polyfill-util": {
         "test.php": null
       },
+      "process": {
+        "test.php": null
+      },
       "swiftmailer-bundle": {
         "test.php": null
       },
       "symfony": {
+        "test.php": null
+      },
+      "translation": {
+        "test.php": null
+      },
+      "translation-contracts": {
+        "test.php": null
+      },
+      "yaml": {
         "test.php": null
       }
     },
@@ -588,7 +815,7 @@
         "test.php": null
       }
     },
-   "willdurand": {
+    "willdurand": {
       "jsonp-callback-validator": {
         "test.php": null
       },
@@ -604,6 +831,11 @@
         "test.php": null
       },
       "zend-eventmanager": {
+        "test.php": null
+      }
+    },
+    "zircote": {
+      "swagger-php": {
         "test.php": null
       }
     }

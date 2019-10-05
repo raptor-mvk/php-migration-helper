@@ -8,6 +8,14 @@
     "version": "1.0"
   },
   {
+    "name": "captioning/captioning",
+    "version": "1.0"
+  },
+  {
+    "name": "cloudconvert/cloudconvert-php",
+    "version": "1.0"
+  },
+  {
     "name": "cloudinary/cloudinary_php",
     "version": "1.0"
   },
@@ -96,12 +104,28 @@
     "version": "1.0"
   },
   {
+    "name": "domnikl/statsd",
+    "version": "1.0"
+  },
+  {
     "name": "drewm/mailchimp-api",
     "version": "1.0"
   },
   {
     "name": "egulias/email-validator",
     "version": "1.0"
+  },
+  {
+    "name": "ekino/newrelic-bundle",
+    "version": "1.0"
+  },
+  {
+    "name": "elasticsearch/elasticsearch",
+    "version": "1.0"
+  },
+  {
+    "name": "exsyst/swagger",
+    "version": "0.1"
   },
   {
     "name": "fig/http-message-util",
@@ -113,6 +137,10 @@
   },
   {
     "name": "firebase/php-jwt",
+    "version": "1.0"
+  },
+  {
+    "name": "fresh/doctrine-enum-bundle",
     "version": "1.0"
   },
   {
@@ -138,6 +166,14 @@
   {
     "name": "giggsey/locale",
     "version": "1.0"
+  },
+  {
+    "name": "google/apiclient",
+    "version": "1.0"
+  },
+  {
+    "name": "google/apiclient-services",
+    "version": "0.1"
   },
   {
     "name": "google/auth",
@@ -168,7 +204,67 @@
     "version": "1.0"
   },
   {
+    "name": "guzzlehttp/ringphp",
+    "version": "1.0"
+  },
+  {
+    "name": "guzzlehttp/streams",
+    "version": "1.0"
+  },
+  {
     "name": "helpscout/api",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/compiler",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/consistency",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/event",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/exception",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/file",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/iterator",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/math",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/protocol",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/regex",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/stream",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/ustring",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/visitor",
+    "version": "1.0"
+  },
+  {
+    "name": "hoa/zformat",
     "version": "1.0"
   },
   {
@@ -180,12 +276,32 @@
     "version": "1.0"
   },
   {
+    "name": "intersvyaz/yii-sentry",
+    "version": "1.0"
+  },
+  {
     "name": "jdorn/sql-formatter",
     "version": "1.0"
   },
   {
     "name": "jean85/pretty-package-versions",
     "version": "1.0"
+  },
+  {
+    "name": "jms/metadata",
+    "version": "1.0"
+  },
+  {
+    "name": "jms/serializer",
+    "version": "1.0"
+  },
+  {
+    "name": "jms/serializer-bundle",
+    "version": "1.0"
+  },
+  {
+    "name": "knplabs/gaufrette",
+    "version": "0.1"
   },
   {
     "name": "kreait/clock",
@@ -212,6 +328,10 @@
     "version": "1.0"
   },
   {
+    "name": "kylekatarnls/update-helper",
+    "version": "1.0"
+  },
+  {
     "name": "lcobucci/jwt",
     "version": "1.0"
   },
@@ -228,6 +348,18 @@
     "version": "1.0"
   },
   {
+    "name": "mhor/php-mediainfo",
+    "version": "1.0"
+  },
+  {
+    "name": "mikey179/vfsstream",
+    "version": "1.0"
+  },
+  {
+    "name": "mobiledetect/mobiledetectlib",
+    "version": "1.0"
+  },
+  {
     "name": "monolog/monolog",
     "version": "1.0"
   },
@@ -237,6 +369,10 @@
   },
   {
     "name": "myclabs/deep-copy",
+    "version": "1.0"
+  },
+  {
+    "name": "myclabs/php-enum",
     "version": "1.0"
   },
   {
@@ -252,6 +388,14 @@
     "version": "1.0"
   },
   {
+    "name": "nesbot/carbon",
+    "version": "1.0"
+  },
+  {
+    "name": "nikic/php-parser",
+    "version": "1.0"
+  },
+  {
     "name": "noxlogic/ratelimit-bundle",
     "version": "1.0"
   },
@@ -264,7 +408,23 @@
     "version": "1.0"
   },
   {
+    "name": "opis/json-schema",
+    "version": "1.0"
+  },
+  {
+    "name": "paquettg/php-html-parser",
+    "version": "1.0"
+  },
+  {
+    "name": "paquettg/string-encode",
+    "version": "1.0"
+  },
+  {
     "name": "paragonie/random_compat",
+    "version": "1.0"
+  },
+  {
+    "name": "paragonie/sodium_compat",
     "version": "1.0"
   },
   {
@@ -316,6 +476,10 @@
     "version": "1.0"
   },
   {
+    "name": "phpdocumentor/reflection",
+    "version": "1.0"
+  },
+  {
     "name": "phpdocumentor/reflection-common",
     "version": "1.0"
   },
@@ -325,6 +489,10 @@
   },
   {
     "name": "phpdocumentor/type-resolver",
+    "version": "0.1"
+  },
+  {
+    "name": "phpseclib/phpseclib",
     "version": "1.0"
   },
   {
@@ -388,6 +556,10 @@
     "version": "0.1"
   },
   {
+    "name": "pusher/pusher-php-server",
+    "version": "0.1"
+  },
+  {
     "name": "ql/uri-template",
     "version": "1.0"
   },
@@ -400,7 +572,19 @@
     "version": "1.0"
   },
   {
+    "name": "ramsey/uuid-doctrine",
+    "version": "1.0"
+  },
+  {
     "name": "raptor/php-migration-helper",
+    "version": "1.0"
+  },
+  {
+    "name": "raven/raven",
+    "version": "0.1"
+  },
+  {
+    "name": "react/promise",
     "version": "1.0"
   },
   {
@@ -488,12 +672,28 @@
     "version": "1.0"
   },
   {
+    "name": "skyeng/external-libs",
+    "version": "1.0"
+  },
+  {
+    "name": "skyeng/lego-core-module",
+    "version": "1.0"
+  },
+  {
+    "name": "skyeng/lego-yii-module",
+    "version": "1.0"
+  },
+  {
     "name": "skyeng/php-lemmatizer",
     "version": "1.0"
   },
   {
     "name": "some_vendor/some_package",
     "version": "1.2.3"
+  },
+  {
+    "name": "suncat/mobile-detect-bundle",
+    "version": "1.0"
   },
   {
     "name": "superbalist/flysystem-google-storage",
@@ -505,6 +705,18 @@
   },
   {
     "name": "symfony/assetic-bundle",
+    "version": "1.0"
+  },
+  {
+    "name": "symfony/console",
+    "version": "1.0"
+  },
+  {
+    "name": "symfony/debug",
+    "version": "1.0"
+  },
+  {
+    "name": "symfony/filesystem",
     "version": "1.0"
   },
   {
@@ -572,11 +784,27 @@
     "version": "1.0"
   },
   {
+    "name": "symfony/process",
+    "version": "1.0"
+  },
+  {
     "name": "symfony/swiftmailer-bundle",
     "version": "1.0"
   },
   {
     "name": "symfony/symfony",
+    "version": "1.0"
+  },
+  {
+    "name": "symfony/translation",
+    "version": "1.0"
+  },
+  {
+    "name": "symfony/translation-contracts",
+    "version": "1.0"
+  },
+  {
+    "name": "symfony/yaml",
     "version": "1.0"
   },
   {
@@ -613,6 +841,10 @@
   },
   {
     "name": "zendframework/zend-eventmanager",
+    "version": "1.0"
+  },
+  {
+    "name": "zircote/swagger-php",
     "version": "1.0"
   }
 ]

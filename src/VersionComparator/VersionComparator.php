@@ -35,13 +35,13 @@ final class VersionComparator implements VersionComparatorInterface
                 $package = $installedVersion['name'];
                 $requiredPackageVersion = $requiredVersions[$package] ?? null;
                 $reportLine = $this->getReportLine($package, $requiredPackageVersion, $installedVersion['version']);
-                if (null !== $reportLine) {
+                if ($reportLine !== null) {
                     $result[] = $reportLine;
                 }
             }
         }
 
-        return (1 === count($result)) ? [] : $result;
+        return (count($result) === 1) ? [] : $result;
     }
 
     /**
@@ -55,7 +55,7 @@ final class VersionComparator implements VersionComparatorInterface
      */
     private function getReportLine(string $package, ?RequiredPackageVersionInterface $requiredPackageVersion, string $installedVersion): ?string
     {
-        if (null === $requiredPackageVersion) {
+        if ($requiredPackageVersion === null) {
             return "Unknown package $package version $installedVersion";
         }
         $installedVersion = $this->normalizeVersion($installedVersion);
@@ -90,10 +90,10 @@ final class VersionComparator implements VersionComparatorInterface
      */
     private function glueReportLine(?string $versionLine, ?string $message): ?string
     {
-        if (null === $versionLine) {
+        if ($versionLine === null) {
             return $message;
         }
 
-        return (null === $message) ? $versionLine : "$versionLine\n$message";
+        return ($message === null) ? $versionLine : "$versionLine\n$message";
     }
 }

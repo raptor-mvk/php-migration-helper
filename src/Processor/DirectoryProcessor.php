@@ -78,7 +78,7 @@ final class DirectoryProcessor implements DirectoryProcessorInterface
     {
         $this->init();
         $iterator = $this->prepareIterator($path);
-        $pathLength = strlen($path) + (int) ('/' !== substr($path, -1));
+        $pathLength = strlen($path) + (int) (substr($path, -1) !== '/');
         $ruleConfigs = $this->config->getRuleConfigs();
         foreach ($iterator as $fileInfo) {
             /** @var SplFileInfo $fileInfo */
@@ -137,7 +137,7 @@ final class DirectoryProcessor implements DirectoryProcessorInterface
             }
             $this->currentFileWasProcessed = true;
             $fileResult = $this->fileProcessor->process($fileName, $ruleConfig->getRules());
-            if (null !== $fileResult) {
+            if ($fileResult !== null) {
                 $report[] = $fileResult;
                 $report[] = ['--------------------------------------------------------------------------------'];
             }
@@ -156,7 +156,7 @@ final class DirectoryProcessor implements DirectoryProcessorInterface
     private function shouldBeProcessed(RuleConfigInterface $ruleConfig, string $fileName): bool
     {
         foreach ($ruleConfig->getExcludedDirs() as $excludedDir) {
-            if (0 === strcmp(substr($fileName, 0, strlen($excludedDir)), $excludedDir)) {
+            if (strcmp(substr($fileName, 0, strlen($excludedDir)), $excludedDir) === 0) {
                 return false;
             }
         }
@@ -190,8 +190,8 @@ final class DirectoryProcessor implements DirectoryProcessorInterface
      */
     private function getSummaryReport(): ?array
     {
-        $processedSuffix = (1 === $this->processedFilesCount) ? '' : 's';
-        $problemSuffix = (1 === $this->problemFilesCount) ? '' : 's';
+        $processedSuffix = ($this->processedFilesCount === 1) ? '' : 's';
+        $problemSuffix = ($this->problemFilesCount === 1) ? '' : 's';
 
         array_pop($this->currentReport);
         $this->currentReport[0] = ["Processed {$this->processedFilesCount} file{$processedSuffix}, ".
