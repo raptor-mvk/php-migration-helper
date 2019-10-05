@@ -33,6 +33,7 @@ excluded:
   - vendor/egulias/email-validator
   - vendor/ekino/newrelic-bundle
   - vendor/elasticsearch/elasticsearch
+  - vendor/exsyst/swagger
   - vendor/fig/http-message-util
   - vendor/fig/link-util
   - vendor/firebase/php-jwt
@@ -99,12 +100,15 @@ excluded:
   - vendor/nelmio/cors-bundle
   - vendor/nelmio/api-doc-bundle
   - vendor/nesbot/carbon
+  - vendor/nikic/php-parser
   - vendor/noxlogic/ratelimit-bundle
   - vendor/ocramius/package-versions
   - vendor/ocramius/proxy-manager
   - vendor/opis/json-schema
   - vendor/paquettg/php-html-parser
+  - vendor/paquettg/string-encode
   - vendor/paragonie/random_compat
+  - vendor/paragonie/sodium_compat
   - vendor/phar-io/manifest
   - vendor/phar-io/version
   - vendor/php-amqplib/php-amqplib
@@ -117,6 +121,7 @@ excluded:
   - vendor/php-http/message
   - vendor/php-http/message-factory
   - vendor/php-http/promise
+  - vendor/phpdocumentor/reflection
   - vendor/phpdocumentor/reflection-common
   - vendor/phpdocumentor/reflection-docblock
   - vendor/phpdocumentor/type-resolver
@@ -176,6 +181,7 @@ excluded:
   - vendor/suncat/mobile-detect-bundle
   - vendor/superbalist/flysystem-google-storage
   - vendor/swiftmailer/swiftmailer
+  - vendor/sybio/gif-creator
   - vendor/symfony/assetic-bundle
   - vendor/symfony/console
   - vendor/symfony/debug
@@ -211,6 +217,7 @@ excluded:
   - vendor/zendframework/zend-code
   - vendor/zendframework/zend-diactoros
   - vendor/zendframework/zend-eventmanager
+  - vendor/zircote/swagger-php
 
 packages:
   aws/aws-sdk-php: '3.112.5'
@@ -244,6 +251,7 @@ packages:
   egulias/email-validator: '2.1.11'
   ekino/newrelic-bundle: '2.1.0'
   elasticsearch/elasticsearch: '6.7.2'
+  exsyst/swagger: '0.4.1'
   fig/http-message-util: '1.1.3'
   fig/link-util: '1.0.0'
   fresh/doctrine-enum-bundle: '5.3.0'
@@ -318,6 +326,7 @@ packages:
     message: 'Warning (minor severity): nelmio/cors-bundle does not have version that is fully compatible with PHP 7.3 (latest known 1.5.6)'
   nelmio/api-doc-bundle: '2.13.4'
   nesbot/carbon: '1.39.0'
+  nikic/php-parser: '2.1.1'
   noxlogic/ratelimit-bundle:
     version: '1.14.0'
     message: 'Warning (minor severity): noxlogic/ratelimit-bundle does not have version that is fully compatible with PHP 7.3 (latest known 1.14.0)'
@@ -325,7 +334,9 @@ packages:
   ocramius/proxy-manager: '2.2.0'
   opis/json-schema: '1.0.18'
   paquettg/php-html-parser: '2.1.0'
+  paquettg/string-encode: '1.0.1'
   paragonie/random_compat: '0.0'
+  paragonie/sodium_compat: '1.11.1'
   phar-io/manifest: '1.0.3'
   phar-io/version: '2.0.1'
   php-amqplib/php-amqplib: '2.8.0'
@@ -340,9 +351,10 @@ packages:
   php-http/message: '1.8.0'
   php-http/message-factory: '1.0.2'
   php-http/promise: '1.0.0'
-  phpdocumentor/reflection-common: '2.0.0'
-  phpdocumentor/reflection-docblock: '4.3.2'
-  phpdocumentor/type-resolver: '1.0.1'
+  phpdocumentor/reflection: '2.0.0'
+  phpdocumentor/reflection-common: '1.0.1'
+  phpdocumentor/reflection-docblock: '3.3.2'
+  phpdocumentor/type-resolver: '0.4.0'
   phpseclib/phpseclib: '2.0.23'
   phpspec/prophecy: '1.8.1'
   phpunit/php-code-coverage: '7.0.0'
@@ -401,6 +413,7 @@ packages:
   suncat/mobile-detect-bundle: '1.1.1'
   superbalist/flysystem-google-storage: '7.2.1'
   swiftmailer/swiftmailer: '6.2.1'
+  sybio/gif-creator: '0.0'
   symfony/assetic-bundle: '2.8.2'
   symfony/console: '3.4.31'
   symfony/debug: '4.3.4'
@@ -438,6 +451,7 @@ packages:
   zendframework/zend-code: '3.3.2'
   zendframework/zend-diactoros: '2.1.3'
   zendframework/zend-eventmanager: '3.2.1'
+  zircote/swagger-php: '2.0.14'
 
 rules:
   heredoc:

@@ -7,6 +7,8 @@
 
  <file>tests</file>
 
- <rule ref="Symfony"/>
+ <rule ref="Symfony">
+    <exclude name="Symfony.ControlStructure.YodaConditions.Invalid"/>
+ </rule>
 
 </ruleset>

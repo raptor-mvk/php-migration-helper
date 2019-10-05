@@ -124,6 +124,10 @@
     "version": "1.0"
   },
   {
+    "name": "exsyst/swagger",
+    "version": "0.1"
+  },
+  {
     "name": "fig/http-message-util",
     "version": "1.0"
   },
@@ -388,6 +392,10 @@
     "version": "1.0"
   },
   {
+    "name": "nikic/php-parser",
+    "version": "1.0"
+  },
+  {
     "name": "noxlogic/ratelimit-bundle",
     "version": "1.0"
   },
@@ -408,7 +416,15 @@
     "version": "1.0"
   },
   {
+    "name": "paquettg/string-encode",
+    "version": "1.0"
+  },
+  {
     "name": "paragonie/random_compat",
+    "version": "1.0"
+  },
+  {
+    "name": "paragonie/sodium_compat",
     "version": "1.0"
   },
   {
@@ -460,6 +476,10 @@
     "version": "1.0"
   },
   {
+    "name": "phpdocumentor/reflection",
+    "version": "1.0"
+  },
+  {
     "name": "phpdocumentor/reflection-common",
     "version": "1.0"
   },
@@ -469,7 +489,7 @@
   },
   {
     "name": "phpdocumentor/type-resolver",
-    "version": "1.0"
+    "version": "0.1"
   },
   {
     "name": "phpseclib/phpseclib",
@@ -821,6 +841,10 @@
   },
   {
     "name": "zendframework/zend-eventmanager",
+    "version": "1.0"
+  },
+  {
+    "name": "zircote/swagger-php",
     "version": "1.0"
   }
 ]

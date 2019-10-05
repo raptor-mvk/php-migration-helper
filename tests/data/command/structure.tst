@@ -125,6 +125,11 @@
         "test.php": null
       }
     },
+    "exsyst": {
+      "swagger": {
+        "test.php": null
+      }
+    },
     "fig": {
       "http-message-util": {
         "test.php": null
@@ -391,6 +396,11 @@
         "test.php": null
       }
     },
+    "nikic": {
+      "php-parser": {
+        "test.php": null
+      }
+    },
     "noxlogic": {
       "ratelimit-bundle": {
         "test.php": null
@@ -412,10 +422,16 @@
     "paquettg": {
       "php-html-parser": {
         "test.php": null
+      },
+      "string-encode": {
+        "test.php": null
       }
     },
     "paragonie": {
       "random_compat": {
+        "test.php": null
+      },
+      "sodium_compat": {
         "test.php": null
       }
     },
@@ -464,6 +480,12 @@
       }
     },
     "phpdocumentor": {
+      "reflection": {
+        "test.php": null
+      },
+      "reflection-common": {
+        "test.php": null
+      },
       "reflection-docblock": {
         "test.php": null
       },
@@ -688,6 +710,11 @@
         "test.php": null
       }
     },
+    "sybio": {
+      "gif-creator": {
+        "test.php": null
+      }
+    },
     "symfony": {
       "assetic-bundle": {
         "test.php": null
@@ -788,7 +815,7 @@
         "test.php": null
       }
     },
-   "willdurand": {
+    "willdurand": {
       "jsonp-callback-validator": {
         "test.php": null
       },
@@ -804,6 +831,11 @@
         "test.php": null
       },
       "zend-eventmanager": {
+        "test.php": null
+      }
+    },
+    "zircote": {
+      "swagger-php": {
         "test.php": null
       }
     }
